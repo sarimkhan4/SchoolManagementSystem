@@ -53,7 +53,7 @@ void setupDatabase() {
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");
     db.setUserName("root");
-    db.setPassword("H2714077");
+    db.setPassword("");
     db.setConnectOptions("MYSQL_OPT_SSL_MODE=DISABLED");
 
     if (!db.open()) {
