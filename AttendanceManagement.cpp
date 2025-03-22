@@ -4,6 +4,7 @@
 #include <QSqlError>
 #include <QMessageBox>
 #include <QInputDialog>
+#include <QKeyEvent>
 
 AttendanceManagement::AttendanceManagement(QWidget *parent) :
     QWidget(parent),
@@ -150,3 +151,11 @@ void AttendanceManagement::onSearchTextChanged(const QString &text) {
     model->setQuery(std::move(query));
     ui->attendanceTable->setModel(model);
 }
+void AttendanceManagement::keyPressEvent(QKeyEvent *event) {
+    if (event->key() == Qt::Key_Escape) {
+        close();  // Closes the Attendance Management window
+    } else {
+        QWidget::keyPressEvent(event);  // Passes other key presses to the parent class
+    }
+}
+

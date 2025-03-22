@@ -15,6 +15,8 @@ class AttendanceManagement : public QWidget {
 public:
     explicit AttendanceManagement(QWidget *parent = nullptr);
     ~AttendanceManagement();
+protected:
+    void keyPressEvent(QKeyEvent *event);
 
 private slots:
     void loadAttendanceRecords();
