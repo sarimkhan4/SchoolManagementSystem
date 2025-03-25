@@ -11,9 +11,14 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QDialog>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -21,37 +26,61 @@ class Ui_ExamManagement
 {
 public:
     QVBoxLayout *verticalLayout;
-    QPushButton *scheduleExamButton;
-    QPushButton *viewExamsButton;
-    QPushButton *editExamButton;
-    QPushButton *removeExamButton;
+    QHBoxLayout *searchLayout;
+    QLabel *searchLabel;
+    QLineEdit *searchBar;
+    QTableView *examTable;
+    QHBoxLayout *buttonLayout;
+    QPushButton *addButton;
+    QPushButton *editButton;
+    QPushButton *removeButton;
 
-    void setupUi(QDialog *ExamManagement)
+    void setupUi(QWidget *ExamManagement)
     {
         if (ExamManagement->objectName().isEmpty())
             ExamManagement->setObjectName("ExamManagement");
-        ExamManagement->resize(400, 300);
+        ExamManagement->resize(850, 500);
         verticalLayout = new QVBoxLayout(ExamManagement);
         verticalLayout->setObjectName("verticalLayout");
-        scheduleExamButton = new QPushButton(ExamManagement);
-        scheduleExamButton->setObjectName("scheduleExamButton");
+        searchLayout = new QHBoxLayout();
+        searchLayout->setObjectName("searchLayout");
+        searchLabel = new QLabel(ExamManagement);
+        searchLabel->setObjectName("searchLabel");
 
-        verticalLayout->addWidget(scheduleExamButton);
+        searchLayout->addWidget(searchLabel);
 
-        viewExamsButton = new QPushButton(ExamManagement);
-        viewExamsButton->setObjectName("viewExamsButton");
+        searchBar = new QLineEdit(ExamManagement);
+        searchBar->setObjectName("searchBar");
 
-        verticalLayout->addWidget(viewExamsButton);
+        searchLayout->addWidget(searchBar);
 
-        editExamButton = new QPushButton(ExamManagement);
-        editExamButton->setObjectName("editExamButton");
 
-        verticalLayout->addWidget(editExamButton);
+        verticalLayout->addLayout(searchLayout);
 
-        removeExamButton = new QPushButton(ExamManagement);
-        removeExamButton->setObjectName("removeExamButton");
+        examTable = new QTableView(ExamManagement);
+        examTable->setObjectName("examTable");
 
-        verticalLayout->addWidget(removeExamButton);
+        verticalLayout->addWidget(examTable);
+
+        buttonLayout = new QHBoxLayout();
+        buttonLayout->setObjectName("buttonLayout");
+        addButton = new QPushButton(ExamManagement);
+        addButton->setObjectName("addButton");
+
+        buttonLayout->addWidget(addButton);
+
+        editButton = new QPushButton(ExamManagement);
+        editButton->setObjectName("editButton");
+
+        buttonLayout->addWidget(editButton);
+
+        removeButton = new QPushButton(ExamManagement);
+        removeButton->setObjectName("removeButton");
+
+        buttonLayout->addWidget(removeButton);
+
+
+        verticalLayout->addLayout(buttonLayout);
 
 
         retranslateUi(ExamManagement);
@@ -59,13 +88,13 @@ public:
         QMetaObject::connectSlotsByName(ExamManagement);
     } // setupUi
 
-    void retranslateUi(QDialog *ExamManagement)
+    void retranslateUi(QWidget *ExamManagement)
     {
         ExamManagement->setWindowTitle(QCoreApplication::translate("ExamManagement", "Exam Management", nullptr));
-        scheduleExamButton->setText(QCoreApplication::translate("ExamManagement", "Schedule Exam", nullptr));
-        viewExamsButton->setText(QCoreApplication::translate("ExamManagement", "View Scheduled Exams", nullptr));
-        editExamButton->setText(QCoreApplication::translate("ExamManagement", "Edit Exam", nullptr));
-        removeExamButton->setText(QCoreApplication::translate("ExamManagement", "Remove Exam", nullptr));
+        searchLabel->setText(QCoreApplication::translate("ExamManagement", "Search:", nullptr));
+        addButton->setText(QCoreApplication::translate("ExamManagement", "Add Exam", nullptr));
+        editButton->setText(QCoreApplication::translate("ExamManagement", "Edit Exam", nullptr));
+        removeButton->setText(QCoreApplication::translate("ExamManagement", "Remove Exam", nullptr));
     } // retranslateUi
 
 };

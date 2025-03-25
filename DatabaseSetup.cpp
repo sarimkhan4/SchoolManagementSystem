@@ -121,7 +121,8 @@ void setupDatabase() {
         {"student_reports", "CREATE TABLE IF NOT EXISTS student_reports (id INT AUTO_INCREMENT PRIMARY KEY, student_id INT NOT NULL, exam_name VARCHAR(100) NOT NULL, marks_obtained INT NOT NULL, total_marks INT NOT NULL, grade VARCHAR(5) DEFAULT NULL, remarks TEXT, FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE)"},
         {"students", "CREATE TABLE IF NOT EXISTS students (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) NOT NULL, password VARCHAR(255) NOT NULL, class VARCHAR(50) DEFAULT NULL)"},
         {"teacher_attendance", "CREATE TABLE IF NOT EXISTS teacher_attendance (id INT AUTO_INCREMENT PRIMARY KEY, teacher_id INT NOT NULL, date DATE NOT NULL, status ENUM('Present','Absent') NOT NULL, course_name VARCHAR(100) NOT NULL, FOREIGN KEY (teacher_id) REFERENCES teachers(id) ON DELETE CASCADE)"},
-        {"teachers", "CREATE TABLE IF NOT EXISTS teachers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) NOT NULL, password VARCHAR(255) NOT NULL, subject VARCHAR(100) DEFAULT NULL)"}
+        {"teachers", "CREATE TABLE IF NOT EXISTS teachers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) NOT NULL, password VARCHAR(255) NOT NULL, subject VARCHAR(100) DEFAULT NULL)"},
+        {"exam_management", "CREATE TABLE IF NOT EXISTS exam_management (id INT AUTO_INCREMENT PRIMARY KEY, class_name VARCHAR(50) NOT NULL, subject VARCHAR(100) NOT NULL, invigilator VARCHAR(100) NOT NULL, exam_date DATE NOT NULL, start_time TIME NOT NULL, end_time TIME NOT NULL, room VARCHAR(20) NOT NULL)"}
     };
 
     for (const Table& table : tables) {

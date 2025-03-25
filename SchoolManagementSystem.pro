@@ -11,36 +11,42 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    AdminPanel.cpp \
-    AttendanceManagement.cpp \
-    ClassScheduleManagement.cpp \
+    AdminPanel/AdminPanel.cpp \
+    AdminPanel/AttendanceManagement.cpp \
+    AdminPanel/ClassScheduleManagement.cpp \
     DatabaseSetup.cpp \
-    ExamManagement.cpp \
+    AdminPanel/ExamManagement.cpp \
     Login.cpp \
-    StudentManagement.cpp \
-    TeacherManagement.cpp \
+    AdminPanel/StudentManagement.cpp \
+    StudentPanel/StudentPanel.cpp \
+    AdminPanel/TeacherManagement.cpp \
+    TeacherPanel/TeacherPanel.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
-    AdminPanel.h \
-    AttendanceManagement.h \
-    ClassScheduleManagement.h \
+    AdminPanel/AdminPanel.h \
+    AdminPanel/AttendanceManagement.h \
+    AdminPanel/ClassScheduleManagement.h \
     DatabaseSetup.h \
-    ExamManagement.h \
+    AdminPanel/ExamManagement.h \
     Login.h \
-    StudentManagement.h \
-    TeacherManagement.h \
+    AdminPanel/StudentManagement.h \
+    StudentPanel/StudentPanel.h \
+    AdminPanel/TeacherManagement.h \
+    TeacherPanel/TeacherPanel.h \
     mainwindow.h
 
 FORMS += \
-    AdminPanel.ui \
-    AttendanceManagement.ui \
-    ClassScheduleManagement.ui \
-    ExamManagement.ui \
+    AdminPanel/AdminPanel.ui \
+    AdminPanel/AttendanceManagement.ui \
+    AdminPanel/ClassScheduleManagement.ui \
+    AdminPanel/ExamManagement.ui \
     Login.ui \
-    StudentManagement.ui \
-    TeacherManagement.ui \
+    AdminPanel/StudentManagement.ui \
+    StudentPanel/StudentPanel.ui \
+    AdminPanel/TeacherManagement.ui \
+    TeacherPanel/TeacherPanel.ui \
     mainwindow.ui
 
 # Default rules for deployment.

@@ -5,7 +5,9 @@ release/DatabaseSetup.o
 release/ExamManagement.o
 release/Login.o
 release/StudentManagement.o
+release/StudentPanel.o
 release/TeacherManagement.o
+release/TeacherPanel.o
 release/main.o
 release/mainwindow.o
 release/moc_AdminPanel.o
@@ -14,5 +16,7 @@ release/moc_ClassScheduleManagement.o
 release/moc_ExamManagement.o
 release/moc_Login.o
 release/moc_StudentManagement.o
+release/moc_StudentPanel.o
 release/moc_TeacherManagement.o
+release/moc_TeacherPanel.o
 release/moc_mainwindow.o

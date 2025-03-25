@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminPanel</class>
+ <widget class="QDialog" name="AdminPanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Admin Panel</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">  <!-- Fixed Layout Issue -->
+   <item>
+    <widget class="QPushButton" name="studentButton">
+     <property name="text">
+      <string>Manage Students</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="teacherButton">
+     <property name="text">
+      <string>Manage Teachers</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="classScheduleButton">
+     <property name="text">
+      <string>Manage Class Schedules</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="attendanceButton">
+     <property name="text">
+      <string>Manage Attendance</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="examButton">
+     <property name="text">
+      <string>Manage Exams</string>
+     </property>
+    </widget>
+   </item>
+  </layout> <!-- Properly closed layout -->
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

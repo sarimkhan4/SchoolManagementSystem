@@ -5,7 +5,9 @@ debug/DatabaseSetup.o
 debug/ExamManagement.o
 debug/Login.o
 debug/StudentManagement.o
+debug/StudentPanel.o
 debug/TeacherManagement.o
+debug/TeacherPanel.o
 debug/main.o
 debug/mainwindow.o
 debug/moc_AdminPanel.o
@@ -14,5 +16,7 @@ debug/moc_ClassScheduleManagement.o
 debug/moc_ExamManagement.o
 debug/moc_Login.o
 debug/moc_StudentManagement.o
+debug/moc_StudentPanel.o
 debug/moc_TeacherManagement.o
+debug/moc_TeacherPanel.o
 debug/moc_mainwindow.o

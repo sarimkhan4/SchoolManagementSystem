@@ -1,6 +1,8 @@
 #include "Login.h"
 #include "ui_Login.h"
-#include "AdminPanel.h"
+#include "AdminPanel/AdminPanel.h"
+#include "StudentPanel/StudentPanel.h"
+#include "TeacherPanel/TeacherPanel.h"
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QDebug>
@@ -22,33 +24,47 @@ void Login::on_loginButton_clicked() {
         QMessageBox::warning(this, "Login Failed", "Please enter username and password.");
         return;
     }
-
-    // Check credentials in database
+    // 1. Check if it's an Admin
     QSqlQuery query;
-    query.prepare("SELECT role FROM login_credentials WHERE user_id = :user_id AND password = :password");
-    query.bindValue(":user_id", username);
-    query.bindValue(":password", password);
-
-    if (!query.exec()) {
-        qDebug() << "Query Execution Failed: " << query.lastError().text();
-        QMessageBox::critical(this, "Login Error", "Database query failed.");
-        return;
-    }
-
-    if (query.next()) {
-        QString role = query.value(0).toString();
-        QMessageBox::information(this, "Login Successful", "Welcome, " + role + "!");
-
-        if (role == "admin") {
-            AdminPanel *adminPanel = new AdminPanel();
-            adminPanel->show();
-            this->hide();  // Hide login window
-        } else if (role == "teacher") {
-            // Open Teacher Panel
-        } else if (role == "student") {
-            // Open Student Panel
+    query.prepare("SELECT password FROM login_credentials WHERE BINARY user_id = :username");
+    query.bindValue(":username", username);
+    if (query.exec() && query.next()) {
+        if (query.value(0).toString() == password) {
+            QMessageBox::information(this, "Login Successful", "Welcome, Admin!");
+            // Open Admin Panel
+            AdminPanel *admin = new AdminPanel();
+            admin->show();
+            this->close();
+            return;
         }
-    } else {
-        QMessageBox::warning(this, "Login Failed", "Invalid username or password.");
     }
+    // 2. Check if it's a Student
+    query.prepare("SELECT password FROM students WHERE BINARY name = :username");
+    query.bindValue(":username", username);
+    if (query.exec() && query.next()) {
+        if (query.value(0).toString() == password) {
+            QMessageBox::information(this, "Login Successful", "Welcome, Student!");
+            // Open Student Panel
+            StudentPanel *student = new StudentPanel();
+            student->show();
+            this->close();
+            return;
+        }
+    }
+    // 3. Check if it's a Teacher
+    query.prepare("SELECT password FROM teachers BINARY WHERE name = :username");
+    query.bindValue(":username", username);
+    if (query.exec() && query.next()) {
+        if (query.value(0).toString() == password) {
+            QMessageBox::information(this, "Login Successful", "Welcome, Teacher!");
+            // Open Teacher Panel
+            TeacherPanel *teacher = new TeacherPanel();
+            teacher->show();
+            this->close();
+            return;
+        }
+    }
+    // If no valid user is found
+    QMessageBox::warning(this, "Login Failed", "Invalid username or password.");
+
 }
