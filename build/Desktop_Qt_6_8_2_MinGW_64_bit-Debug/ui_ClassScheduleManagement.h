@@ -12,72 +12,162 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableWidget>
-#include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_ClassScheduleManagement
 {
 public:
-    QVBoxLayout *verticalLayout;
     QTableWidget *scheduleTable;
-    QHBoxLayout *buttonLayout;
-    QPushButton *addScheduleButton;
     QPushButton *editScheduleButton;
-    QPushButton *removeScheduleButton;
-    QPushButton *viewScheduleButton;
+    QPushButton *addScheduleButton;
     QLineEdit *searchBar;
+    QPushButton *viewScheduleButton;
+    QPushButton *removeScheduleButton;
 
     void setupUi(QDialog *ClassScheduleManagement)
     {
         if (ClassScheduleManagement->objectName().isEmpty())
             ClassScheduleManagement->setObjectName("ClassScheduleManagement");
-        ClassScheduleManagement->resize(750, 500);
-        verticalLayout = new QVBoxLayout(ClassScheduleManagement);
-        verticalLayout->setObjectName("verticalLayout");
+        ClassScheduleManagement->resize(800, 634);
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(ClassScheduleManagement->sizePolicy().hasHeightForWidth());
+        ClassScheduleManagement->setSizePolicy(sizePolicy);
+        ClassScheduleManagement->setStyleSheet(QString::fromUtf8("QDialog#ClassScheduleManagement {\n"
+"        background-color: #fef6f0   ;\n"
+"        border: 1px solid black;\n"
+"        border-radius: 10%;\n"
+"}"));
         scheduleTable = new QTableWidget(ClassScheduleManagement);
         if (scheduleTable->columnCount() < 7)
             scheduleTable->setColumnCount(7);
         scheduleTable->setObjectName("scheduleTable");
+        scheduleTable->setGeometry(QRect(10, 70, 781, 511));
+        scheduleTable->setStyleSheet(QString::fromUtf8("QTableView#scheduleTable {\n"
+"    border: 1.5px solid #2c3e50;\n"
+"    border-radius: 8px;\n"
+"    background-color: #ffffff;\n"
+"    font-family: 'Segoe UI', sans-serif;\n"
+"    font-size: 11pt;\n"
+"    color: #2c3e50;\n"
+"    gridline-color: #ecf0f1;\n"
+"    alternate-background-color: #f7f9fa;\n"
+"    selection-background-color: #d6eaf8;\n"
+"    selection-color: #1a252f;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #2c3e50;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"    font-size: 11pt;\n"
+"    padding: 6px;\n"
+"    border: none;\n"
+"    font-family: 'Segoe UI', sans-serif;\n"
+"}\n"
+"\n"
+"QTableWidget QTableCornerButton::section {\n"
+"    background-color: #2c3e50;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QTableWidget::item {\n"
+"    padding: 8px 10px;\n"
+"    font-size: 9pt;\n"
+"}\n"
+"\n"
+"QTableWidget::item:selected {\n"
+"    background-color: #d6eaf8;\n"
+"    color: #1a252f;\n"
+"}\n"
+""));
+        scheduleTable->setFrameShape(QFrame::Shape::StyledPanel);
         scheduleTable->setColumnCount(7);
-
-        verticalLayout->addWidget(scheduleTable);
-
-        buttonLayout = new QHBoxLayout();
-        buttonLayout->setObjectName("buttonLayout");
-        addScheduleButton = new QPushButton(ClassScheduleManagement);
-        addScheduleButton->setObjectName("addScheduleButton");
-
-        buttonLayout->addWidget(addScheduleButton);
-
         editScheduleButton = new QPushButton(ClassScheduleManagement);
         editScheduleButton->setObjectName("editScheduleButton");
-
-        buttonLayout->addWidget(editScheduleButton);
-
-        removeScheduleButton = new QPushButton(ClassScheduleManagement);
-        removeScheduleButton->setObjectName("removeScheduleButton");
-
-        buttonLayout->addWidget(removeScheduleButton);
-
-        viewScheduleButton = new QPushButton(ClassScheduleManagement);
-        viewScheduleButton->setObjectName("viewScheduleButton");
-
-        buttonLayout->addWidget(viewScheduleButton);
-
+        editScheduleButton->setGeometry(QRect(570, 590, 131, 31));
+        editScheduleButton->setStyleSheet(QString::fromUtf8("QPushButton#editScheduleButton {\n"
+"    background-color: #ff6b6b;\n"
+"    border: 1.5px solid black;\n"
+"    border-radius: 10px;\n"
+"    font-size: 16px;\n"
+"        color: #2c3e50 ;\n"
+"}\n"
+"\n"
+"QPushButton#editScheduleButton:hover {\n"
+"    background-color: #ee5253;\n"
+"        color: #2c3e50 ;\n"
+"}\n"
+"\n"
+""));
+        addScheduleButton = new QPushButton(ClassScheduleManagement);
+        addScheduleButton->setObjectName("addScheduleButton");
+        addScheduleButton->setGeometry(QRect(90, 590, 131, 31));
+        addScheduleButton->setStyleSheet(QString::fromUtf8("QPushButton#addScheduleButton {\n"
+"    background-color: #ff6b6b;\n"
+"    border: 1.5px solid black;\n"
+"    border-radius: 10px;\n"
+"    font-size: 16px;\n"
+"        color: #2c3e50 ;\n"
+"}\n"
+"\n"
+"QPushButton#addScheduleButton:hover {\n"
+"    background-color: #ee5253;\n"
+"        color: #2c3e50 ;\n"
+"}\n"
+"\n"
+""));
         searchBar = new QLineEdit(ClassScheduleManagement);
         searchBar->setObjectName("searchBar");
-
-        buttonLayout->addWidget(searchBar);
-
-
-        verticalLayout->addLayout(buttonLayout);
-
+        searchBar->setGeometry(QRect(10, 20, 781, 31));
+        searchBar->setStyleSheet(QString::fromUtf8("QLineEdit#searchBar {\n"
+"    color: black;;\n"
+"    border: 1.5px solid black;;\n"
+"    border-radius: 10px;\n"
+"        font-size: 16px;\n"
+"        padding: 0px 8px 0px 8px;\n"
+"}\n"
+""));
+        viewScheduleButton = new QPushButton(ClassScheduleManagement);
+        viewScheduleButton->setObjectName("viewScheduleButton");
+        viewScheduleButton->setGeometry(QRect(250, 590, 131, 31));
+        viewScheduleButton->setStyleSheet(QString::fromUtf8("QPushButton#viewScheduleButton {\n"
+"    background-color: #ff6b6b;\n"
+"    border: 1.5px solid black;\n"
+"    border-radius: 10px;\n"
+"    font-size: 16px;\n"
+"        color: #2c3e50 ;\n"
+"}\n"
+"\n"
+"QPushButton#viewScheduleButton:hover {\n"
+"    background-color: #ee5253;\n"
+"        color: #2c3e50 ;\n"
+"}\n"
+"\n"
+""));
+        removeScheduleButton = new QPushButton(ClassScheduleManagement);
+        removeScheduleButton->setObjectName("removeScheduleButton");
+        removeScheduleButton->setGeometry(QRect(410, 590, 131, 31));
+        removeScheduleButton->setStyleSheet(QString::fromUtf8("QPushButton#removeScheduleButton {\n"
+"    background-color: #ff6b6b;\n"
+"    border: 1.5px solid black;\n"
+"    border-radius: 10px;\n"
+"    font-size: 16px;\n"
+"        color: #2c3e50 ;\n"
+"}\n"
+"\n"
+"QPushButton#removeScheduleButton:hover {\n"
+"    background-color: #ee5253;\n"
+"        color: #2c3e50 ;\n"
+"}\n"
+"\n"
+""));
 
         retranslateUi(ClassScheduleManagement);
 
@@ -95,12 +185,12 @@ public:
             QCoreApplication::translate("ClassScheduleManagement", "Start Time", nullptr),
             QCoreApplication::translate("ClassScheduleManagement", "End Time", nullptr),
             QCoreApplication::translate("ClassScheduleManagement", "Room", nullptr)}));
-        addScheduleButton->setText(QCoreApplication::translate("ClassScheduleManagement", "Add Schedule", nullptr));
         editScheduleButton->setText(QCoreApplication::translate("ClassScheduleManagement", "Edit Schedule", nullptr));
-        removeScheduleButton->setText(QCoreApplication::translate("ClassScheduleManagement", "Remove Schedule", nullptr));
-        viewScheduleButton->setText(QCoreApplication::translate("ClassScheduleManagement", "View Schedules", nullptr));
+        addScheduleButton->setText(QCoreApplication::translate("ClassScheduleManagement", "Add Schedule", nullptr));
         searchBar->setText(QString());
         searchBar->setPlaceholderText(QCoreApplication::translate("ClassScheduleManagement", "Search by Class Name ", nullptr));
+        viewScheduleButton->setText(QCoreApplication::translate("ClassScheduleManagement", "View Schedules", nullptr));
+        removeScheduleButton->setText(QCoreApplication::translate("ClassScheduleManagement", "Remove Schedule", nullptr));
     } // retranslateUi
 
 };

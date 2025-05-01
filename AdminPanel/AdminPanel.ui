@@ -6,16 +6,64 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>410</width>
+    <height>384</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>2000</width>
+    <height>1000</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Admin Panel</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">  <!-- Fixed Layout Issue -->
+  <property name="styleSheet">
+   <string notr="true">QDialog#AdminPanel {
+        background-color: #fef6f0;
+        border: 1px solid black;
+        border-radius: 10%;
+}</string>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0">
+   <property name="spacing">
+    <number>1</number>
+   </property>
+   <property name="leftMargin">
+    <number>82</number>
+   </property>
+   <property name="topMargin">
+    <number>4</number>
+   </property>
+   <property name="bottomMargin">
+    <number>12</number>
+   </property>
    <item>
     <widget class="QPushButton" name="studentButton">
+     <property name="maximumSize">
+      <size>
+       <width>240</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#studentButton {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+QPushButton#studentButton:hover {
+    background-color: #ee5253;
+}
+
+</string>
+     </property>
      <property name="text">
       <string>Manage Students</string>
      </property>
@@ -23,33 +71,113 @@
    </item>
    <item>
     <widget class="QPushButton" name="teacherButton">
+     <property name="maximumSize">
+      <size>
+       <width>240</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#teacherButton {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+QPushButton#teacherButton:hover {
+    background-color: #ee5253;
+}
+
+</string>
+     </property>
      <property name="text">
       <string>Manage Teachers</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="classScheduleButton">
-     <property name="text">
-      <string>Manage Class Schedules</string>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="QPushButton" name="attendanceButton">
+     <property name="maximumSize">
+      <size>
+       <width>240</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#attendanceButton {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+QPushButton#attendanceButton:hover {
+    background-color: #ee5253;
+}
+
+</string>
+     </property>
      <property name="text">
       <string>Manage Attendance</string>
      </property>
     </widget>
    </item>
    <item>
+    <widget class="QPushButton" name="classScheduleButton">
+     <property name="maximumSize">
+      <size>
+       <width>240</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#classScheduleButton {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+QPushButton#classScheduleButton:hover {
+    background-color: #ee5253;
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Manage Class Schedules</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QPushButton" name="examButton">
+     <property name="maximumSize">
+      <size>
+       <width>240</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#examButton {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+QPushButton#examButton:hover {
+    background-color: #ee5253;
+}
+
+</string>
+     </property>
      <property name="text">
       <string>Manage Exams</string>
      </property>
     </widget>
    </item>
-  </layout> <!-- Properly closed layout -->
+  </layout>
  </widget>
  <resources/>
  <connections/>

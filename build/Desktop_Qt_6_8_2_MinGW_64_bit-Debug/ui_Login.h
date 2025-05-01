@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
@@ -21,44 +22,119 @@ QT_BEGIN_NAMESPACE
 class Ui_Login
 {
 public:
-    QLabel *label_title;
+    QLabel *label;
     QLabel *label_username;
     QLineEdit *usernameInput;
     QLabel *label_password;
     QLineEdit *passwordInput;
     QPushButton *loginButton;
-    QLabel *messageLabel;
+    QFrame *line;
 
     void setupUi(QDialog *Login)
     {
         if (Login->objectName().isEmpty())
             Login->setObjectName("Login");
-        Login->resize(400, 250);
-        label_title = new QLabel(Login);
-        label_title->setObjectName("label_title");
-        label_title->setGeometry(QRect(140, 10, 120, 30));
-        label_title->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        Login->setEnabled(true);
+        Login->resize(459, 520);
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(Login->sizePolicy().hasHeightForWidth());
+        Login->setSizePolicy(sizePolicy);
+        Login->setMinimumSize(QSize(200, 300));
+        Login->setMaximumSize(QSize(1920, 1000));
+        Login->setBaseSize(QSize(0, 0));
+        QPalette palette;
+        QBrush brush(QColor(254, 246, 240, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Button, brush);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Button, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Button, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush);
+        Login->setPalette(palette);
+        Login->setAutoFillBackground(false);
+        Login->setStyleSheet(QString::fromUtf8("QDialog#Login {\n"
+"        background-color: #fef6f0   ;\n"
+"        border: 1px solid black;\n"
+"        border-radius: 10%;\n"
+"}"));
+        label = new QLabel(Login);
+        label->setObjectName("label");
+        label->setGeometry(QRect(30, 90, 121, 51));
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Arial")});
+        font.setBold(true);
+        label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8("QLabel#label {\n"
+"        font-size: 25px;\n"
+"color: #2c3e50 ;\n"
+"}"));
+        label->setAlignment(Qt::AlignmentFlag::AlignCenter);
         label_username = new QLabel(Login);
         label_username->setObjectName("label_username");
-        label_username->setGeometry(QRect(50, 60, 80, 30));
+        label_username->setGeometry(QRect(60, 140, 91, 51));
+        label_username->setStyleSheet(QString::fromUtf8("QLabel#label_username {\n"
+"        font-size: 16px;\n"
+"        color: #2c3e50 ;\n"
+"}"));
         usernameInput = new QLineEdit(Login);
         usernameInput->setObjectName("usernameInput");
-        usernameInput->setGeometry(QRect(150, 60, 200, 30));
+        usernameInput->setGeometry(QRect(60, 180, 341, 30));
+        usernameInput->setStyleSheet(QString::fromUtf8("QLineEdit#usernameInput {\n"
+"    color: black;;\n"
+"    border: 1.5px solid black;;\n"
+"    border-radius: 10px;\n"
+"        font-size: 16px;\n"
+"padding: 0px 8px 0px 8px;\n"
+"}\n"
+""));
         label_password = new QLabel(Login);
         label_password->setObjectName("label_password");
-        label_password->setGeometry(QRect(50, 110, 80, 30));
+        label_password->setGeometry(QRect(60, 220, 80, 30));
+        label_password->setStyleSheet(QString::fromUtf8("QLabel#label_password {\n"
+"        font-size: 16px;\n"
+"color: #2c3e50 ;\n"
+"}"));
         passwordInput = new QLineEdit(Login);
         passwordInput->setObjectName("passwordInput");
-        passwordInput->setGeometry(QRect(150, 110, 200, 30));
+        passwordInput->setGeometry(QRect(60, 250, 341, 30));
         passwordInput->setAutoFillBackground(false);
+        passwordInput->setStyleSheet(QString::fromUtf8("QLineEdit#passwordInput {\n"
+"    color: black;;\n"
+"    border: 1.5px solid black;;\n"
+"    border-radius: 10px;\n"
+"        font-size: 16px;\n"
+"        padding: 0px 8px 0px 8px;\n"
+"}\n"
+""));
         passwordInput->setEchoMode(QLineEdit::EchoMode::Password);
         loginButton = new QPushButton(Login);
         loginButton->setObjectName("loginButton");
-        loginButton->setGeometry(QRect(150, 160, 100, 30));
-        messageLabel = new QLabel(Login);
-        messageLabel->setObjectName("messageLabel");
-        messageLabel->setGeometry(QRect(100, 200, 200, 30));
-        messageLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        loginButton->setGeometry(QRect(60, 320, 341, 41));
+        loginButton->setStyleSheet(QString::fromUtf8("QPushButton#loginButton {\n"
+"    background-color: #ff6b6b;\n"
+"    border: 1.5px solid black;\n"
+"    border-radius: 10px;\n"
+"    padding: 6px;\n"
+"    font-size: 16px;\n"
+"}\n"
+"\n"
+"/* Hover effect */\n"
+"QPushButton#loginButton:hover {\n"
+"    background-color: #ee5253;\n"
+"}\n"
+"\n"
+""));
+        line = new QFrame(Login);
+        line->setObjectName("line");
+        line->setGeometry(QRect(450, 0, 20, 551));
+        line->setFrameShape(QFrame::Shape::VLine);
+        line->setFrameShadow(QFrame::Shadow::Sunken);
 
         retranslateUi(Login);
 
@@ -68,9 +144,11 @@ public:
     void retranslateUi(QDialog *Login)
     {
         Login->setWindowTitle(QCoreApplication::translate("Login", "School Management System", nullptr));
-        label_title->setText(QCoreApplication::translate("Login", "Login Panel", nullptr));
-        label_username->setText(QCoreApplication::translate("Login", "Username:", nullptr));
-        label_password->setText(QCoreApplication::translate("Login", "Password:", nullptr));
+        label->setText(QCoreApplication::translate("Login", "Login", nullptr));
+        label_username->setText(QCoreApplication::translate("Login", "Username", nullptr));
+        usernameInput->setInputMask(QString());
+        usernameInput->setPlaceholderText(QString());
+        label_password->setText(QCoreApplication::translate("Login", "Password", nullptr));
         loginButton->setText(QCoreApplication::translate("Login", "Login", nullptr));
     } // retranslateUi
 

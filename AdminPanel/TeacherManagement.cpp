@@ -10,13 +10,10 @@ TeacherManagement::TeacherManagement(QWidget *parent)
     : QDialog(parent), ui(new Ui::TeacherManagement) {
     ui->setupUi(this);
 
-    // Connect buttons to their respective functions
     connect(ui->addTeacherButton, &QPushButton::clicked, this, &TeacherManagement::addTeacher);
     connect(ui->editTeacherButton, &QPushButton::clicked, this, &TeacherManagement::editTeacher);
     connect(ui->removeTeacherButton, &QPushButton::clicked, this, &TeacherManagement::removeTeacher);
     connect(ui->viewTeacherButton, &QPushButton::clicked, this, &TeacherManagement::viewTeacher);
-
-    // Load teachers into the table when the window opens
     updateTable();
     connect(ui->nameLineEdit, &QLineEdit::textChanged, this, &TeacherManagement::filterTeachers);
     connect(ui->subjectLineEdit, &QLineEdit::textChanged, this, &TeacherManagement::filterTeachers);
@@ -26,7 +23,7 @@ TeacherManagement::~TeacherManagement() {
     delete ui;
 }
 
-// Generate a random 8-character password
+// Generate a random 4-character password
 QString TeacherManagement::generateRandomPassword(int length) {
     const QString chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     QString password;
@@ -195,7 +192,7 @@ void TeacherManagement::resetAutoIncrement() {
     }
 }
 
-// View Teachers Function (Now Updates Table Instead of Dialog)
+// View Teachers Function
 void TeacherManagement::viewTeacher() {
     ui->viewTeacherButton->setEnabled(true);  // Ensure button is enabled
     updateTable();  // Update the table first

@@ -7,6 +7,10 @@ release/Login.o
 release/StudentManagement.o
 release/StudentPanel.o
 release/TeacherManagement.o
+release/AttendanceMarkingViewing.o
+release/ClassScheduleViewing.o
+release/TeacherExamManagement.o
+release/ExamResultManagement.o
 release/TeacherPanel.o
 release/main.o
 release/mainwindow.o
@@ -18,5 +22,9 @@ release/moc_Login.o
 release/moc_StudentManagement.o
 release/moc_StudentPanel.o
 release/moc_TeacherManagement.o
+release/moc_AttendanceMarkingViewing.o
+release/moc_ClassScheduleViewing.o
+release/moc_TeacherExamManagement.o
+release/moc_ExamResultManagement.o
 release/moc_TeacherPanel.o
 release/moc_mainwindow.o

@@ -29,9 +29,8 @@ private slots:
 private:
     Ui::ExamManagement *ui;
     QSqlQueryModel *model;
-    int getNextAvailableId();  // Assigns deleted ID if available
     bool doesInvigilatorExist(const QString &invigilatorName);
     void updateTable();
 };
 
-#endif // EXAMMANAGEMENT_H
+#endif

@@ -20,6 +20,10 @@ SOURCES += \
     AdminPanel/StudentManagement.cpp \
     StudentPanel/StudentPanel.cpp \
     AdminPanel/TeacherManagement.cpp \
+    TeacherPanel/AttendanceMarkingViewing.cpp \
+    TeacherPanel/ClassScheduleViewing.cpp \
+    TeacherPanel/TeacherExamManagement.cpp \
+    TeacherPanel/ExamResultManagement.cpp \
     TeacherPanel/TeacherPanel.cpp \
     main.cpp \
     mainwindow.cpp
@@ -34,6 +38,10 @@ HEADERS += \
     AdminPanel/StudentManagement.h \
     StudentPanel/StudentPanel.h \
     AdminPanel/TeacherManagement.h \
+    TeacherPanel/AttendanceMarkingViewing.h \
+    TeacherPanel/ClassScheduleViewing.h \
+    TeacherPanel/TeacherExamManagement.h \
+    TeacherPanel/ExamResultManagement.h \
     TeacherPanel/TeacherPanel.h \
     mainwindow.h
 
@@ -46,6 +54,10 @@ FORMS += \
     AdminPanel/StudentManagement.ui \
     StudentPanel/StudentPanel.ui \
     AdminPanel/TeacherManagement.ui \
+    TeacherPanel/AttendanceMarkingViewing.ui \
+    TeacherPanel/ClassScheduleViewing.ui \
+    TeacherPanel/TeacherExamManagement.ui \
+    TeacherPanel/ExamResultManagement.ui \
     TeacherPanel/TeacherPanel.ui \
     mainwindow.ui
 

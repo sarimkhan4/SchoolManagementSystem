@@ -31,4 +31,4 @@ private:
     QString generateRandomPassword(int length = 4);
 };
 
-#endif // STUDENTMANAGEMENT_H
+#endif

@@ -8,4 +8,4 @@
 
 void setupDatabase();
 
-#endif // DATABASESETUP_H
+#endif

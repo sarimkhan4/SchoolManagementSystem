@@ -16,13 +16,10 @@ ExamManagement::ExamManagement(QWidget *parent) :
     setWindowFlags(Qt::Dialog | Qt::WindowTitleHint | Qt::WindowCloseButtonHint);
     setAttribute(Qt::WA_DeleteOnClose);
 
-    // Connect signals
     connect(ui->searchBar, &QLineEdit::textChanged, this, &ExamManagement::onSearchTextChanged);
     connect(ui->addButton, &QPushButton::clicked, this, &ExamManagement::addExam);
     connect(ui->editButton, &QPushButton::clicked, this, &ExamManagement::editExam);
     connect(ui->removeButton, &QPushButton::clicked, this, &ExamManagement::removeExam);
-
-    // Load initial data
     loadExamRecords();
 }
 

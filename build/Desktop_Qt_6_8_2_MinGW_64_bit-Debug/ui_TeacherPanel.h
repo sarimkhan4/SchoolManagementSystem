@@ -11,40 +11,49 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QLabel>
-#include <QtWidgets/QMainWindow>
-#include <QtWidgets/QWidget>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_TeacherPanel
 {
 public:
-    QWidget *centralwidget;
-    QLabel *label;
+    QPushButton *btnClassSchedule;
+    QPushButton *btnExamResult;
+    QPushButton *btnAttendanceViewing;
+    QPushButton *btnExamManagement;
 
-    void setupUi(QMainWindow *TeacherPanel)
+    void setupUi(QDialog *TeacherPanel)
     {
         if (TeacherPanel->objectName().isEmpty())
             TeacherPanel->setObjectName("TeacherPanel");
-        TeacherPanel->resize(800, 600);
-        centralwidget = new QWidget(TeacherPanel);
-        centralwidget->setObjectName("centralwidget");
-        label = new QLabel(centralwidget);
-        label->setObjectName("label");
-        label->setGeometry(QRect(250, 250, 300, 50));
-        label->setAlignment(Qt::AlignCenter);
-        TeacherPanel->setCentralWidget(centralwidget);
+        TeacherPanel->resize(398, 332);
+        btnClassSchedule = new QPushButton(TeacherPanel);
+        btnClassSchedule->setObjectName("btnClassSchedule");
+        btnClassSchedule->setGeometry(QRect(50, 40, 300, 40));
+        btnExamResult = new QPushButton(TeacherPanel);
+        btnExamResult->setObjectName("btnExamResult");
+        btnExamResult->setGeometry(QRect(50, 110, 300, 40));
+        btnAttendanceViewing = new QPushButton(TeacherPanel);
+        btnAttendanceViewing->setObjectName("btnAttendanceViewing");
+        btnAttendanceViewing->setGeometry(QRect(50, 180, 300, 40));
+        btnExamManagement = new QPushButton(TeacherPanel);
+        btnExamManagement->setObjectName("btnExamManagement");
+        btnExamManagement->setGeometry(QRect(50, 250, 300, 40));
 
         retranslateUi(TeacherPanel);
 
         QMetaObject::connectSlotsByName(TeacherPanel);
     } // setupUi
 
-    void retranslateUi(QMainWindow *TeacherPanel)
+    void retranslateUi(QDialog *TeacherPanel)
     {
         TeacherPanel->setWindowTitle(QCoreApplication::translate("TeacherPanel", "Teacher Panel", nullptr));
-        label->setText(QCoreApplication::translate("TeacherPanel", "Welcome to Teacher Panel", nullptr));
+        btnClassSchedule->setText(QCoreApplication::translate("TeacherPanel", "View Class Schedule", nullptr));
+        btnExamResult->setText(QCoreApplication::translate("TeacherPanel", "Manage Exam Results", nullptr));
+        btnAttendanceViewing->setText(QCoreApplication::translate("TeacherPanel", "View Attendance", nullptr));
+        btnExamManagement->setText(QCoreApplication::translate("TeacherPanel", "View Assigned Exams", nullptr));
     } // retranslateUi
 
 };

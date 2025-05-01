@@ -12,16 +12,13 @@ AttendanceManagement::AttendanceManagement(QWidget *parent) :
     model(new QSqlQueryModel)
 {
     ui->setupUi(this);
-    setWindowModality(Qt::ApplicationModal);  // Ensure it fully covers
+    setWindowModality(Qt::ApplicationModal);
     setWindowFlags(Qt::Dialog | Qt::WindowTitleHint | Qt::WindowCloseButtonHint);
-    setAttribute(Qt::WA_DeleteOnClose);  // Ensures proper closing
+    setAttribute(Qt::WA_DeleteOnClose);
 
-    // Connect signals
     connect(ui->searchBar, &QLineEdit::textChanged, this, &AttendanceManagement::onSearchTextChanged);
     connect(ui->markAttendanceButton, &QPushButton::clicked, this, &AttendanceManagement::markAttendance);
     connect(ui->attendanceTypeComboBox, &QComboBox::currentTextChanged, this, &AttendanceManagement::loadAttendanceRecords);
-
-    // Load attendance records initially
     loadAttendanceRecords();
 }
 

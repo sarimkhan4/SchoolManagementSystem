@@ -9,12 +9,12 @@
 StudentManagement::StudentManagement(QWidget *parent)
     : QDialog(parent), ui(new Ui::StudentManagement) {
     ui->setupUi(this);
-    // Connect buttons to their respective functions
+
     connect(ui->addStudentButton, &QPushButton::clicked, this, &StudentManagement::addStudent);
     connect(ui->editStudentButton, &QPushButton::clicked, this, &StudentManagement::editStudent);
     connect(ui->removeStudentButton, &QPushButton::clicked, this, &StudentManagement::removeStudent);
     connect(ui->viewStudentButton, &QPushButton::clicked, this, &StudentManagement::viewStudents);
-    // Load students into the table when the window opens
+
     updateTable();
     connect(ui->nameLineEdit, &QLineEdit::textChanged, this, &StudentManagement::filterStudents);
     connect(ui->classLineEdit, &QLineEdit::textChanged, this, &StudentManagement::filterStudents);
@@ -193,7 +193,7 @@ void StudentManagement::resetAutoIncrement() {
     }
 }
 
-// View Students Function (Now Updates Table Instead of Dialog)
+// View Students Function
 void StudentManagement::viewStudents() {
     ui->viewStudentButton->setEnabled(true);  // Ensure button is enabled
     updateTable();  // Update the table first

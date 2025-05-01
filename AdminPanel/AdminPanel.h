@@ -26,4 +26,4 @@ private:
     Ui::AdminPanel *ui;
 };
 
-#endif // ADMINPANEL_H
+#endif

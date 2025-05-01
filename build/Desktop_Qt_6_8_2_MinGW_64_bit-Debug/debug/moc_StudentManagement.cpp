@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../StudentManagement.h"
+#include "../../../AdminPanel/StudentManagement.h"
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>

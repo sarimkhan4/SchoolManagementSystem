@@ -9,14 +9,11 @@ ClassScheduleManagement::ClassScheduleManagement(QWidget *parent)
     : QDialog(parent), ui(new Ui::ClassScheduleManagement) {
     ui->setupUi(this);
 
-    // Connect buttons to respective slots
     connect(ui->addScheduleButton, &QPushButton::clicked, this, &ClassScheduleManagement::addClassSchedule);
     connect(ui->editScheduleButton, &QPushButton::clicked, this, &ClassScheduleManagement::editClassSchedule);
     connect(ui->removeScheduleButton, &QPushButton::clicked, this, &ClassScheduleManagement::removeClassSchedule);
     connect(ui->viewScheduleButton, &QPushButton::clicked, this, &ClassScheduleManagement::viewClassSchedules);
     connect(ui->searchBar, &QLineEdit::textChanged, this, &ClassScheduleManagement::searchClassSchedule);
-
-    // Load initial data
     updateTable();
 }
 
@@ -24,7 +21,7 @@ ClassScheduleManagement::~ClassScheduleManagement() {
     delete ui;
 }
 
-// ✅ Function to update the table with current data
+// Function to update the table with current data
 void ClassScheduleManagement::updateTable() {
     QSqlQuery query("SELECT id, class_name, teacher_name, day, time_start, time_end, room FROM class_schedule");
 
@@ -42,12 +39,12 @@ void ClassScheduleManagement::updateTable() {
     }
 }
 
-// ✅ View all class schedules
+// View all class schedules
 void ClassScheduleManagement::viewClassSchedules() {
     updateTable();  // Refresh the table
 }
 
-// ✅ Add Class Schedule
+// Add Class Schedule
 void ClassScheduleManagement::addClassSchedule() {
     QString className = QInputDialog::getText(this, "Add Schedule", "Enter Class Name:");
     if (className.isEmpty()) return;
@@ -55,7 +52,7 @@ void ClassScheduleManagement::addClassSchedule() {
     QString teacherName = QInputDialog::getText(this, "Add Schedule", "Enter Teacher Name:");
     if (teacherName.isEmpty()) return;
 
-    // ✅ Check if the teacher exists in the teachers table
+    // Check if the teacher exists in the teachers table
     QSqlQuery checkQuery;
     checkQuery.prepare("SELECT COUNT(*) FROM teachers WHERE name = :teacher_name");
     checkQuery.bindValue(":teacher_name", teacherName);
@@ -73,7 +70,7 @@ void ClassScheduleManagement::addClassSchedule() {
 
     QString room = QInputDialog::getText(this, "Add Schedule", "Enter Room Number:");
     if (room.isEmpty()) return;
-    // ✅ Get the smallest available ID
+    // Get the smallest available ID
     QSqlQuery idQuery;
     idQuery.exec("SELECT MIN(t1.id + 1) AS next_id "
                  "FROM class_schedule t1 "
@@ -114,7 +111,7 @@ void ClassScheduleManagement::addClassSchedule() {
     }
 }
 
-// ✅ Edit Class Schedule
+// Edit Class Schedule
 void ClassScheduleManagement::editClassSchedule() {
     int id = QInputDialog::getInt(this, "Edit Schedule", "Enter Schedule ID:");
     if (id <= 0) return;
@@ -136,7 +133,7 @@ void ClassScheduleManagement::editClassSchedule() {
     QString timeEnd = QInputDialog::getText(this, "Edit Schedule", "Enter new End Time:", QLineEdit::Normal, query.value(4).toString());
     QString room = QInputDialog::getText(this, "Edit Schedule", "Enter new Room:", QLineEdit::Normal, query.value(5).toString());
 
-    // ✅ Check if the new teacher exists
+    // Check if the new teacher exists
     QSqlQuery checkQuery;
     checkQuery.prepare("SELECT COUNT(*) FROM teachers WHERE name = :teacher_name");
     checkQuery.bindValue(":teacher_name", teacherName);
@@ -162,7 +159,7 @@ void ClassScheduleManagement::editClassSchedule() {
     }
 }
 
-// ✅ Remove Class Schedule
+// Remove Class Schedule
 void ClassScheduleManagement::removeClassSchedule() {
     int id = QInputDialog::getInt(this, "Remove Schedule", "Enter Schedule ID:");
     if (id <= 0) return;
@@ -183,7 +180,7 @@ void ClassScheduleManagement::removeClassSchedule() {
     }
 }
 
-// ✅ Search Class Schedule
+// Search Class Schedule
 void ClassScheduleManagement::searchClassSchedule(const QString &text) {
     QSqlQuery query;
     query.prepare("SELECT id, class_name, teacher_name, day, time_start, time_end, room FROM class_schedule WHERE class_name LIKE :text ");

@@ -6,91 +6,290 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>400</height>
+    <width>800</width>
+    <height>639</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Manage Students</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <layout class="QFormLayout" name="formLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="labelName">
-       <property name="text">
-        <string>Name:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="nameLineEdit"/>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="labelClass">
-       <property name="text">
-        <string>Class:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="classLineEdit"/>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <widget class="QTableWidget" name="studentTable">
-     <property name="columnCount">
-      <number>3</number>
-     </property>
-     <property name="horizontalHeaderLabels" stdset="0">
-      <stringlist>
-       <string>ID</string>
-       <string>Name</string>
-       <string>Class</string>
-      </stringlist>
-     </property>
-     <column/>
-     <column/>
-     <column/>
-    </widget>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="buttonLayout">
-     <item>
-      <widget class="QPushButton" name="addStudentButton">
-       <property name="text">
-        <string>Add Student</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="editStudentButton">
-       <property name="text">
-        <string>Edit Student</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="removeStudentButton">
-       <property name="text">
-        <string>Remove Student</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="viewStudentButton">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="text">
-        <string>View Students</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-  </layout>
+  <property name="styleSheet">
+   <string notr="true">QDialog#StudentManagement {
+        background-color: #fef6f0   ;
+        border: 1px solid black;
+        border-radius: 10%;
+}</string>
+  </property>
+  <widget class="QTableWidget" name="studentTable">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>781</width>
+     <height>471</height>
+    </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1000</width>
+     <height>600</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTableWidget#studentTable {
+    border: 1.5px solid #2c3e50;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 11pt;
+    color: #2c3e50;
+    gridline-color: #ecf0f1;
+    alternate-background-color: #f7f9fa;
+    selection-background-color: #d6eaf8;
+    selection-color: #1a252f;
+}
+
+QHeaderView::section {
+    background-color: #2c3e50;
+    color: white;
+    font-weight: bold;
+    font-size: 11pt;
+    padding: 6px;
+    border: none;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+QTableWidget QTableCornerButton::section {
+    background-color: #2c3e50;
+    border: none;
+}
+
+QTableWidget::item {
+    padding: 6px;
+    font-size: 10.5pt;
+}
+
+QTableWidget::item:selected {
+    background-color: #d6eaf8;
+    color: #1a252f;
+}
+</string>
+   </property>
+   <property name="showGrid">
+    <bool>true</bool>
+   </property>
+   <property name="columnCount">
+    <number>3</number>
+   </property>
+   <property name="horizontalHeaderLabels" stdset="0">
+    <stringlist>
+     <string>ID</string>
+     <string>Name</string>
+     <string>Class</string>
+    </stringlist>
+   </property>
+   <column/>
+   <column/>
+   <column/>
+  </widget>
+  <widget class="QLineEdit" name="classLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>80</y>
+     <width>721</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit#classLineEdit {
+    color: black;;
+    border: 1.5px solid black;;
+    border-radius: 10px;
+        font-size: 16px;
+        padding: 0px 8px 0px 8px;
+}
+</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="nameLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>20</y>
+     <width>721</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit#nameLineEdit {
+    color: black;;
+    border: 1.5px solid black;;
+    border-radius: 10px;
+        font-size: 16px;
+        padding: 0px 8px 0px 8px;
+}
+</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelName">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel#labelName {
+        font-size: 20px;
+        color: #2c3e50 ;
+}</string>
+   </property>
+   <property name="text">
+    <string>Name</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelClass">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>51</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel#labelClass {
+        font-size: 20px;
+        color: #2c3e50 ;
+}</string>
+   </property>
+   <property name="text">
+    <string>Class</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="viewStudentButton">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>600</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#viewStudentButton {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+color: #2c3e50 ;
+}
+
+QPushButton#viewStudentButton:hover {
+    background-color: #ee5253;
+color: #2c3e50 ;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>View Students</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="removeStudentButton">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>600</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#removeStudentButton {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+color: #2c3e50 ;
+}
+
+QPushButton#removeStudentButton:hover {
+color: #2c3e50 ;
+    background-color: #ee5253;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>Remove Student</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="editStudentButton">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>600</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#editStudentButton {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+        color: #2c3e50 ;
+}
+
+QPushButton#editStudentButton:hover {
+
+    background-color: #ee5253;
+        color: #2c3e50 ;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>Edit Student</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addStudentButton">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>600</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#addStudentButton {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+        color: #2c3e50 ;
+}
+
+QPushButton#addStudentButton:hover {
+    background-color: #ee5253;
+        color: #2c3e50 ;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>Add Student</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

@@ -29,4 +29,4 @@ private:
     void updateTable(const QString &type);
 };
 
-#endif // ATTENDANCEMANAGEMENT_H
+#endif

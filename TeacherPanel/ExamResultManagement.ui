@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ExamResultManagement</class>
+ <widget class="QDialog" name="ExamResultManagement">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>750</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Exam Result Management</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Exam Result Entry</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="studentIdInput"/>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="labelSubject">
+        <property name="text">
+         <string>Subject:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="marksInput"/>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLineEdit" name="studentNameInput"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelClass">
+        <property name="text">
+         <string>Class:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="labelStudentName">
+        <property name="text">
+         <string>Student Name:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="classInput"/>
+      </item>
+      <item row="3" column="0" colspan="4">
+       <layout class="QHBoxLayout" name="horizontalLayoutButtons">
+        <item>
+         <widget class="QPushButton" name="saveButton">
+          <property name="text">
+           <string>Save</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="updateButton">
+          <property name="text">
+           <string>Update</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="clearButton">
+          <property name="text">
+           <string>Clear</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="labelStudentId">
+        <property name="text">
+         <string>Student ID:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QLineEdit" name="subjectInput"/>
+      </item>
+      <item row="2" column="3">
+       <widget class="QLineEdit" name="totalmarksInput"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="labelMarks">
+        <property name="text">
+         <string>Marks:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QLabel" name="labelTotalMarks">
+        <property name="text">
+         <string>Total Marks</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayoutSearch">
+     <item>
+      <widget class="QLineEdit" name="searchInput">
+       <property name="placeholderText">
+        <string>Enter Student ID or Name to search</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="searchButton">
+       <property name="text">
+        <string>Search</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTableView" name="tableViewResults"/>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

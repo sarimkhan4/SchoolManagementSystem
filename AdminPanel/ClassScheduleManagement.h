@@ -27,4 +27,4 @@ private:
     Ui::ClassScheduleManagement *ui;
 };
 
-#endif // CLASSSCHEDULEMANAGEMENT_H
+#endif
