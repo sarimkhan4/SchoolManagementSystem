@@ -5,8 +5,13 @@ debug/DatabaseSetup.o
 debug/ExamManagement.o
 debug/Login.o
 debug/StudentManagement.o
+debug/StudentAttendance.o
+debug/StudentExam.o
+debug/StudentInfo.o
 debug/StudentPanel.o
 debug/TeacherManagement.o
+debug/StudentResult.o
+debug/StudentSchedule.o
 debug/AttendanceMarkingViewing.o
 debug/ClassScheduleViewing.o
 debug/TeacherExamManagement.o
@@ -20,8 +25,13 @@ debug/moc_ClassScheduleManagement.o
 debug/moc_ExamManagement.o
 debug/moc_Login.o
 debug/moc_StudentManagement.o
+debug/moc_StudentAttendance.o
+debug/moc_StudentExam.o
+debug/moc_StudentInfo.o
 debug/moc_StudentPanel.o
 debug/moc_TeacherManagement.o
+debug/moc_StudentResult.o
+debug/moc_StudentSchedule.o
 debug/moc_AttendanceMarkingViewing.o
 debug/moc_ClassScheduleViewing.o
 debug/moc_TeacherExamManagement.o

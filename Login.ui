@@ -256,8 +256,20 @@ color: #2c3e50 ;
 }
 </string>
    </property>
+   <property name="frame">
+    <bool>true</bool>
+   </property>
    <property name="echoMode">
     <enum>QLineEdit::EchoMode::Password</enum>
+   </property>
+   <property name="dragEnabled">
+    <bool>false</bool>
+   </property>
+   <property name="readOnly">
+    <bool>false</bool>
+   </property>
+   <property name="clearButtonEnabled">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="loginButton">

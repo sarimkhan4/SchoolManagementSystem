@@ -111,7 +111,7 @@ void setupDatabase() {
 
     QList<Table> tables = {
         {"admins", "CREATE TABLE IF NOT EXISTS admins (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) NOT NULL, email VARCHAR(100) NOT NULL UNIQUE, password VARCHAR(255) NOT NULL)"},
-        {"class_schedule", "CREATE TABLE IF NOT EXISTS class_schedule (id INT AUTO_INCREMENT PRIMARY KEY, class_name VARCHAR(50) NOT NULL, teacher_name VARCHAR(100) NOT NULL, day ENUM('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday') NOT NULL, time_start TIME NOT NULL, time_end TIME NOT NULL, room VARCHAR(20) NOT NULL)"},
+        {"class_schedule", "CREATE TABLE IF NOT EXISTS class_schedule (id INT AUTO_INCREMENT PRIMARY KEY, class_name VARCHAR(50) NOT NULL, teacher_name VARCHAR(100) NOT NULL,subject VARCHAR(100) NOT NULL, day ENUM('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday') NOT NULL, time_start TIME NOT NULL, time_end TIME NOT NULL, room VARCHAR(20) NOT NULL)"},
         {"exam_schedule", "CREATE TABLE IF NOT EXISTS exam_schedule (id INT AUTO_INCREMENT PRIMARY KEY, subject VARCHAR(100) NOT NULL, exam_date DATE NOT NULL, time_start TIME NOT NULL, time_end TIME NOT NULL)"},
         {"login_credentials", "CREATE TABLE IF NOT EXISTS login_credentials (id INT AUTO_INCREMENT PRIMARY KEY, user_id VARCHAR(50) NOT NULL, role ENUM('admin','teacher','student') NOT NULL, password VARCHAR(64) DEFAULT NULL)"},
         {"students", "CREATE TABLE IF NOT EXISTS students (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) NOT NULL, password VARCHAR(255) NOT NULL, class VARCHAR(50) DEFAULT NULL)"},

@@ -1,36 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>StudentPanel</class>
- <widget class="QMainWindow" name="StudentPanel">
+ <widget class="QDialog" name="StudentPanel">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>400</width>
+    <height>350</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Student Panel</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>250</y>
-      <width>300</width>
-      <height>50</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Welcome to Student Panel</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-  </widget>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QPushButton" name="personalInfoButton">
+     <property name="text">
+      <string>Personal Info</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="attendanceButton">
+     <property name="text">
+      <string>My Attendance</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="examButton">
+     <property name="text">
+      <string>Assigned Exams</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="scheduleButton">
+     <property name="text">
+      <string>Class Schedule</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="resultButton">
+     <property name="text">
+      <string>My Results</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

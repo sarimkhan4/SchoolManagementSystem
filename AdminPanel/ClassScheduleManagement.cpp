@@ -23,16 +23,16 @@ ClassScheduleManagement::~ClassScheduleManagement() {
 
 // Function to update the table with current data
 void ClassScheduleManagement::updateTable() {
-    QSqlQuery query("SELECT id, class_name, teacher_name, day, time_start, time_end, room FROM class_schedule");
+    QSqlQuery query("SELECT id, class_name, teacher_name,subject, day, time_start, time_end, room FROM class_schedule");
 
     ui->scheduleTable->setRowCount(0);
-    ui->scheduleTable->setColumnCount(7);
-    ui->scheduleTable->setHorizontalHeaderLabels({"ID", "Class", "Teacher Name", "Day", "Start Time", "End Time", "Room"});
+    ui->scheduleTable->setColumnCount(8);
+    ui->scheduleTable->setHorizontalHeaderLabels({"ID", "Class", "Teacher Name","Subject", "Day", "Start Time", "End Time", "Room"});
 
     int row = 0;
     while (query.next()) {
         ui->scheduleTable->insertRow(row);
-        for (int col = 0; col < 7; ++col) {
+        for (int col = 0; col < 8; ++col) {
             ui->scheduleTable->setItem(row, col, new QTableWidgetItem(query.value(col).toString()));
         }
         row++;
@@ -60,7 +60,8 @@ void ClassScheduleManagement::addClassSchedule() {
         QMessageBox::warning(this, "Error", "Teacher does not exist in the system.");
         return;
     }
-
+    QString subject = QInputDialog::getText(this, "Add Schedule", "Enter Subject:");
+    if (subject.isEmpty()) return;
     QString day = QInputDialog::getItem(this, "Add Schedule", "Select Day:",
                                         {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}, 0, false);
     if (day.isEmpty()) return;
@@ -86,18 +87,19 @@ void ClassScheduleManagement::addClassSchedule() {
     // Check if we found a valid missing ID, otherwise get the highest ID + 1
     if (nextID == 1) {
         QSqlQuery maxIDQuery;
-        maxIDQuery.exec("SELECT COALESCE(MAX(id), 0) + 1 FROM class_schedules");
+        maxIDQuery.exec("SELECT COALESCE(MAX(id), 0) + 1 FROM class_schedule");
         if (maxIDQuery.next()) {
             nextID = maxIDQuery.value(0).toInt();
         }
     }
 
     QSqlQuery query;
-    query.prepare("INSERT INTO class_schedule (id,class_name, teacher_name, day, time_start, time_end, room) "
-                  "VALUES (:id,:class_name, :teacher_name, :day, :time_start, :time_end, :room)");
+    query.prepare("INSERT INTO class_schedule (id,class_name, teacher_name,subject, day, time_start, time_end, room) "
+                  "VALUES (:id,:class_name, :teacher_name,:subject, :day, :time_start, :time_end, :room)");
     query.bindValue(":id", nextID);
     query.bindValue(":class_name", className);
     query.bindValue(":teacher_name", teacherName);
+    query.bindValue(":subject", subject);
     query.bindValue(":day", day);
     query.bindValue(":time_start", timeStart);
     query.bindValue(":time_end", timeEnd);
@@ -117,7 +119,7 @@ void ClassScheduleManagement::editClassSchedule() {
     if (id <= 0) return;
 
     QSqlQuery query;
-    query.prepare("SELECT class_name, teacher_name, day, time_start, time_end, room FROM class_schedule WHERE id = :id");
+    query.prepare("SELECT class_name, teacher_name,subject, day, time_start, time_end, room FROM class_schedule WHERE id = :id");
     query.bindValue(":id", id);
 
     if (!query.exec() || !query.next()) {
@@ -127,11 +129,12 @@ void ClassScheduleManagement::editClassSchedule() {
 
     QString className = QInputDialog::getText(this, "Edit Schedule", "Enter new Class Name:", QLineEdit::Normal, query.value(0).toString());
     QString teacherName = QInputDialog::getText(this, "Edit Schedule", "Enter new Teacher Name:", QLineEdit::Normal, query.value(1).toString());
+    QString subject = QInputDialog::getText(this, "Edit Schedule", "Enter new Subject:", QLineEdit::Normal, query.value(2).toString());
     QString day = QInputDialog::getItem(this, "Edit Schedule", "Select new Day:",
                                         {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}, 0, false);
-    QString timeStart = QInputDialog::getText(this, "Edit Schedule", "Enter new Start Time:", QLineEdit::Normal, query.value(3).toString());
-    QString timeEnd = QInputDialog::getText(this, "Edit Schedule", "Enter new End Time:", QLineEdit::Normal, query.value(4).toString());
-    QString room = QInputDialog::getText(this, "Edit Schedule", "Enter new Room:", QLineEdit::Normal, query.value(5).toString());
+    QString timeStart = QInputDialog::getText(this, "Edit Schedule", "Enter new Start Time:", QLineEdit::Normal, query.value(4).toString());
+    QString timeEnd = QInputDialog::getText(this, "Edit Schedule", "Enter new End Time:", QLineEdit::Normal, query.value(5).toString());
+    QString room = QInputDialog::getText(this, "Edit Schedule", "Enter new Room:", QLineEdit::Normal, query.value(6).toString());
 
     // Check if the new teacher exists
     QSqlQuery checkQuery;
@@ -142,9 +145,10 @@ void ClassScheduleManagement::editClassSchedule() {
         return;
     }
 
-    query.prepare("UPDATE class_schedule SET class_name = :class_name, teacher_name = :teacher_name, day = :day, time_start = :time_start, time_end = :time_end, room = :room WHERE id = :id");
+    query.prepare("UPDATE class_schedule SET class_name = :class_name, teacher_name = :teacher_name,subject=:subject, day = :day, time_start = :time_start, time_end = :time_end, room = :room WHERE id = :id");
     query.bindValue(":class_name", className);
     query.bindValue(":teacher_name", teacherName);
+    query.bindValue(":subject", subject);
     query.bindValue(":day", day);
     query.bindValue(":time_start", timeStart);
     query.bindValue(":time_end", timeEnd);
@@ -183,7 +187,7 @@ void ClassScheduleManagement::removeClassSchedule() {
 // Search Class Schedule
 void ClassScheduleManagement::searchClassSchedule(const QString &text) {
     QSqlQuery query;
-    query.prepare("SELECT id, class_name, teacher_name, day, time_start, time_end, room FROM class_schedule WHERE class_name LIKE :text ");
+    query.prepare("SELECT id, class_name, teacher_name,subject, day, time_start, time_end, room FROM class_schedule WHERE class_name LIKE :text ");
     query.bindValue(":text", "%" + text + "%");
 
 
@@ -196,7 +200,7 @@ void ClassScheduleManagement::searchClassSchedule(const QString &text) {
     int row = 0;
     while (query.next()) {
         ui->scheduleTable->insertRow(row);
-        for (int col = 0; col < 7; ++col) {
+        for (int col = 0; col < 8; ++col) {
             ui->scheduleTable->setItem(row, col, new QTableWidgetItem(query.value(col).toString()));
         }
         row++;

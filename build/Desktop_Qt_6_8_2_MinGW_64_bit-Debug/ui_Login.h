@@ -112,7 +112,11 @@ public:
 "        padding: 0px 8px 0px 8px;\n"
 "}\n"
 ""));
+        passwordInput->setFrame(true);
         passwordInput->setEchoMode(QLineEdit::EchoMode::Password);
+        passwordInput->setDragEnabled(false);
+        passwordInput->setReadOnly(false);
+        passwordInput->setClearButtonEnabled(true);
         loginButton = new QPushButton(Login);
         loginButton->setObjectName("loginButton");
         loginButton->setGeometry(QRect(60, 320, 341, 41));

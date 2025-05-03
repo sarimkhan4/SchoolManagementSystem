@@ -38,15 +38,17 @@ void Login::on_loginButton_clicked() {
         }
     }
     // Check if it's a Student
-    query.prepare("SELECT password FROM students WHERE BINARY name = :username");
+    query.prepare("SELECT id,password,class FROM students WHERE BINARY name = :username");
     query.bindValue(":username", username);
     if (query.exec() && query.next()) {
-        if (query.value(0).toString() == password) {
-            QMessageBox::information(this, "Login Successful", "Welcome, Student!");
-            // Open Student Panel
-            StudentPanel *student = new StudentPanel();
-            student->show();
-            this->close();
+        QString dbPassword = query.value(1).toString();
+        if (dbPassword == password) {
+            int studentId = query.value(0).toInt();
+            QString studentClass = query.value(2).toString();
+            QString studentName = username;
+            QMessageBox::information(this, "Login Successful", "Welcome, Student! ");
+            StudentPanel *panel = new StudentPanel(this, studentId, studentName, studentClass);
+            panel->exec();
             return;
         }
     }

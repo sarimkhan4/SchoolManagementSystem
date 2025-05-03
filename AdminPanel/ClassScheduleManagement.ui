@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>836</width>
     <height>634</height>
    </rect>
   </property>
@@ -31,7 +31,7 @@
     <rect>
      <x>10</x>
      <y>70</y>
-     <width>781</width>
+     <width>811</width>
      <height>511</height>
     </rect>
    </property>
@@ -79,7 +79,7 @@ QTableWidget::item:selected {
     <enum>QFrame::Shape::StyledPanel</enum>
    </property>
    <property name="columnCount">
-    <number>7</number>
+    <number>8</number>
    </property>
    <property name="horizontalHeaderLabels" stdset="0">
     <stringlist>
@@ -92,6 +92,11 @@ QTableWidget::item:selected {
      <string>Room</string>
     </stringlist>
    </property>
+   <column>
+    <property name="text">
+     <string/>
+    </property>
+   </column>
    <column/>
    <column/>
    <column/>
@@ -103,7 +108,7 @@ QTableWidget::item:selected {
   <widget class="QPushButton" name="editScheduleButton">
    <property name="geometry">
     <rect>
-     <x>570</x>
+     <x>580</x>
      <y>590</y>
      <width>131</width>
      <height>31</height>
@@ -132,7 +137,7 @@ QPushButton#editScheduleButton:hover {
   <widget class="QPushButton" name="addScheduleButton">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>100</x>
      <y>590</y>
      <width>131</width>
      <height>31</height>
@@ -163,7 +168,7 @@ QPushButton#addScheduleButton:hover {
     <rect>
      <x>10</x>
      <y>20</y>
-     <width>781</width>
+     <width>811</width>
      <height>31</height>
     </rect>
    </property>
@@ -187,7 +192,7 @@ QPushButton#addScheduleButton:hover {
   <widget class="QPushButton" name="viewScheduleButton">
    <property name="geometry">
     <rect>
-     <x>250</x>
+     <x>260</x>
      <y>590</y>
      <width>131</width>
      <height>31</height>
@@ -216,7 +221,7 @@ QPushButton#viewScheduleButton:hover {
   <widget class="QPushButton" name="removeScheduleButton">
    <property name="geometry">
     <rect>
-     <x>410</x>
+     <x>420</x>
      <y>590</y>
      <width>131</width>
      <height>31</height>

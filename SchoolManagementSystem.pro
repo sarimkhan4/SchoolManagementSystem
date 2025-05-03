@@ -18,8 +18,13 @@ SOURCES += \
     AdminPanel/ExamManagement.cpp \
     Login.cpp \
     AdminPanel/StudentManagement.cpp \
+    StudentPanel/StudentAttendance.cpp \
+    StudentPanel/StudentExam.cpp \
+    StudentPanel/StudentInfo.cpp \
     StudentPanel/StudentPanel.cpp \
     AdminPanel/TeacherManagement.cpp \
+    StudentPanel/StudentResult.cpp \
+    StudentPanel/StudentSchedule.cpp \
     TeacherPanel/AttendanceMarkingViewing.cpp \
     TeacherPanel/ClassScheduleViewing.cpp \
     TeacherPanel/TeacherExamManagement.cpp \
@@ -36,8 +41,13 @@ HEADERS += \
     AdminPanel/ExamManagement.h \
     Login.h \
     AdminPanel/StudentManagement.h \
+    StudentPanel/StudentAttendance.h \
+    StudentPanel/StudentExam.h \
+    StudentPanel/StudentInfo.h \
     StudentPanel/StudentPanel.h \
     AdminPanel/TeacherManagement.h \
+    StudentPanel/StudentResult.h \
+    StudentPanel/StudentSchedule.h \
     TeacherPanel/AttendanceMarkingViewing.h \
     TeacherPanel/ClassScheduleViewing.h \
     TeacherPanel/TeacherExamManagement.h \
@@ -52,8 +62,13 @@ FORMS += \
     AdminPanel/ExamManagement.ui \
     Login.ui \
     AdminPanel/StudentManagement.ui \
+    StudentPanel/StudentAttendance.ui \
+    StudentPanel/StudentExam.ui \
+    StudentPanel/StudentInfo.ui \
     StudentPanel/StudentPanel.ui \
     AdminPanel/TeacherManagement.ui \
+    StudentPanel/StudentResult.ui \
+    StudentPanel/StudentSchedule.ui \
     TeacherPanel/AttendanceMarkingViewing.ui \
     TeacherPanel/ClassScheduleViewing.ui \
     TeacherPanel/TeacherExamManagement.ui \
