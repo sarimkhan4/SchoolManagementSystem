@@ -90,7 +90,7 @@ public:
 ""));
         closeButton = new QPushButton(TeacherExamManagement);
         closeButton->setObjectName("closeButton");
-        closeButton->setGeometry(QRect(230, 400, 141, 31));
+        closeButton->setGeometry(QRect(20, 400, 561, 31));
         closeButton->setStyleSheet(QString::fromUtf8("QPushButton#closeButton {\n"
 "    background-color: #ff6b6b;\n"
 "    border: 1.5px solid black;\n"

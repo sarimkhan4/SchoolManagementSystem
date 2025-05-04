@@ -152,6 +152,7 @@ public:
 "    border-top-right-radius: 10%;\n"
 "    border-bottom-right-radius: 10%;\n"
 "}"));
+        label_2->setPixmap(QPixmap(QString::fromUtf8(":/background/Resources/Adobe Express - file.jpg")));
 
         retranslateUi(Login);
 

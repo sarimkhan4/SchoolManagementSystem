@@ -346,8 +346,13 @@ QPushButton#loginButton:hover {
    <property name="text">
     <string/>
    </property>
+   <property name="pixmap">
+    <pixmap resource="Images.qrc">:/background/Resources/Adobe Express - file.jpg</pixmap>
+   </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="Images.qrc"/>
+ </resources>
  <connections/>
 </ui>

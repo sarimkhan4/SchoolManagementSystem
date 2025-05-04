@@ -85,3 +85,6 @@ INCLUDEPATH += "C:/Program Files/MySQL/mysql-connector-c-6.1.11-winx64/include"
 LIBS += -L"C:/Program Files/MySQL/mysql-connector-c-6.1.11-winx64/lib" -llibmysql
 
 DISTFILES +=
+
+RESOURCES += \
+    Images.qrc

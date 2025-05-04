@@ -19,6 +19,7 @@ debug/ExamResultManagement.o
 debug/TeacherPanel.o
 debug/main.o
 debug/mainwindow.o
+debug/qrc_Images.o
 debug/moc_AdminPanel.o
 debug/moc_AttendanceManagement.o
 debug/moc_ClassScheduleManagement.o

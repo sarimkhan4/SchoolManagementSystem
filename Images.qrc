@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/background">
+        <file>Resources/Adobe Express - file.jpg</file>
+    </qresource>
+</RCC>

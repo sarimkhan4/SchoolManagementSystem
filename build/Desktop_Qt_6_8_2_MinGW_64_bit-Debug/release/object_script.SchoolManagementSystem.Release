@@ -19,6 +19,7 @@ release/ExamResultManagement.o
 release/TeacherPanel.o
 release/main.o
 release/mainwindow.o
+release/qrc_Images.o
 release/moc_AdminPanel.o
 release/moc_AttendanceManagement.o
 release/moc_ClassScheduleManagement.o
