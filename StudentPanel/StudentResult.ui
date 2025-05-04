@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>641</width>
+    <width>600</width>
     <height>450</height>
    </rect>
   </property>
@@ -23,7 +23,7 @@
   <widget class="QLabel" name="titleLabel">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>9</x>
      <y>9</y>
      <width>581</width>
      <height>31</height>
@@ -48,12 +48,41 @@ color: #2c3e50 ;
     <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
+  <widget class="QPushButton" name="gradingFormulaButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>390</y>
+     <width>581</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#gradingFormulaButton {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    padding: 6px;
+    font-size: 16px;
+}
+
+/* Hover effect */
+QPushButton#gradingFormulaButton:hover {
+    background-color: #ee5253;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>Grading Formula</string>
+   </property>
+  </widget>
   <widget class="QTableWidget" name="tableWidget">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>51</y>
-     <width>621</width>
+     <x>10</x>
+     <y>50</y>
+     <width>581</width>
      <height>331</height>
     </rect>
    </property>
@@ -97,68 +126,41 @@ QTableWidget::item:selected {
 }
 </string>
    </property>
-   <property name="alternatingRowColors">
-    <bool>true</bool>
-   </property>
-   <property name="selectionMode">
-    <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
-   </property>
-   <property name="selectionBehavior">
-    <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
-   </property>
-   <property name="showGrid">
-    <bool>true</bool>
-   </property>
-   <property name="columnCount">
-    <number>7</number>
-   </property>
-   <property name="horizontalHeaderLabels" stdset="0">
-    <stringlist>
+   <column>
+    <property name="text">
      <string>Name</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
      <string>Class</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
      <string>Subject</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
      <string>Marks Obtained</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
      <string>Total Marks</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
      <string>Percentage</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
      <string>Grade</string>
-    </stringlist>
-   </property>
-   <column/>
-   <column/>
-   <column/>
-   <column/>
-   <column/>
-   <column/>
-   <column/>
-  </widget>
-  <widget class="QPushButton" name="gradingFormulaButton">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>390</y>
-     <width>581</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton#gradingFormulaButton {
-    background-color: #ff6b6b;
-    border: 1.5px solid black;
-    border-radius: 10px;
-    padding: 6px;
-    font-size: 16px;
-}
-
-/* Hover effect */
-QPushButton#gradingFormulaButton:hover {
-    background-color: #ee5253;
-}
-
-</string>
-   </property>
-   <property name="text">
-    <string>Grading Formula</string>
-   </property>
+    </property>
+   </column>
   </widget>
  </widget>
  <resources/>

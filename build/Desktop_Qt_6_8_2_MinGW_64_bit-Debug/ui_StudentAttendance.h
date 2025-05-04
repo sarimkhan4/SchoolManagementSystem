@@ -22,13 +22,13 @@ class Ui_StudentAttendance
 {
 public:
     QLabel *titleLabel;
-    QTableWidget *tableWidget;
+    QTableWidget *tableWidget_2;
 
     void setupUi(QDialog *StudentAttendance)
     {
         if (StudentAttendance->objectName().isEmpty())
             StudentAttendance->setObjectName("StudentAttendance");
-        StudentAttendance->resize(480, 400);
+        StudentAttendance->resize(261, 400);
         StudentAttendance->setStyleSheet(QString::fromUtf8("QDialog#StudentAttendance {\n"
 "        background-color: #fef6f0   ;\n"
 "        border: 1px solid black;\n"
@@ -36,7 +36,7 @@ public:
 "}"));
         titleLabel = new QLabel(StudentAttendance);
         titleLabel->setObjectName("titleLabel");
-        titleLabel->setGeometry(QRect(10, 0, 461, 41));
+        titleLabel->setGeometry(QRect(-100, 10, 461, 41));
         QFont font;
         font.setBold(true);
         titleLabel->setFont(font);
@@ -45,12 +45,16 @@ public:
 "color: #2c3e50 ;\n"
 "}"));
         titleLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        tableWidget = new QTableWidget(StudentAttendance);
-        if (tableWidget->columnCount() < 2)
-            tableWidget->setColumnCount(2);
-        tableWidget->setObjectName("tableWidget");
-        tableWidget->setGeometry(QRect(9, 41, 461, 351));
-        tableWidget->setStyleSheet(QString::fromUtf8("QTableView#tableWidget {\n"
+        tableWidget_2 = new QTableWidget(StudentAttendance);
+        if (tableWidget_2->columnCount() < 2)
+            tableWidget_2->setColumnCount(2);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        tableWidget_2->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        tableWidget_2->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        tableWidget_2->setObjectName("tableWidget_2");
+        tableWidget_2->setGeometry(QRect(10, 60, 241, 321));
+        tableWidget_2->setStyleSheet(QString::fromUtf8("QTableWidget#tableWidget_2 {\n"
 "    border: 1.5px solid #2c3e50;\n"
 "    border-radius: 8px;\n"
 "    background-color: #ffffff;\n"
@@ -88,8 +92,6 @@ public:
 "    color: #1a252f;\n"
 "}\n"
 ""));
-        tableWidget->setRowCount(0);
-        tableWidget->setColumnCount(2);
 
         retranslateUi(StudentAttendance);
 
@@ -99,10 +101,11 @@ public:
     void retranslateUi(QDialog *StudentAttendance)
     {
         StudentAttendance->setWindowTitle(QCoreApplication::translate("StudentAttendance", "My Attendance", nullptr));
-        titleLabel->setText(QCoreApplication::translate("StudentAttendance", "My Attendance Record", nullptr));
-        tableWidget->setProperty("horizontalHeaderLabels", QVariant(QStringList{
-            QCoreApplication::translate("StudentAttendance", "Date", nullptr),
-            QCoreApplication::translate("StudentAttendance", "Status", nullptr)}));
+        titleLabel->setText(QCoreApplication::translate("StudentAttendance", "Attendance Record", nullptr));
+        QTableWidgetItem *___qtablewidgetitem = tableWidget_2->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QCoreApplication::translate("StudentAttendance", "Date", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = tableWidget_2->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("StudentAttendance", "Status", nullptr));
     } // retranslateUi
 
 };

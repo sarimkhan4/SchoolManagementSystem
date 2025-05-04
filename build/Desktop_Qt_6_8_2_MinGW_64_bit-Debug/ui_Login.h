@@ -62,7 +62,6 @@ public:
         Login->setStyleSheet(QString::fromUtf8("QDialog#Login {\n"
 "        background-color: #fef6f0   ;\n"
 "        border: 1px solid black;\n"
-"        border-radius: 10%;\n"
 "}"));
         label = new QLabel(Login);
         label->setObjectName("label");
@@ -143,16 +142,16 @@ public:
         line->setFrameShadow(QFrame::Shadow::Sunken);
         label_2 = new QLabel(Login);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(460, 0, 491, 521));
+        label_2->setGeometry(QRect(458, -10, 501, 541));
+        sizePolicy.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
+        label_2->setSizePolicy(sizePolicy);
         label_2->setStyleSheet(QString::fromUtf8("QLabel#label_2 {\n"
-"		border: 0.4px solid black;\n"
-"        border-radius: 10%;\n"
+"    border: 1px solid black; /* Use 'solid' for a visible border */\n"
+"    border-top-left-radius: 10%;\n"
+"    border-bottom-left-radius: 10%;\n"
+"    border-top-right-radius: 10%;\n"
+"    border-bottom-right-radius: 10%;\n"
 "}"));
-        label_2->setFrameShape(QFrame::Shape::NoFrame);
-        label_2->setPixmap(QPixmap(QString::fromUtf8("../../03ca7cd8-d889-4960-9cf5-8d4bd6616c83.png")));
-        label_2->setScaledContents(true);
-        label_2->setWordWrap(false);
-        label_2->setIndent(-1);
 
         retranslateUi(Login);
 

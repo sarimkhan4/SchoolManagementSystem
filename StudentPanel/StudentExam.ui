@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>726</width>
+    <width>734</width>
     <height>400</height>
    </rect>
   </property>
@@ -42,7 +42,7 @@ color: #2c3e50 ;
 }</string>
    </property>
    <property name="text">
-    <string>Assigned Exams </string>
+    <string>Assigned Exams for Class</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -51,10 +51,10 @@ color: #2c3e50 ;
   <widget class="QTableWidget" name="tableWidget">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>48</y>
-     <width>701</width>
-     <height>341</height>
+     <x>10</x>
+     <y>50</y>
+     <width>711</width>
+     <height>331</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -97,27 +97,41 @@ QTableWidget::item:selected {
 }
 </string>
    </property>
-   <property name="columnCount">
-    <number>7</number>
-   </property>
-   <property name="horizontalHeaderLabels" stdset="0">
-    <stringlist>
+   <column>
+    <property name="text">
      <string>Class</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
      <string>Subject</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
      <string>Invigilator</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
      <string>Exam Date</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
      <string>Start Time</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
      <string>End Time</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
      <string>Room</string>
-    </stringlist>
-   </property>
-   <column/>
-   <column/>
-   <column/>
-   <column/>
-   <column/>
-   <column/>
-   <column/>
+    </property>
+   </column>
   </widget>
  </widget>
  <resources/>

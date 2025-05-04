@@ -28,7 +28,7 @@ public:
     {
         if (StudentExam->objectName().isEmpty())
             StudentExam->setObjectName("StudentExam");
-        StudentExam->resize(726, 400);
+        StudentExam->resize(734, 400);
         StudentExam->setStyleSheet(QString::fromUtf8("QDialog#StudentExam {\n"
 "        background-color: #fef6f0   ;\n"
 "        border: 1px solid black;\n"
@@ -48,8 +48,22 @@ public:
         tableWidget = new QTableWidget(StudentExam);
         if (tableWidget->columnCount() < 7)
             tableWidget->setColumnCount(7);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(5, __qtablewidgetitem5);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(6, __qtablewidgetitem6);
         tableWidget->setObjectName("tableWidget");
-        tableWidget->setGeometry(QRect(9, 48, 701, 341));
+        tableWidget->setGeometry(QRect(10, 50, 711, 331));
         tableWidget->setStyleSheet(QString::fromUtf8("QTableWidget#tableWidget {\n"
 "    border: 1.5px solid #2c3e50;\n"
 "    border-radius: 8px;\n"
@@ -88,7 +102,6 @@ public:
 "    color: #1a252f;\n"
 "}\n"
 ""));
-        tableWidget->setColumnCount(7);
 
         retranslateUi(StudentExam);
 
@@ -98,15 +111,21 @@ public:
     void retranslateUi(QDialog *StudentExam)
     {
         StudentExam->setWindowTitle(QCoreApplication::translate("StudentExam", "Assigned Exams", nullptr));
-        titleLabel->setText(QCoreApplication::translate("StudentExam", "Assigned Exams ", nullptr));
-        tableWidget->setProperty("horizontalHeaderLabels", QVariant(QStringList{
-            QCoreApplication::translate("StudentExam", "Class", nullptr),
-            QCoreApplication::translate("StudentExam", "Subject", nullptr),
-            QCoreApplication::translate("StudentExam", "Invigilator", nullptr),
-            QCoreApplication::translate("StudentExam", "Exam Date", nullptr),
-            QCoreApplication::translate("StudentExam", "Start Time", nullptr),
-            QCoreApplication::translate("StudentExam", "End Time", nullptr),
-            QCoreApplication::translate("StudentExam", "Room", nullptr)}));
+        titleLabel->setText(QCoreApplication::translate("StudentExam", "Assigned Exams for Class", nullptr));
+        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QCoreApplication::translate("StudentExam", "Class", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("StudentExam", "Subject", nullptr));
+        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("StudentExam", "Invigilator", nullptr));
+        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("StudentExam", "Exam Date", nullptr));
+        QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(4);
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("StudentExam", "Start Time", nullptr));
+        QTableWidgetItem *___qtablewidgetitem5 = tableWidget->horizontalHeaderItem(5);
+        ___qtablewidgetitem5->setText(QCoreApplication::translate("StudentExam", "End Time", nullptr));
+        QTableWidgetItem *___qtablewidgetitem6 = tableWidget->horizontalHeaderItem(6);
+        ___qtablewidgetitem6->setText(QCoreApplication::translate("StudentExam", "Room", nullptr));
     } // retranslateUi
 
 };

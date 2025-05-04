@@ -28,7 +28,7 @@ public:
     {
         if (StudentSchedule->objectName().isEmpty())
             StudentSchedule->setObjectName("StudentSchedule");
-        StudentSchedule->resize(650, 400);
+        StudentSchedule->resize(643, 400);
         StudentSchedule->setStyleSheet(QString::fromUtf8("QDialog#StudentSchedule {\n"
 "        background-color: #fef6f0   ;\n"
 "        border: 1px solid black;\n"
@@ -36,7 +36,7 @@ public:
 "}"));
         label = new QLabel(StudentSchedule);
         label->setObjectName("label");
-        label->setGeometry(QRect(90, 9, 481, 26));
+        label->setGeometry(QRect(80, 9, 481, 26));
         QFont font;
         font.setBold(true);
         label->setFont(font);
@@ -48,8 +48,20 @@ public:
         tableWidget = new QTableWidget(StudentSchedule);
         if (tableWidget->columnCount() < 6)
             tableWidget->setColumnCount(6);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(5, __qtablewidgetitem5);
         tableWidget->setObjectName("tableWidget");
-        tableWidget->setGeometry(QRect(9, 41, 631, 341));
+        tableWidget->setGeometry(QRect(10, 40, 621, 351));
         tableWidget->setStyleSheet(QString::fromUtf8("QTableWidget#tableWidget {\n"
 "    border: 1.5px solid #2c3e50;\n"
 "    border-radius: 8px;\n"
@@ -88,8 +100,6 @@ public:
 "    color: #1a252f;\n"
 "}\n"
 ""));
-        tableWidget->setRowCount(0);
-        tableWidget->setColumnCount(6);
 
         retranslateUi(StudentSchedule);
 
@@ -100,13 +110,18 @@ public:
     {
         StudentSchedule->setWindowTitle(QCoreApplication::translate("StudentSchedule", "Class Schedule", nullptr));
         label->setText(QCoreApplication::translate("StudentSchedule", "Class Schedule", nullptr));
-        tableWidget->setProperty("horizontalHeaderLabels", QVariant(QStringList{
-            QCoreApplication::translate("StudentSchedule", "Teacher Name", nullptr),
-            QCoreApplication::translate("StudentSchedule", "Subject", nullptr),
-            QCoreApplication::translate("StudentSchedule", "Day", nullptr),
-            QCoreApplication::translate("StudentSchedule", "Start Time", nullptr),
-            QCoreApplication::translate("StudentSchedule", "End Time", nullptr),
-            QCoreApplication::translate("StudentSchedule", "Room", nullptr)}));
+        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QCoreApplication::translate("StudentSchedule", "Teacher Name", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("StudentSchedule", "Subject", nullptr));
+        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("StudentSchedule", "Day", nullptr));
+        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("StudentSchedule", "Start Time", nullptr));
+        QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(4);
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("StudentSchedule", "End Time", nullptr));
+        QTableWidgetItem *___qtablewidgetitem5 = tableWidget->horizontalHeaderItem(5);
+        ___qtablewidgetitem5->setText(QCoreApplication::translate("StudentSchedule", "Room", nullptr));
     } // retranslateUi
 
 };
