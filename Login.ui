@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>459</width>
-    <height>520</height>
+    <width>952</width>
+    <height>521</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -21,14 +21,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>200</width>
-    <height>300</height>
+    <width>952</width>
+    <height>521</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1920</width>
-    <height>1000</height>
+    <width>952</width>
+    <height>521</height>
    </size>
   </property>
   <property name="baseSize">
@@ -281,6 +281,12 @@ color: #2c3e50 ;
      <height>41</height>
     </rect>
    </property>
+   <property name="maximumSize">
+    <size>
+     <width>2000</width>
+     <height>2000</height>
+    </size>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton#loginButton {
     background-color: #ff6b6b;
@@ -312,6 +318,40 @@ QPushButton#loginButton:hover {
    </property>
    <property name="orientation">
     <enum>Qt::Orientation::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>0</y>
+     <width>491</width>
+     <height>521</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel#label_2 {
+		border: 0.4px solid black;
+        border-radius: 10%;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../03ca7cd8-d889-4960-9cf5-8d4bd6616c83.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="wordWrap">
+    <bool>false</bool>
+   </property>
+   <property name="indent">
+    <number>-1</number>
    </property>
   </widget>
  </widget>

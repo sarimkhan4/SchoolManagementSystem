@@ -13,24 +13,87 @@
   <property name="windowTitle">
    <string>Class Schedule</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog#ClassScheduleViewing {
+        background-color: #fef6f0   ;
+        border: 1px solid black;
+        border-radius: 10%;
+}</string>
+  </property>
   <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>580</width>
-     <height>330</height>
+     <width>581</width>
+     <height>321</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTableView#tableView {
+    border: 1.5px solid #2c3e50;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 11pt;
+    color: #2c3e50;
+    gridline-color: #ecf0f1;
+    alternate-background-color: #f7f9fa;
+    selection-background-color: #d6eaf8;
+    selection-color: #1a252f;
+}
+
+QHeaderView::section {
+    background-color: #2c3e50;
+    color: white;
+    font-weight: bold;
+    font-size: 11pt;
+    padding: 6px;
+    border: none;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+QTableView QTableCornerButton::section {
+    background-color: #2c3e50;
+    border: none;
+}
+
+QTableView::item {
+    padding: 8px 10px;
+    font-size: 9pt;
+}
+
+QTableView::item:selected {
+    background-color: #d6eaf8;
+    color: #1a252f;
+}
+</string>
    </property>
   </widget>
   <widget class="QPushButton" name="closeButton">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>350</y>
-     <width>561</width>
-     <height>30</height>
+     <x>10</x>
+     <y>339</y>
+     <width>581</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#closeButton {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    padding: 6px;
+    font-size: 16px;
+}
+
+/* Hover effect */
+QPushButton#closeButton:hover {
+    background-color: #ee5253;
+}
+
+</string>
    </property>
    <property name="text">
     <string>Close</string>

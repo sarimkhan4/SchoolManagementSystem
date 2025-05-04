@@ -13,6 +13,13 @@
   <property name="windowTitle">
    <string>Teacher Panel</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog#TeacherPanel {
+        background-color: #fef6f0   ;
+        border: 1px solid black;
+        border-radius: 10%;
+}</string>
+  </property>
   <widget class="QPushButton" name="btnClassSchedule">
    <property name="geometry">
     <rect>
@@ -21,6 +28,22 @@
      <width>300</width>
      <height>40</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#btnClassSchedule {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    padding: 6px;
+    font-size: 16px;
+}
+
+/* Hover effect */
+QPushButton#btnClassSchedule:hover {
+    background-color: #ee5253;
+}
+
+</string>
    </property>
    <property name="text">
     <string>View Class Schedule</string>
@@ -35,6 +58,22 @@
      <height>40</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#btnExamResult {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    padding: 6px;
+    font-size: 16px;
+}
+
+/* Hover effect */
+QPushButton#btnExamResult:hover {
+    background-color: #ee5253;
+}
+
+</string>
+   </property>
    <property name="text">
     <string>Manage Exam Results</string>
    </property>
@@ -48,6 +87,22 @@
      <height>40</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#btnAttendanceViewing {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    padding: 6px;
+    font-size: 16px;
+}
+
+/* Hover effect */
+QPushButton#btnAttendanceViewing:hover {
+    background-color: #ee5253;
+}
+
+</string>
+   </property>
    <property name="text">
     <string>View Attendance</string>
    </property>
@@ -60,6 +115,22 @@
      <width>300</width>
      <height>40</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#btnExamManagement {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    padding: 6px;
+    font-size: 16px;
+}
+
+/* Hover effect */
+QPushButton#btnExamManagement:hover {
+    background-color: #ee5253;
+}
+
+</string>
    </property>
    <property name="text">
     <string>View Assigned Exams</string>

@@ -13,43 +13,148 @@
   <property name="windowTitle">
    <string>Student Panel</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <widget class="QPushButton" name="personalInfoButton">
-     <property name="text">
-      <string>Personal Info</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="attendanceButton">
-     <property name="text">
-      <string>My Attendance</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="examButton">
-     <property name="text">
-      <string>Assigned Exams</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="scheduleButton">
-     <property name="text">
-      <string>Class Schedule</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="resultButton">
-     <property name="text">
-      <string>My Results</string>
-     </property>
-    </widget>
-   </item>
-  </layout>
+  <property name="styleSheet">
+   <string notr="true">QDialog#StudentPanel {
+        background-color: #fef6f0;
+        border: 1px solid black;
+        border-radius: 10%;
+}</string>
+  </property>
+  <widget class="QPushButton" name="personalInfoButton">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>40</y>
+     <width>381</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#personalInfoButton {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+QPushButton#personalInfoButton:hover {
+    background-color: #ee5253;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>Personal Info</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="attendanceButton">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>101</y>
+     <width>381</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#attendanceButton {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+QPushButton#attendanceButton:hover {
+    background-color: #ee5253;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>My Attendance</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="examButton">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>162</y>
+     <width>381</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#examButton {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+QPushButton#examButton:hover {
+    background-color: #ee5253;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>Assigned Exams</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="scheduleButton">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>223</y>
+     <width>381</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#scheduleButton {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+QPushButton#scheduleButton:hover {
+    background-color: #ee5253;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>Class Schedule</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="resultButton">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>284</y>
+     <width>381</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#resultButton {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+QPushButton#resultButton:hover {
+    background-color: #ee5253;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>My Results</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
