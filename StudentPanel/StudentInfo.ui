@@ -134,7 +134,7 @@ QPushButton#btnClose:hover {
     <rect>
      <x>20</x>
      <y>60</y>
-     <width>71</width>
+     <width>81</width>
      <height>31</height>
     </rect>
    </property>

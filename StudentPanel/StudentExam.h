@@ -13,12 +13,11 @@ class StudentExam : public QDialog
     Q_OBJECT
 
 public:
-    explicit StudentExam(QWidget *parent = nullptr, int studentId = -1, const QString &studentClass = "");
+    explicit StudentExam(QWidget *parent = nullptr, const QString &studentClass = "");
     ~StudentExam();
 
 private:
     Ui::StudentExam *ui;
-    int studentId;
     QString studentClass;
     QSqlQueryModel *model;
 

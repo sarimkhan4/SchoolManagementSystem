@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
+    <width>726</width>
     <height>400</height>
    </rect>
   </property>
@@ -23,7 +23,7 @@
   <widget class="QLabel" name="titleLabel">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>70</x>
      <y>10</y>
      <width>581</width>
      <height>33</height>
@@ -42,7 +42,7 @@ color: #2c3e50 ;
 }</string>
    </property>
    <property name="text">
-    <string>Assigned Exams for Class</string>
+    <string>Assigned Exams </string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -53,7 +53,7 @@ color: #2c3e50 ;
     <rect>
      <x>9</x>
      <y>48</y>
-     <width>581</width>
+     <width>701</width>
      <height>341</height>
     </rect>
    </property>

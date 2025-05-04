@@ -24,8 +24,8 @@ public:
     QPushButton *studentButton;
     QPushButton *teacherButton;
     QPushButton *attendanceButton;
-    QPushButton *classScheduleButton;
     QPushButton *examButton;
+    QPushButton *classScheduleButton;
 
     void setupUi(QDialog *AdminPanel)
     {
@@ -45,7 +45,7 @@ public:
         verticalLayout->setContentsMargins(82, 4, -1, 12);
         studentButton = new QPushButton(AdminPanel);
         studentButton->setObjectName("studentButton");
-        studentButton->setMaximumSize(QSize(240, 30));
+        studentButton->setMaximumSize(QSize(240, 40));
         studentButton->setStyleSheet(QString::fromUtf8("QPushButton#studentButton {\n"
 "    background-color: #ff6b6b;\n"
 "    border: 1.5px solid black;\n"
@@ -63,7 +63,7 @@ public:
 
         teacherButton = new QPushButton(AdminPanel);
         teacherButton->setObjectName("teacherButton");
-        teacherButton->setMaximumSize(QSize(240, 30));
+        teacherButton->setMaximumSize(QSize(240, 40));
         teacherButton->setStyleSheet(QString::fromUtf8("QPushButton#teacherButton {\n"
 "    background-color: #ff6b6b;\n"
 "    border: 1.5px solid black;\n"
@@ -81,7 +81,7 @@ public:
 
         attendanceButton = new QPushButton(AdminPanel);
         attendanceButton->setObjectName("attendanceButton");
-        attendanceButton->setMaximumSize(QSize(240, 30));
+        attendanceButton->setMaximumSize(QSize(240, 40));
         attendanceButton->setStyleSheet(QString::fromUtf8("QPushButton#attendanceButton {\n"
 "    background-color: #ff6b6b;\n"
 "    border: 1.5px solid black;\n"
@@ -97,27 +97,9 @@ public:
 
         verticalLayout->addWidget(attendanceButton);
 
-        classScheduleButton = new QPushButton(AdminPanel);
-        classScheduleButton->setObjectName("classScheduleButton");
-        classScheduleButton->setMaximumSize(QSize(240, 30));
-        classScheduleButton->setStyleSheet(QString::fromUtf8("QPushButton#classScheduleButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
-"    border-radius: 10px;\n"
-"    font-size: 16px;\n"
-"}\n"
-"\n"
-"QPushButton#classScheduleButton:hover {\n"
-"    background-color: #ee5253;\n"
-"}\n"
-"\n"
-""));
-
-        verticalLayout->addWidget(classScheduleButton);
-
         examButton = new QPushButton(AdminPanel);
         examButton->setObjectName("examButton");
-        examButton->setMaximumSize(QSize(240, 30));
+        examButton->setMaximumSize(QSize(240, 40));
         examButton->setStyleSheet(QString::fromUtf8("QPushButton#examButton {\n"
 "    background-color: #ff6b6b;\n"
 "    border: 1.5px solid black;\n"
@@ -133,6 +115,24 @@ public:
 
         verticalLayout->addWidget(examButton);
 
+        classScheduleButton = new QPushButton(AdminPanel);
+        classScheduleButton->setObjectName("classScheduleButton");
+        classScheduleButton->setMaximumSize(QSize(240, 40));
+        classScheduleButton->setStyleSheet(QString::fromUtf8("QPushButton#classScheduleButton {\n"
+"    background-color: #ff6b6b;\n"
+"    border: 1.5px solid black;\n"
+"    border-radius: 10px;\n"
+"    font-size: 16px;\n"
+"}\n"
+"\n"
+"QPushButton#classScheduleButton:hover {\n"
+"    background-color: #ee5253;\n"
+"}\n"
+"\n"
+""));
+
+        verticalLayout->addWidget(classScheduleButton);
+
 
         retranslateUi(AdminPanel);
 
@@ -145,8 +145,8 @@ public:
         studentButton->setText(QCoreApplication::translate("AdminPanel", "Manage Students", nullptr));
         teacherButton->setText(QCoreApplication::translate("AdminPanel", "Manage Teachers", nullptr));
         attendanceButton->setText(QCoreApplication::translate("AdminPanel", "Manage Attendance", nullptr));
-        classScheduleButton->setText(QCoreApplication::translate("AdminPanel", "Manage Class Schedules", nullptr));
         examButton->setText(QCoreApplication::translate("AdminPanel", "Manage Exams", nullptr));
+        classScheduleButton->setText(QCoreApplication::translate("AdminPanel", "Manage Class Schedules", nullptr));
     } // retranslateUi
 
 };

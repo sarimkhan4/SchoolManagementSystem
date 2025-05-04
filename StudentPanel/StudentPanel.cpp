@@ -32,7 +32,7 @@ void StudentPanel::on_attendanceButton_clicked()
 
 void StudentPanel::on_examButton_clicked()
 {
-    StudentExam *exam = new StudentExam(this, studentId);
+    StudentExam *exam = new StudentExam(this, studentClass);
     exam->exec();
 }
 

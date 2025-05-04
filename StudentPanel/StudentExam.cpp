@@ -5,10 +5,9 @@
 #include <QMessageBox>
 #include <QHeaderView>
 
-StudentExam::StudentExam(QWidget *parent, int studentId, const QString &studentClass) :
+StudentExam::StudentExam(QWidget *parent, const QString &studentClass) :
     QDialog(parent),
     ui(new Ui::StudentExam),
-    studentId(studentId),
     studentClass(studentClass)
 {
     ui->setupUi(this);
@@ -32,17 +31,16 @@ void StudentExam::loadAssignedExams()
         return;
     }
 
-    ui->tableWidget->setRowCount(0); // Clear previous data
-
     int row = 0;
+    ui->tableWidget->setRowCount(query.size());  // Set number of rows based on query result
     while (query.next()) {
-        ui->tableWidget->insertRow(row);
-        for (int col = 0; col < 7; ++col) {
-            QTableWidgetItem *item = new QTableWidgetItem(query.value(col).toString());
-            ui->tableWidget->setItem(row, col, item);
-        }
-        ++row;
+        ui->tableWidget->setItem(row, 0, new QTableWidgetItem(query.value(0).toString()));  // Class Name
+        ui->tableWidget->setItem(row, 1, new QTableWidgetItem(query.value(1).toString()));  // Subject
+        ui->tableWidget->setItem(row, 2, new QTableWidgetItem(query.value(2).toString()));  // Invigilator
+        ui->tableWidget->setItem(row, 3, new QTableWidgetItem(query.value(3).toString()));  // Exam Date
+        ui->tableWidget->setItem(row, 4, new QTableWidgetItem(query.value(4).toString()));  // Start Time
+        ui->tableWidget->setItem(row, 5, new QTableWidgetItem(query.value(5).toString()));  // End Time
+        ui->tableWidget->setItem(row, 6, new QTableWidgetItem(query.value(6).toString()));  // Room
+        row++;
     }
-
-    ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }

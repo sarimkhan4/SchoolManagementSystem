@@ -26,7 +26,7 @@
      <x>10</x>
      <y>10</y>
      <width>741</width>
-     <height>161</height>
+     <height>171</height>
     </rect>
    </property>
    <property name="title">
@@ -36,7 +36,7 @@
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>40</y>
+      <y>30</y>
       <width>161</width>
       <height>22</height>
      </rect>
@@ -56,7 +56,7 @@
     <property name="geometry">
      <rect>
       <x>440</x>
-      <y>70</y>
+      <y>60</y>
       <width>71</width>
       <height>21</height>
      </rect>
@@ -75,7 +75,7 @@
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>100</y>
+      <y>90</y>
       <width>161</width>
       <height>22</height>
      </rect>
@@ -95,7 +95,7 @@
     <property name="geometry">
      <rect>
       <x>562</x>
-      <y>40</y>
+      <y>30</y>
       <width>171</width>
       <height>22</height>
      </rect>
@@ -115,7 +115,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>70</y>
+      <y>60</y>
       <width>51</width>
       <height>21</height>
      </rect>
@@ -134,7 +134,7 @@
     <property name="geometry">
      <rect>
       <x>440</x>
-      <y>30</y>
+      <y>20</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -153,7 +153,7 @@
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>70</y>
+      <y>60</y>
       <width>161</width>
       <height>22</height>
      </rect>
@@ -173,7 +173,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>40</y>
+      <y>30</y>
       <width>58</width>
       <height>16</height>
      </rect>
@@ -192,7 +192,7 @@
     <property name="geometry">
      <rect>
       <x>560</x>
-      <y>70</y>
+      <y>60</y>
       <width>171</width>
       <height>22</height>
      </rect>
@@ -212,7 +212,7 @@
     <property name="geometry">
      <rect>
       <x>560</x>
-      <y>100</y>
+      <y>90</y>
       <width>171</width>
       <height>22</height>
      </rect>
@@ -232,7 +232,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>90</y>
+      <y>80</y>
       <width>51</width>
       <height>31</height>
      </rect>
@@ -251,7 +251,7 @@
     <property name="geometry">
      <rect>
       <x>440</x>
-      <y>90</y>
+      <y>80</y>
       <width>101</width>
       <height>41</height>
      </rect>
@@ -270,7 +270,7 @@
     <property name="geometry">
      <rect>
       <x>530</x>
-      <y>130</y>
+      <y>120</y>
       <width>206</width>
       <height>29</height>
      </rect>
@@ -298,8 +298,8 @@ font: 9pt &quot;Segoe UI&quot;;</string>
    <widget class="QPushButton" name="updateButton">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>130</y>
+      <x>270</x>
+      <y>120</y>
       <width>205</width>
       <height>31</height>
      </rect>
@@ -327,8 +327,8 @@ font: 9pt &quot;Segoe UI&quot;;</string>
    <widget class="QPushButton" name="saveButton">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>130</y>
+      <x>10</x>
+      <y>120</y>
       <width>206</width>
       <height>29</height>
      </rect>
@@ -408,7 +408,7 @@ QTableView::item:selected {
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>180</y>
+     <y>190</y>
      <width>621</width>
      <height>31</height>
     </rect>
@@ -430,8 +430,8 @@ QTableView::item:selected {
   <widget class="QPushButton" name="searchButton">
    <property name="geometry">
     <rect>
-     <x>660</x>
-     <y>180</y>
+     <x>650</x>
+     <y>190</y>
      <width>91</width>
      <height>31</height>
     </rect>

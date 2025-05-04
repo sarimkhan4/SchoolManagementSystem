@@ -29,20 +29,21 @@ public:
     QLineEdit *passwordInput;
     QPushButton *loginButton;
     QFrame *line;
+    QLabel *label_2;
 
     void setupUi(QDialog *Login)
     {
         if (Login->objectName().isEmpty())
             Login->setObjectName("Login");
         Login->setEnabled(true);
-        Login->resize(459, 520);
+        Login->resize(952, 521);
         QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(Login->sizePolicy().hasHeightForWidth());
         Login->setSizePolicy(sizePolicy);
-        Login->setMinimumSize(QSize(200, 300));
-        Login->setMaximumSize(QSize(1920, 1000));
+        Login->setMinimumSize(QSize(952, 521));
+        Login->setMaximumSize(QSize(952, 521));
         Login->setBaseSize(QSize(0, 0));
         QPalette palette;
         QBrush brush(QColor(254, 246, 240, 255));
@@ -120,6 +121,7 @@ public:
         loginButton = new QPushButton(Login);
         loginButton->setObjectName("loginButton");
         loginButton->setGeometry(QRect(60, 320, 341, 41));
+        loginButton->setMaximumSize(QSize(2000, 2000));
         loginButton->setStyleSheet(QString::fromUtf8("QPushButton#loginButton {\n"
 "    background-color: #ff6b6b;\n"
 "    border: 1.5px solid black;\n"
@@ -139,6 +141,18 @@ public:
         line->setGeometry(QRect(450, 0, 20, 551));
         line->setFrameShape(QFrame::Shape::VLine);
         line->setFrameShadow(QFrame::Shadow::Sunken);
+        label_2 = new QLabel(Login);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(460, 0, 491, 521));
+        label_2->setStyleSheet(QString::fromUtf8("QLabel#label_2 {\n"
+"		border: 0.4px solid black;\n"
+"        border-radius: 10%;\n"
+"}"));
+        label_2->setFrameShape(QFrame::Shape::NoFrame);
+        label_2->setPixmap(QPixmap(QString::fromUtf8("../../03ca7cd8-d889-4960-9cf5-8d4bd6616c83.png")));
+        label_2->setScaledContents(true);
+        label_2->setWordWrap(false);
+        label_2->setIndent(-1);
 
         retranslateUi(Login);
 
@@ -154,6 +168,7 @@ public:
         usernameInput->setPlaceholderText(QString());
         label_password->setText(QCoreApplication::translate("Login", "Password", nullptr));
         loginButton->setText(QCoreApplication::translate("Login", "Login", nullptr));
+        label_2->setText(QString());
     } // retranslateUi
 
 };

@@ -53,7 +53,7 @@ void setupDatabase() {
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");
     db.setUserName("root");
-    db.setPassword("ss7vegeto12");
+    db.setPassword("H2714077");
     db.setConnectOptions("MYSQL_OPT_SSL_MODE=DISABLED");
 
     if (!db.open()) {
@@ -99,7 +99,7 @@ void setupDatabase() {
 
     // Step 4: Ensure MySQL uses `mysql_native_password`
     QSqlQuery authQuery(db);
-    authQuery.prepare("ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'ss7vegeto12'");
+    authQuery.prepare("ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'H2714077'");
     if (!authQuery.exec()) {
         qDebug() << "Failed to set authentication method:" << authQuery.lastError().text();
     }
@@ -117,13 +117,14 @@ void setupDatabase() {
         {"teachers", "CREATE TABLE IF NOT EXISTS teachers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) NOT NULL, password VARCHAR(255) NOT NULL, subject VARCHAR(100) DEFAULT NULL)"},
 
         {"admins", "CREATE TABLE IF NOT EXISTS admins (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) NOT NULL, email VARCHAR(100) NOT NULL UNIQUE, password VARCHAR(255) NOT NULL)"},
-        {"class_schedule", "CREATE TABLE IF NOT EXISTS class_schedule (id INT AUTO_INCREMENT PRIMARY KEY, class_name VARCHAR(50) NOT NULL, teacher_name VARCHAR(100) NOT NULL, day ENUM('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday') NOT NULL, time_start TIME NOT NULL, time_end TIME NOT NULL, room VARCHAR(20) NOT NULL)"},
+        {"class_schedule", "CREATE TABLE IF NOT EXISTS class_schedule (id INT AUTO_INCREMENT PRIMARY KEY, class_name VARCHAR(50) NOT NULL, teacher_name VARCHAR(100) NOT NULL,subject VARCHAR(100) NOT NULL, day ENUM('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday') NOT NULL, time_start TIME NOT NULL, time_end TIME NOT NULL, room VARCHAR(20) NOT NULL)"},
         {"exam_schedule", "CREATE TABLE IF NOT EXISTS exam_schedule (id INT AUTO_INCREMENT PRIMARY KEY, subject VARCHAR(100) NOT NULL, exam_date DATE NOT NULL, time_start TIME NOT NULL, time_end TIME NOT NULL)"},
         {"login_credentials", "CREATE TABLE IF NOT EXISTS login_credentials (id INT AUTO_INCREMENT PRIMARY KEY, user_id VARCHAR(50) NOT NULL, role ENUM('admin','teacher','student') NOT NULL, password VARCHAR(64) DEFAULT NULL)"},
         {"student_attendance", "CREATE TABLE IF NOT EXISTS student_attendance (id INT AUTO_INCREMENT PRIMARY KEY, student_id INT NOT NULL, date DATE NOT NULL, status ENUM('Present','Absent') NOT NULL, class_name VARCHAR(50) NOT NULL, FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE)"},
         {"student_reports", "CREATE TABLE IF NOT EXISTS student_reports (id INT AUTO_INCREMENT PRIMARY KEY, student_id INT NOT NULL, exam_name VARCHAR(100) NOT NULL, marks_obtained INT NOT NULL, total_marks INT NOT NULL, grade VARCHAR(5) DEFAULT NULL, remarks TEXT, FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE)"},
         {"teacher_attendance", "CREATE TABLE IF NOT EXISTS teacher_attendance (id INT AUTO_INCREMENT PRIMARY KEY, teacher_id INT NOT NULL, date DATE NOT NULL, status ENUM('Present','Absent') NOT NULL, course_name VARCHAR(100) NOT NULL, FOREIGN KEY (teacher_id) REFERENCES teachers(id) ON DELETE CASCADE)"},
-        {"exam_management", "CREATE TABLE IF NOT EXISTS exam_management (id INT AUTO_INCREMENT PRIMARY KEY, class_name VARCHAR(50) NOT NULL, subject VARCHAR(100) NOT NULL, invigilator VARCHAR(100) NOT NULL, exam_date DATE NOT NULL, start_time TIME NOT NULL, end_time TIME NOT NULL, room VARCHAR(20) NOT NULL)"}
+        {"exam_management", "CREATE TABLE IF NOT EXISTS exam_management (id INT AUTO_INCREMENT PRIMARY KEY, class_name VARCHAR(50) NOT NULL, subject VARCHAR(100) NOT NULL, invigilator VARCHAR(100) NOT NULL, exam_date DATE NOT NULL, start_time TIME NOT NULL, end_time TIME NOT NULL, room VARCHAR(20) NOT NULL)"},
+        {"exam_results","CREATE TABLE IF NOT EXISTS exam_results (id INT PRIMARY KEY AUTO_INCREMENT, student_id INT NOT NULL, student_name VARCHAR(100) NOT NULL, class_name VARCHAR(50) NOT NULL, subject VARCHAR(100) NOT NULL, marks_obtained INT NOT NULL, total_marks INT NOT NULL, exam_date DATE, teacher_id INT)"}
     };
 
 

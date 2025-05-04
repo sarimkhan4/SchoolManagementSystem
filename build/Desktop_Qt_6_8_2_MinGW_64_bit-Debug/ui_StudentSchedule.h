@@ -15,14 +15,12 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QTableWidget>
-#include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_StudentSchedule
 {
 public:
-    QVBoxLayout *verticalLayout;
     QLabel *label;
     QTableWidget *tableWidget;
 
@@ -30,26 +28,68 @@ public:
     {
         if (StudentSchedule->objectName().isEmpty())
             StudentSchedule->setObjectName("StudentSchedule");
-        StudentSchedule->resize(500, 400);
-        verticalLayout = new QVBoxLayout(StudentSchedule);
-        verticalLayout->setObjectName("verticalLayout");
+        StudentSchedule->resize(650, 400);
+        StudentSchedule->setStyleSheet(QString::fromUtf8("QDialog#StudentSchedule {\n"
+"        background-color: #fef6f0   ;\n"
+"        border: 1px solid black;\n"
+"        border-radius: 10%;\n"
+"}"));
         label = new QLabel(StudentSchedule);
         label->setObjectName("label");
+        label->setGeometry(QRect(90, 9, 481, 26));
         QFont font;
-        font.setPointSize(14);
         font.setBold(true);
         label->setFont(font);
-        label->setAlignment(Qt::AlignCenter);
-
-        verticalLayout->addWidget(label);
-
+        label->setStyleSheet(QString::fromUtf8("QLabel#label {\n"
+"        font-size: 25px;\n"
+"color: #2c3e50 ;\n"
+"}"));
+        label->setAlignment(Qt::AlignmentFlag::AlignCenter);
         tableWidget = new QTableWidget(StudentSchedule);
+        if (tableWidget->columnCount() < 6)
+            tableWidget->setColumnCount(6);
         tableWidget->setObjectName("tableWidget");
-        tableWidget->setColumnCount(6);
+        tableWidget->setGeometry(QRect(9, 41, 631, 341));
+        tableWidget->setStyleSheet(QString::fromUtf8("QTableWidget#tableWidget {\n"
+"    border: 1.5px solid #2c3e50;\n"
+"    border-radius: 8px;\n"
+"    background-color: #ffffff;\n"
+"    font-family: 'Segoe UI', sans-serif;\n"
+"    font-size: 11pt;\n"
+"    color: #2c3e50;\n"
+"    gridline-color: #ecf0f1;\n"
+"    alternate-background-color: #f7f9fa;\n"
+"    selection-background-color: #d6eaf8;\n"
+"    selection-color: #1a252f;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #2c3e50;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"    font-size: 11pt;\n"
+"    padding: 6px;\n"
+"    border: none;\n"
+"    font-family: 'Segoe UI', sans-serif;\n"
+"}\n"
+"\n"
+"QTableWidget QTableCornerButton::section {\n"
+"    background-color: #2c3e50;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QTableWidget::item {\n"
+"    padding: 8px 10px;\n"
+"    font-size: 9pt;\n"
+"}\n"
+"\n"
+"QTableWidget::item:selected {\n"
+"    background-color: #d6eaf8;\n"
+"    color: #1a252f;\n"
+"}\n"
+""));
         tableWidget->setRowCount(0);
-
-        verticalLayout->addWidget(tableWidget);
-
+        tableWidget->setColumnCount(6);
 
         retranslateUi(StudentSchedule);
 
@@ -60,13 +100,13 @@ public:
     {
         StudentSchedule->setWindowTitle(QCoreApplication::translate("StudentSchedule", "Class Schedule", nullptr));
         label->setText(QCoreApplication::translate("StudentSchedule", "Class Schedule", nullptr));
-        tableWidget->setHorizontalHeaderLabels(QStringList{
+        tableWidget->setProperty("horizontalHeaderLabels", QVariant(QStringList{
             QCoreApplication::translate("StudentSchedule", "Teacher Name", nullptr),
             QCoreApplication::translate("StudentSchedule", "Subject", nullptr),
             QCoreApplication::translate("StudentSchedule", "Day", nullptr),
             QCoreApplication::translate("StudentSchedule", "Start Time", nullptr),
             QCoreApplication::translate("StudentSchedule", "End Time", nullptr),
-            QCoreApplication::translate("StudentSchedule", "Room", nullptr)});
+            QCoreApplication::translate("StudentSchedule", "Room", nullptr)}));
     } // retranslateUi
 
 };

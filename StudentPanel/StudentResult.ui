@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
+    <width>641</width>
     <height>450</height>
    </rect>
   </property>
@@ -23,7 +23,7 @@
   <widget class="QLabel" name="titleLabel">
    <property name="geometry">
     <rect>
-     <x>9</x>
+     <x>30</x>
      <y>9</y>
      <width>581</width>
      <height>31</height>
@@ -53,7 +53,7 @@ color: #2c3e50 ;
     <rect>
      <x>9</x>
      <y>51</y>
-     <width>581</width>
+     <width>621</width>
      <height>331</height>
     </rect>
    </property>
@@ -134,7 +134,7 @@ QTableWidget::item:selected {
   <widget class="QPushButton" name="gradingFormulaButton">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>30</x>
      <y>390</y>
      <width>581</width>
      <height>41</height>

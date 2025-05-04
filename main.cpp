@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
         "padding: 3px 3px 3px 3px;"
         "font-size: 14px;"
         "min-width: 50px;"
-        "min-height: 30px;"
+        "min-height: 20px;"
         "}"
         "QPushButton:hover {"
         "background-color: #ee5253;"

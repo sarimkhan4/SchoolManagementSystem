@@ -47,7 +47,7 @@
      <property name="maximumSize">
       <size>
        <width>240</width>
-       <height>30</height>
+       <height>40</height>
       </size>
      </property>
      <property name="styleSheet">
@@ -74,7 +74,7 @@ QPushButton#studentButton:hover {
      <property name="maximumSize">
       <size>
        <width>240</width>
-       <height>30</height>
+       <height>40</height>
       </size>
      </property>
      <property name="styleSheet">
@@ -101,7 +101,7 @@ QPushButton#teacherButton:hover {
      <property name="maximumSize">
       <size>
        <width>240</width>
-       <height>30</height>
+       <height>40</height>
       </size>
      </property>
      <property name="styleSheet">
@@ -124,38 +124,11 @@ QPushButton#attendanceButton:hover {
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="classScheduleButton">
-     <property name="maximumSize">
-      <size>
-       <width>240</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton#classScheduleButton {
-    background-color: #ff6b6b;
-    border: 1.5px solid black;
-    border-radius: 10px;
-    font-size: 16px;
-}
-
-QPushButton#classScheduleButton:hover {
-    background-color: #ee5253;
-}
-
-</string>
-     </property>
-     <property name="text">
-      <string>Manage Class Schedules</string>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="QPushButton" name="examButton">
      <property name="maximumSize">
       <size>
        <width>240</width>
-       <height>30</height>
+       <height>40</height>
       </size>
      </property>
      <property name="styleSheet">
@@ -174,6 +147,33 @@ QPushButton#examButton:hover {
      </property>
      <property name="text">
       <string>Manage Exams</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="classScheduleButton">
+     <property name="maximumSize">
+      <size>
+       <width>240</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#classScheduleButton {
+    background-color: #ff6b6b;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+QPushButton#classScheduleButton:hover {
+    background-color: #ee5253;
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Manage Class Schedules</string>
      </property>
     </widget>
    </item>
