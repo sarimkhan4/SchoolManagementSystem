@@ -24,4 +24,4 @@ private:
     void loadAssignedExams();
 };
 
-#endif // STUDENTEXAMS_H
+#endif

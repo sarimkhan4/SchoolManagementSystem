@@ -13,8 +13,6 @@ StudentResult::StudentResult(QWidget *parent, int studentId) :
     ui->setupUi(this);
     setWindowTitle("My Results");
     loadResultData();
-
-    // Connect grading formula button to show message
     connect(ui->gradingFormulaButton, &QPushButton::clicked, this, [=]() {
         QMessageBox::information(this, "Grading Formula",
                                  "A+: 90%-100%\n A  :  80%-89%\n B  :  70%-79%\n C  :  60%-69%\n D  :  50%-59%\n F  :  Below 50%");
@@ -25,7 +23,7 @@ StudentResult::~StudentResult()
 {
     delete ui;
 }
-
+// Function to show results
 void StudentResult::loadResultData()
 {
     QSqlQuery query;
@@ -37,7 +35,7 @@ void StudentResult::loadResultData()
         return;
     }
 
-    // Setting up the table
+    // Table setup
     int row = 0;
     while (query.next()) {
         ui->tableWidget->insertRow(row);
@@ -60,17 +58,15 @@ void StudentResult::loadResultData()
         else grade = "F";
 
         // Filling table with data
-        ui->tableWidget->setItem(row, 0, new QTableWidgetItem(studentName));
-        ui->tableWidget->setItem(row, 1, new QTableWidgetItem(className));
-        ui->tableWidget->setItem(row, 2, new QTableWidgetItem(subject));
-        ui->tableWidget->setItem(row, 3, new QTableWidgetItem(QString::number(marksObtained)));
-        ui->tableWidget->setItem(row, 4, new QTableWidgetItem(QString::number(totalMarks)));
-        ui->tableWidget->setItem(row, 5, new QTableWidgetItem(QString::number(percentage, 'f', 2) + "%"));
-        ui->tableWidget->setItem(row, 6, new QTableWidgetItem(grade));
-
+        ui->tableWidget->setItem(row, 0, new QTableWidgetItem(studentName)); // Student Name
+        ui->tableWidget->setItem(row, 1, new QTableWidgetItem(className));  // Student Class
+        ui->tableWidget->setItem(row, 2, new QTableWidgetItem(subject));   // Subject
+        ui->tableWidget->setItem(row, 3, new QTableWidgetItem(QString::number(marksObtained))); // Marks Obtained
+        ui->tableWidget->setItem(row, 4, new QTableWidgetItem(QString::number(totalMarks)));   // Total Marks
+        ui->tableWidget->setItem(row, 5, new QTableWidgetItem(QString::number(percentage, 'f', 2) + "%")); // Percentage
+        ui->tableWidget->setItem(row, 6, new QTableWidgetItem(grade)); // Grade
         row++;
     }
-
     // Adjust the columns to fit the content
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }

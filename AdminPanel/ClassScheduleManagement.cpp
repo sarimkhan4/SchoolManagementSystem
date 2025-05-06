@@ -20,8 +20,7 @@ ClassScheduleManagement::ClassScheduleManagement(QWidget *parent)
 ClassScheduleManagement::~ClassScheduleManagement() {
     delete ui;
 }
-
-// Function to update the table with current data
+// Function to update the table
 void ClassScheduleManagement::updateTable() {
     QSqlQuery query("SELECT id, class_name, teacher_name,subject, day, time_start, time_end, room FROM class_schedule");
 
@@ -39,12 +38,10 @@ void ClassScheduleManagement::updateTable() {
     }
 }
 
-// View all class schedules
 void ClassScheduleManagement::viewClassSchedules() {
-    updateTable();  // Refresh the table
+    updateTable(); // Refresh the table
 }
-
-// Add Class Schedule
+// Function to add class schedule
 void ClassScheduleManagement::addClassSchedule() {
     QString className = QInputDialog::getText(this, "Add Schedule", "Enter Class Name:");
     if (className.isEmpty()) return;
@@ -52,11 +49,10 @@ void ClassScheduleManagement::addClassSchedule() {
     QString teacherName = QInputDialog::getText(this, "Add Schedule", "Enter Teacher Name:");
     if (teacherName.isEmpty()) return;
 
-    // Check if the teacher exists in the teachers table
     QSqlQuery checkQuery;
     checkQuery.prepare("SELECT COUNT(*) FROM teachers WHERE name = :teacher_name");
     checkQuery.bindValue(":teacher_name", teacherName);
-    if (!checkQuery.exec() || !checkQuery.next() || checkQuery.value(0).toInt() == 0) {
+    if (!checkQuery.exec() || !checkQuery.next() || checkQuery.value(0).toInt() == 0) { // Checks if entered teacher exist or not
         QMessageBox::warning(this, "Error", "Teacher does not exist in the system.");
         return;
     }
@@ -71,14 +67,14 @@ void ClassScheduleManagement::addClassSchedule() {
 
     QString room = QInputDialog::getText(this, "Add Schedule", "Enter Room Number:");
     if (room.isEmpty()) return;
-    // Get the smallest available ID
+    // Get the smallest id
     QSqlQuery idQuery;
     idQuery.exec("SELECT MIN(t1.id + 1) AS next_id "
                  "FROM class_schedule t1 "
                  "LEFT JOIN class_schedule t2 ON t1.id + 1 = t2.id "
                  "WHERE t2.id IS NULL");
 
-    int nextID = 1; // Default to 1 if no schedules exist
+    int nextID = 1; // Default to 1 if no schedules exists
 
     if (idQuery.next() && !idQuery.value(0).isNull()) {
         nextID = idQuery.value(0).toInt();

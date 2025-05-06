@@ -13,7 +13,7 @@ class ExamResultManagement : public QDialog
     Q_OBJECT
 
 public:
-    explicit ExamResultManagement(QWidget *parent = nullptr,const QString& teacherName = "");
+    explicit ExamResultManagement(QWidget *parent = nullptr);
     ~ExamResultManagement();
 
 private slots:
@@ -29,4 +29,4 @@ private:
     bool validateStudent(int studentId, const QString &studentName);
 };
 
-#endif // EXAMRESULTMANAGEMENT_H
+#endif

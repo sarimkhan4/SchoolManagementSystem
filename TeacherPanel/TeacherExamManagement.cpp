@@ -11,11 +11,7 @@ TeacherExamManagement::TeacherExamManagement(const QString& teacherName, QWidget
 
     model = new QSqlQueryModel(this);
     loadAssignedExams();
-
-    // Connect search bar text change signal to filter exams
     connect(ui->searchBar, &QLineEdit::textChanged, this, &TeacherExamManagement::onSearchTextChanged);
-
-    // Close button functionality
     connect(ui->closeButton, &QPushButton::clicked, this, &TeacherExamManagement::close);
 }
 
@@ -23,7 +19,7 @@ TeacherExamManagement::~TeacherExamManagement()
 {
     delete ui;
 }
-
+// Function to load assigned exmas
 void TeacherExamManagement::loadAssignedExams()
 {
     QSqlQuery query;
@@ -47,7 +43,7 @@ void TeacherExamManagement::loadAssignedExams()
     ui->examTable->setModel(model);
     ui->examTable->resizeColumnsToContents();
 }
-
+// Function for searching via search bar
 void TeacherExamManagement::onSearchTextChanged(const QString &text)
 {
     QString filter = QString("invigilator = '%1' AND (class_name LIKE '%%2%' OR subject LIKE '%%2%')").arg(teacherName, text);

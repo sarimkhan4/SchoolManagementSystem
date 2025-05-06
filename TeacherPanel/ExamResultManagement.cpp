@@ -5,7 +5,7 @@
 #include <QSqlError>
 #include <QDebug>
 
-ExamResultManagement::ExamResultManagement(QWidget *parent,const QString& teacherName) :
+ExamResultManagement::ExamResultManagement(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ExamResultManagement)
 {
@@ -24,7 +24,7 @@ ExamResultManagement::~ExamResultManagement()
 {
     delete ui;
 }
-
+// Function to load exam results
 void ExamResultManagement::loadExamResults()
 {
     model->setQuery("SELECT id, student_id, student_name, class_name, subject, marks_obtained, total_marks FROM exam_results");
@@ -39,7 +39,7 @@ void ExamResultManagement::loadExamResults()
     ui->tableViewResults->setModel(model);
     ui->tableViewResults->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
-
+// Checking if student exists or not thorugh database
 bool ExamResultManagement::validateStudent(int studentId, const QString &studentName)
 {
     QSqlQuery query;
@@ -53,7 +53,7 @@ bool ExamResultManagement::validateStudent(int studentId, const QString &student
 
     return false;
 }
-
+// Function to save exam results
 void ExamResultManagement::saveExamResult()
 {
     QString studentId = ui->studentIdInput->text();
@@ -86,12 +86,12 @@ void ExamResultManagement::saveExamResult()
         QMessageBox::critical(this, "Error", "Failed to save result: " + query.lastError().text());
     }
 }
-
+// Function for searching via search bar
 void ExamResultManagement::searchExamResult()
 {
         QString searchInput = ui->searchInput->text().trimmed();
         if (searchInput.isEmpty()) {
-            loadExamResults(); // if search box empty, load all results
+            loadExamResults();  // Loads the results
             return;
         }
 
@@ -113,7 +113,7 @@ void ExamResultManagement::searchExamResult()
         ui->tableViewResults->setModel(model);
         ui->tableViewResults->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     }
-
+// Function to update exam result
 void ExamResultManagement::updateExamResult()
 {
     QModelIndex index = ui->tableViewResults->currentIndex();
@@ -130,7 +130,6 @@ void ExamResultManagement::updateExamResult()
     QString subject = ui->subjectInput->text().trimmed();
     float marks = ui->marksInput->text().toFloat();
     float totalMarks = ui->totalmarksInput->text().toFloat();
-
 
     if (!validateStudent(studentId, studentName)) {
         QMessageBox::warning(this, "Validation Failed", "Student ID and Name do not match or student does not exist.");
@@ -155,7 +154,7 @@ void ExamResultManagement::updateExamResult()
         QMessageBox::critical(this, "Error", "Failed to update: " + query.lastError().text());
     }
 }
-
+// Function to clear form
 void ExamResultManagement::clearFields()
 {
     ui->studentIdInput->clear();

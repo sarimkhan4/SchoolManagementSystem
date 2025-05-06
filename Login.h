@@ -18,10 +18,10 @@ public:
     ~Login();
 
 private slots:
-    void on_loginButton_clicked();  // Function when login button is clicked
+    void on_loginButton_clicked();
 
 private:
     Ui::Login *ui;
 };
 
-#endif // LOGIN_H
+#endif

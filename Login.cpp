@@ -15,7 +15,8 @@ Login::Login(QWidget *parent) : QDialog(parent), ui(new Ui::Login) {
 Login::~Login() {
     delete ui;
 }
-// Handle login when button is clicked
+
+// Function to handle login
 void Login::on_loginButton_clicked() {
     QString username = ui->usernameInput->text().trimmed();
     QString password = ui->passwordInput->text().trimmed();
@@ -24,21 +25,20 @@ void Login::on_loginButton_clicked() {
         QMessageBox::warning(this, "Login Failed", "Please enter username and password.");
         return;
     }
-    // Check if it's an Admin
+    // Check if it is  Admin
     QSqlQuery query;
-    query.prepare("SELECT password FROM login_credentials WHERE BINARY user_id = :username");
+    query.prepare("SELECT password FROM login_credentials WHERE BINARY user_id = :username"); // BINARY make sures username and password case senstivity
     query.bindValue(":username", username);
     if (query.exec() && query.next()) {
         if (query.value(0).toString() == password) {
             QMessageBox::information(this, "Login Successful", "Welcome, Admin!");
-            // Open Admin Panel
             AdminPanel *admin = new AdminPanel();
             admin->show();
             return;
         }
     }
-    // Check if it's a Student
-    query.prepare("SELECT id,password,class FROM students WHERE BINARY name = :username");
+    // Check if it is Student
+    query.prepare("SELECT id,password,class FROM students WHERE BINARY name = :username"); // BINARY make sures username and password case senstivity
     query.bindValue(":username", username);
     if (query.exec() && query.next()) {
         QString dbPassword = query.value(1).toString();
@@ -53,12 +53,12 @@ void Login::on_loginButton_clicked() {
         }
     }
     // Check if it's a Teacher
-    query.prepare("SELECT id, name, password FROM teachers WHERE BINARY name = :username");
+    query.prepare("SELECT id, name, password FROM teachers WHERE BINARY name = :username"); // BINARY make sures username and password case senstivity
     query.bindValue(":username", username);
     if (query.exec() && query.next()) {
         int teacherId = query.value(0).toInt();
-        QString teacherName = query.value(1).toString().trimmed();  // Get teacher name from DB
-        QString dbPassword = query.value(2).toString().trimmed();        // Get password from DB
+        QString teacherName = query.value(1).toString().trimmed();  // Get teacher name from database
+        QString dbPassword = query.value(2).toString().trimmed();        // Get password from database
         if (dbPassword == password.trimmed()) {
             QMessageBox::information(this, "Login Successful", "Welcome, Teacher!");
             TeacherPanel *panel = new TeacherPanel(this, teacherName, teacherId);

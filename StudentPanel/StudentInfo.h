@@ -22,4 +22,4 @@ private:
     void loadStudentInfo();
 };
 
-#endif // STUDENTINFO_H
+#endif

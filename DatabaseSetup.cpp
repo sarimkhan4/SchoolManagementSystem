@@ -6,15 +6,14 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDebug>
-#include<QCryptographicHash>
 
+// Creates a admin user
 void createAdminUser(QSqlDatabase& db) {
-    // Ensure the datab
     if (!db.isOpen()) {
         qDebug() << "Database is not open!";
         return;
     }
-    QString adminName = "Admin";  // Admin email/ID
+    QString adminName = "Admin";                // Admin username
     QString adminRole = "admin";               // Role
     QString adminPassword = "admin123";        // Default password (Change as needed)
 
@@ -33,12 +32,12 @@ void createAdminUser(QSqlDatabase& db) {
         return;  // Exit function if admin is already present
     }
 
-    // Insert admin into login_credentials
+    // Inserting admin into login_credentials
     QSqlQuery insertQuery(db);
     insertQuery.prepare("INSERT INTO login_credentials (user_id, role, password) VALUES (:user_id, :role, :password)");
     insertQuery.bindValue(":user_id", adminName);
     insertQuery.bindValue(":role", adminRole);
-    insertQuery.bindValue(":password", adminPassword);  // If using hashed password, hash it here
+    insertQuery.bindValue(":password", adminPassword);
 
     if (insertQuery.exec()) {
         qDebug() << "Admin user inserted successfully!";
@@ -46,14 +45,13 @@ void createAdminUser(QSqlDatabase& db) {
         qDebug() << "Error inserting admin user:" << insertQuery.lastError().text();
     }
 }
-
+// Connecting to MySQL Server
 void setupDatabase() {
     QString databaseName = "school_management_system";
-    // Step 1: Connect to MySQL Server (without specifying a database)
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");
-    db.setUserName("root");
-    db.setPassword("H2714077");
+    db.setUserName("root");     // Database Username
+    db.setPassword("H2714077"); // Database Password
     db.setConnectOptions("MYSQL_OPT_SSL_MODE=DISABLED");
 
     if (!db.open()) {
@@ -62,7 +60,7 @@ void setupDatabase() {
     }
     qDebug() << "Connected to MySQL server successfully!";
 
-    // Step 2: Check if the database exists
+    // Check if the database exists
     QSqlQuery checkDbQuery(db);
     checkDbQuery.prepare("SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = :dbName");
     checkDbQuery.bindValue(":dbName", databaseName);
@@ -74,7 +72,6 @@ void setupDatabase() {
     }
 
     if (!checkDbQuery.next()) {
-        // Database does not exist, create it
         qDebug() << "Database" << databaseName << "does not exist. Creating it...";
         QSqlQuery createDbQuery(db);
         if (!createDbQuery.exec("CREATE DATABASE " + databaseName)) {
@@ -87,7 +84,7 @@ void setupDatabase() {
         qDebug() << "Database" << databaseName << "already exists.";
     }
 
-    // Step 3: Reconnect to the database
+    // Reconnecting to database
     db.close();
     db.setDatabaseName(databaseName);
 
@@ -97,14 +94,14 @@ void setupDatabase() {
     }
     qDebug() << "Connected to database" << databaseName << "successfully!";
 
-    // Step 4: Ensure MySQL uses `mysql_native_password`
+    // Setting MySQL to use `mysql_native_password`
     QSqlQuery authQuery(db);
     authQuery.prepare("ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'H2714077'");
     if (!authQuery.exec()) {
         qDebug() << "Failed to set authentication method:" << authQuery.lastError().text();
     }
 
-    // Step 5: Create required tables
+    // Creating tables
     QSqlQuery query(db);
 
     struct Table {
@@ -115,7 +112,6 @@ void setupDatabase() {
     QList<Table> tables = {
         {"students", "CREATE TABLE IF NOT EXISTS students (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) NOT NULL, password VARCHAR(255) NOT NULL, class VARCHAR(50) DEFAULT NULL)"},
         {"teachers", "CREATE TABLE IF NOT EXISTS teachers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) NOT NULL, password VARCHAR(255) NOT NULL, subject VARCHAR(100) DEFAULT NULL)"},
-
         {"admins", "CREATE TABLE IF NOT EXISTS admins (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) NOT NULL, email VARCHAR(100) NOT NULL UNIQUE, password VARCHAR(255) NOT NULL)"},
         {"class_schedule", "CREATE TABLE IF NOT EXISTS class_schedule (id INT AUTO_INCREMENT PRIMARY KEY, class_name VARCHAR(50) NOT NULL, teacher_name VARCHAR(100) NOT NULL,subject VARCHAR(100) NOT NULL, day ENUM('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday') NOT NULL, time_start TIME NOT NULL, time_end TIME NOT NULL, room VARCHAR(20) NOT NULL)"},
         {"exam_schedule", "CREATE TABLE IF NOT EXISTS exam_schedule (id INT AUTO_INCREMENT PRIMARY KEY, subject VARCHAR(100) NOT NULL, exam_date DATE NOT NULL, time_start TIME NOT NULL, time_end TIME NOT NULL)"},
@@ -126,7 +122,6 @@ void setupDatabase() {
         {"exam_management", "CREATE TABLE IF NOT EXISTS exam_management (id INT AUTO_INCREMENT PRIMARY KEY, class_name VARCHAR(50) NOT NULL, subject VARCHAR(100) NOT NULL, invigilator VARCHAR(100) NOT NULL, exam_date DATE NOT NULL, start_time TIME NOT NULL, end_time TIME NOT NULL, room VARCHAR(20) NOT NULL)"},
         {"exam_results","CREATE TABLE IF NOT EXISTS exam_results (id INT PRIMARY KEY AUTO_INCREMENT, student_id INT NOT NULL, student_name VARCHAR(100) NOT NULL, class_name VARCHAR(50) NOT NULL, subject VARCHAR(100) NOT NULL, marks_obtained INT NOT NULL, total_marks INT NOT NULL, exam_date DATE, teacher_id INT)"}
     };
-
 
     for (const Table& table : tables) {
         if (!query.exec(table.schema)) {

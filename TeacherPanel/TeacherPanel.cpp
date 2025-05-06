@@ -13,7 +13,6 @@ TeacherPanel::TeacherPanel(QWidget *parent, const QString &teacherName,int teach
 {
     ui->setupUi(this);
 
-    // Connect buttons to open respective windows
     connect(ui->btnClassSchedule, &QPushButton::clicked, this, &TeacherPanel::openClassSchedule);
     connect(ui->btnExamResult, &QPushButton::clicked, this, &TeacherPanel::openExamResultManagement);
     connect(ui->btnAttendanceViewing, &QPushButton::clicked, this, &TeacherPanel::openAttendanceViewing);
@@ -33,7 +32,7 @@ void TeacherPanel::openClassSchedule()
 
 void TeacherPanel::openExamResultManagement()
 {
-    ExamResultManagement resultWindow(this,teacherName);
+    ExamResultManagement resultWindow(this);
     resultWindow.exec();
 }
 
@@ -45,6 +44,6 @@ void TeacherPanel::openAttendanceViewing()
 
 void TeacherPanel::openExamManagement()
 {
-    TeacherExamManagement examWindow(teacherName, this); // This will only allow viewing assigned exams
+    TeacherExamManagement examWindow(teacherName, this);
     examWindow.exec();
 }

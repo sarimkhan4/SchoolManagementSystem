@@ -24,4 +24,4 @@ private:
     void loadAttendanceRecords();
 };
 
-#endif // STUDENTATTENDANCE_H
+#endif

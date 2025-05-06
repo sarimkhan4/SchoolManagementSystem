@@ -18,7 +18,7 @@ StudentSchedule::~StudentSchedule()
 {
     delete ui;
 }
-
+// Function to load class schedule
 void StudentSchedule::loadSchedule()
 {
     QSqlQuery query;
@@ -31,7 +31,7 @@ void StudentSchedule::loadSchedule()
     }
 
     int row = 0;
-    ui->tableWidget->setRowCount(query.size());  // Set number of rows based on query result
+    ui->tableWidget->setRowCount(query.size());
     while (query.next()) {
         ui->tableWidget->setItem(row, 0, new QTableWidgetItem(query.value(0).toString()));  // Teacher Name
         ui->tableWidget->setItem(row, 1, new QTableWidgetItem(query.value(1).toString()));  // Subject

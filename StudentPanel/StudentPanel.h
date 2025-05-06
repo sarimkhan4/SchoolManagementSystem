@@ -30,4 +30,4 @@ private:
     QString studentClass;
 };
 
-#endif // STUDENTPANEL_H
+#endif

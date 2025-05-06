@@ -19,7 +19,7 @@ ClassScheduleViewing::~ClassScheduleViewing()
 {
     delete ui;
 }
-
+// Function to load class schedules
 void ClassScheduleViewing::loadClassSchedule()
 {
     QSqlQuery query;

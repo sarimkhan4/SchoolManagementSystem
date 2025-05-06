@@ -22,7 +22,6 @@ TeacherManagement::TeacherManagement(QWidget *parent)
 TeacherManagement::~TeacherManagement() {
     delete ui;
 }
-
 // Generate a random 4-character password
 QString TeacherManagement::generateRandomPassword(int length) {
     const QString chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -33,13 +32,13 @@ QString TeacherManagement::generateRandomPassword(int length) {
     return password;
 }
 
-// Function to Update the Table in UI
+// Function to update tabel
 void TeacherManagement::updateTable() {
     QSqlQuery query("SELECT id, name, subject FROM teachers");
 
     ui->teacherTable->setRowCount(0);
-    ui->teacherTable->setColumnCount(3); // Ensure table has 3 columns
-    ui->teacherTable->setHorizontalHeaderLabels({"ID", "Name", "Subject"}); // Set column headers
+    ui->teacherTable->setColumnCount(3);
+    ui->teacherTable->setHorizontalHeaderLabels({"ID", "Name", "Subject"});
     int row = 0;
 
     while (query.next()) {
@@ -50,7 +49,7 @@ void TeacherManagement::updateTable() {
         row++;
     }
 }
-
+//Function for searching any teacher via search bar
 void TeacherManagement::filterTeachers() {
     QString nameFilter = ui->nameLineEdit->text().trimmed();
     QString subjectFilter = ui->subjectLineEdit->text().trimmed();
@@ -75,9 +74,7 @@ void TeacherManagement::filterTeachers() {
         row++;
     }
 }
-
-
-// Add Teacher Function
+// Function to add teacher
 void TeacherManagement::addTeacher() {
     QString name = QInputDialog::getText(this, "Add Teacher", "Enter teacher name:");
     if (name.isEmpty()) {
@@ -121,9 +118,7 @@ void TeacherManagement::addTeacher() {
         QMessageBox::critical(this, "Error", "Failed to add teacher: " + query.lastError().text());
     }
 }
-
-
-// Edit Teacher Function
+// Function to edit teacher
 void TeacherManagement::editTeacher() {
     int id = QInputDialog::getInt(this, "Edit Teacher", "Enter teacher ID to edit:");
     if (id <= 0) {
@@ -159,7 +154,7 @@ void TeacherManagement::editTeacher() {
     }
 }
 
-// Remove Teacher Function
+// Function to remove teacher
 void TeacherManagement::removeTeacher() {
     int id = QInputDialog::getInt(this, "Remove Teacher", "Enter teacher ID to remove:");
     if (id <= 0) {
@@ -179,7 +174,6 @@ void TeacherManagement::removeTeacher() {
         QMessageBox::critical(this, "Error", "Failed to remove teacher: " + query.lastError().text());
     }
 }
-
 // Reset Auto-Increment if No Teachers Exist
 void TeacherManagement::resetAutoIncrement() {
     QSqlQuery countQuery("SELECT COUNT(*) FROM teachers");
@@ -191,11 +185,10 @@ void TeacherManagement::resetAutoIncrement() {
         resetQuery.exec("ALTER TABLE teachers AUTO_INCREMENT = 1");
     }
 }
-
-// View Teachers Function
+// Function to view all teachers
 void TeacherManagement::viewTeacher() {
-    ui->viewTeacherButton->setEnabled(true);  // Ensure button is enabled
-    updateTable();  // Update the table first
+    ui->viewTeacherButton->setEnabled(true);
+    updateTable();  // Update the table
 
     QSqlQuery query("SELECT id, name, password, subject FROM teachers");
 

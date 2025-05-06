@@ -18,7 +18,7 @@ StudentAttendance::~StudentAttendance()
 {
     delete ui;
 }
-
+// Function to load student attendance
 void StudentAttendance::loadAttendanceRecords()
 {
     QSqlQuery query;
@@ -31,7 +31,7 @@ void StudentAttendance::loadAttendanceRecords()
     }
 
     int row = 0;
-    ui->tableWidget_2->setRowCount(query.size());  // Set the number of rows dynamically
+    ui->tableWidget_2->setRowCount(query.size());
     while (query.next()) {
         ui->tableWidget_2->setItem(row, 0, new QTableWidgetItem(query.value(0).toString()));  // Date
         ui->tableWidget_2->setItem(row, 1, new QTableWidgetItem(query.value(1).toString()));  // Status

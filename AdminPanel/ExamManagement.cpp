@@ -28,12 +28,7 @@ ExamManagement::~ExamManagement()
     delete ui;
     delete model;
 }
-
-void ExamManagement::loadExamRecords()
-{
-    updateTable();
-}
-
+// Function to update table
 void ExamManagement::updateTable()
 {
     QSqlQuery query;
@@ -67,6 +62,11 @@ bool ExamManagement::doesInvigilatorExist(const QString &invigilatorName) {
     return false;
 }
 
+void ExamManagement::loadExamRecords()
+{
+    updateTable(); // Refresh the table
+}
+// Function to add exam
 void ExamManagement::addExam()
 {
     bool ok;
@@ -137,7 +137,7 @@ void ExamManagement::addExam()
         QMessageBox::critical(this, "Error", "Failed to add exam: " + query.lastError().text());
     }
 }
-
+// Function to edit exam
 void ExamManagement::editExam()
 {
     int examId = QInputDialog::getInt(this, "Edit Exam", "Enter Exam ID to edit:");
@@ -182,7 +182,7 @@ void ExamManagement::editExam()
     }
 }
 
-
+// Function to remove exam
 void ExamManagement::removeExam()
 {
     bool ok;
@@ -200,7 +200,7 @@ void ExamManagement::removeExam()
         QMessageBox::critical(this, "Error", "Failed to remove exam: " + query.lastError().text());
     }
 }
-
+// Function to search
 void ExamManagement::onSearchTextChanged(const QString &text)
 {
     QSqlQuery query;
@@ -216,11 +216,12 @@ void ExamManagement::onSearchTextChanged(const QString &text)
     model->setQuery(std::move(query));
     ui->examTable->setModel(model);
 }
+// Esc key set to close the window
 void ExamManagement::keyPressEvent(QKeyEvent *event) {
     if (event->key() == Qt::Key_Escape) {
-        close();  // Closes the Attendance Management window
+        close();
     } else {
-        QWidget::keyPressEvent(event);  // Passes other key presses to the parent class
+        QWidget::keyPressEvent(event);
     }
 }
 

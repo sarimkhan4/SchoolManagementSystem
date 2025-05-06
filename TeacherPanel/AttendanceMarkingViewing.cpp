@@ -12,7 +12,6 @@ AttendanceMarkingViewing::AttendanceMarkingViewing(QWidget *parent, int teacherI
 
     ui->setupUi(this);
     ui->lblTitle->setText("My Attendance Record");
-
     loadAttendanceRecords();
 }
 
@@ -20,7 +19,7 @@ AttendanceMarkingViewing::~AttendanceMarkingViewing()
 {
     delete ui;
 }
-
+// Function to load attendance
 void AttendanceMarkingViewing::loadAttendanceRecords()
 {
     QSqlQuery query ;
@@ -30,7 +29,7 @@ void AttendanceMarkingViewing::loadAttendanceRecords()
         QMessageBox::critical(this, "Database Error", query.lastError().text());
         return;
     }
-    ui->tableWidget->setRowCount(0);  // Clear existing rows
+    ui->tableWidget->setRowCount(0);
     int row = 0;
 
     while (query.next()) {
@@ -40,6 +39,6 @@ void AttendanceMarkingViewing::loadAttendanceRecords()
 
         row++;
     }
-
+    // Adjust the columns to fit the content
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }

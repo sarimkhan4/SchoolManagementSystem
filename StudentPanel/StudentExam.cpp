@@ -19,7 +19,7 @@ StudentExam::~StudentExam()
 {
     delete ui;
 }
-
+// Function to load exams
 void StudentExam::loadAssignedExams()
 {
     QSqlQuery query;

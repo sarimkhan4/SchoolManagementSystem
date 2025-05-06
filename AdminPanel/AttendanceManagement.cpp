@@ -26,12 +26,7 @@ AttendanceManagement::~AttendanceManagement() {
     delete ui;
     delete model;
 }
-
-void AttendanceManagement::loadAttendanceRecords() {
-    QString type = ui->attendanceTypeComboBox->currentText();  // "Student" or "Teacher"
-    updateTable(type);
-}
-
+// Function to update table
 void AttendanceManagement::updateTable(const QString &type) {
     QSqlQuery query;
 
@@ -54,24 +49,24 @@ void AttendanceManagement::updateTable(const QString &type) {
     model->setQuery(query);
     ui->attendanceTable->setModel(model);
 
-    // Set column headers dynamically
     model->setHeaderData(0, Qt::Horizontal, (type == "Student") ? "Student ID" : "Teacher ID");
     model->setHeaderData(1, Qt::Horizontal, (type == "Student") ? "Student Name" : "Teacher Name");
     model->setHeaderData(2, Qt::Horizontal, (type == "Student") ? "Class" : "Subject");
     model->setHeaderData(3, Qt::Horizontal, "Date");
     model->setHeaderData(4, Qt::Horizontal, "Status");
 }
-
+void AttendanceManagement::loadAttendanceRecords() {
+    QString type = ui->attendanceTypeComboBox->currentText();
+    updateTable(type); // Refresh the relevant table
+}
+// Function to mark attendance
 void AttendanceManagement::markAttendance() {
-    QString type = ui->attendanceTypeComboBox->currentText();  // "Student" or "Teacher"
+    QString type = ui->attendanceTypeComboBox->currentText();
 
     bool ok;
-    int personId = QInputDialog::getInt(this, "Mark Attendance",
-                                        QString("Enter %1 ID:").arg(type),
-                                        1, 1, 9999, 1, &ok);
+    int personId = QInputDialog::getInt(this, "Mark Attendance", QString("Enter %1 ID:").arg(type), 1, 1, 9999, 1, &ok);
     if (!ok) return;
 
-    // Check if the ID exists and get additional info
     QSqlQuery checkQuery;
     QString personName, classOrCourseName;
 
@@ -89,14 +84,12 @@ void AttendanceManagement::markAttendance() {
     }
 
     personName = checkQuery.value(0).toString();
-    classOrCourseName = checkQuery.value(1).toString(); // Getting class/course
+    classOrCourseName = checkQuery.value(1).toString();
 
-    // Select Attendance Status
     QString status = QInputDialog::getItem(this, "Mark Attendance",
                                            "Select Status:", {"Present", "Absent"}, 0, false, &ok);
     if (!ok) return;
 
-    // Insert attendance record
     QSqlQuery query;
     if (type == "Student") {
         query.prepare("INSERT INTO student_attendance (student_id,  class_name, date, status) "
@@ -120,9 +113,9 @@ void AttendanceManagement::markAttendance() {
         QMessageBox::critical(this, "Error", "Failed to mark attendance: " + query.lastError().text());
     }
 }
-
+// Function for searching via search bar
 void AttendanceManagement::onSearchTextChanged(const QString &text) {
-    QString type = ui->attendanceTypeComboBox->currentText();  // "Student" or "Teacher"
+    QString type = ui->attendanceTypeComboBox->currentText();
 
     QSqlQuery query;
     if (type == "Student") {
@@ -148,11 +141,12 @@ void AttendanceManagement::onSearchTextChanged(const QString &text) {
     model->setQuery(std::move(query));
     ui->attendanceTable->setModel(model);
 }
+// Esc key set as to close window
 void AttendanceManagement::keyPressEvent(QKeyEvent *event) {
     if (event->key() == Qt::Key_Escape) {
-        close();  // Closes the Attendance Management window
+        close();
     } else {
-        QWidget::keyPressEvent(event);  // Passes other key presses to the parent class
+        QWidget::keyPressEvent(event);
     }
 }
 

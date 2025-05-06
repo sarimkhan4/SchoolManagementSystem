@@ -34,13 +34,13 @@ QString StudentManagement::generateRandomPassword(int length) {
     return password;
 }
 
-// Function to Update the Table in UI
+// Function to update table
 void StudentManagement::updateTable() {
     QSqlQuery query("SELECT id, name, class FROM students");
 
     ui->studentTable->setRowCount(0);
-    ui->studentTable->setColumnCount(3); // Ensure table has 3 columns
-    ui->studentTable->setHorizontalHeaderLabels({"ID", "Name", "Class"}); // Set column headers
+    ui->studentTable->setColumnCount(3);
+    ui->studentTable->setHorizontalHeaderLabels({"ID", "Name", "Class"});
     int row = 0;
 
     while (query.next()) {
@@ -51,7 +51,7 @@ void StudentManagement::updateTable() {
         row++;
     }
 }
-
+// Function for searching any student via search bar
 void StudentManagement::filterStudents() {
     QString nameFilter = ui->nameLineEdit->text().trimmed();
     QString classFilter = ui->classLineEdit->text().trimmed();
@@ -76,9 +76,7 @@ void StudentManagement::filterStudents() {
         row++;
     }
 }
-
-
-// Add Student Function
+// Function to add student
 void StudentManagement::addStudent() {
     QString name = QInputDialog::getText(this, "Add Student", "Enter student name:");
     if (name.isEmpty()) {
@@ -90,7 +88,6 @@ void StudentManagement::addStudent() {
     if (className.isEmpty()) return;
 
     QString password = generateRandomPassword(4);
-
     // Find the smallest available ID
     int newID = 1;
     QSqlQuery checkQuery("SELECT id FROM students ORDER BY id ASC");
@@ -98,7 +95,6 @@ void StudentManagement::addStudent() {
     while (checkQuery.next()) {
         existingIDs.append(checkQuery.value(0).toInt());
     }
-
     for (int i = 1; i <= existingIDs.size(); ++i) {
         if (!existingIDs.contains(i)) {  // Find first missing ID
             newID = i;
@@ -106,8 +102,6 @@ void StudentManagement::addStudent() {
         }
         newID = i + 1;  // If no gaps, use next available ID
     }
-
-    // Insert Student with the manually chosen ID
     QSqlQuery query;
     query.prepare("INSERT INTO students (id, name, password, class) VALUES (:id, :name, :password, :class)");
     query.bindValue(":id", newID);
@@ -124,7 +118,7 @@ void StudentManagement::addStudent() {
 }
 
 
-// Edit Student Function
+// Function to edit student
 void StudentManagement::editStudent() {
     int id = QInputDialog::getInt(this, "Edit Student", "Enter student ID to edit:");
     if (id <= 0) {
@@ -160,7 +154,7 @@ void StudentManagement::editStudent() {
     }
 }
 
-// Remove Student Function
+// Function to remove student
 void StudentManagement::removeStudent() {
     int id = QInputDialog::getInt(this, "Remove Student", "Enter student ID to remove:");
     if (id <= 0) {
@@ -193,10 +187,10 @@ void StudentManagement::resetAutoIncrement() {
     }
 }
 
-// View Students Function
+// Function to view all students
 void StudentManagement::viewStudents() {
-    ui->viewStudentButton->setEnabled(true);  // Ensure button is enabled
-    updateTable();  // Update the table first
+    ui->viewStudentButton->setEnabled(true);
+    updateTable();  // Update the table
 
     QSqlQuery query("SELECT id, name, password, class FROM students");
 

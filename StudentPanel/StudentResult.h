@@ -24,4 +24,4 @@ private:
     void loadResultData();
 };
 
-#endif // STUDENTRESULT_H
+#endif

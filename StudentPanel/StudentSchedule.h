@@ -23,4 +23,4 @@ private:
     void loadSchedule();
 };
 
-#endif // STUDENTSCHEDULE_H
+#endif
