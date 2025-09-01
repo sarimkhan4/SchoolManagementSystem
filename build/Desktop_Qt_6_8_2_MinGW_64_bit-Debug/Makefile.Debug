@@ -216,7 +216,10 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_Images.cpp
 debug/qrc_Images.cpp: ../../Images.qrc \
 		C:/Qt/6.8.2/mingw_64/bin/rcc.exe \
-		../../Resources/Adobe\ Express\ -\ file.jpg
+		../../Resources/login\ page.jpeg \
+		../../Resources/student\ page.jpeg \
+		../../Resources/teacher\ page.jpeg \
+		../../Resources/admin\ page.jpeg
 	C:\Qt\6.8.2\mingw_64\bin\rcc.exe -name Images --no-zstd ..\..\Images.qrc -o debug\qrc_Images.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h
@@ -5483,11 +5486,7 @@ debug/DatabaseSetup.o: ../../DatabaseSetup.cpp ../../DatabaseSetup.h \
 		C:/Qt/6.8.2/mingw_64/include/QtCore/qpromise.h \
 		C:/Qt/6.8.2/mingw_64/include/QtCore/QString \
 		C:/Qt/6.8.2/mingw_64/include/QtCore/QSettings \
-		C:/Qt/6.8.2/mingw_64/include/QtCore/qsettings.h \
-		C:/Qt/6.8.2/mingw_64/include/QtCore/QCryptographicHash \
-		C:/Qt/6.8.2/mingw_64/include/QtCore/qcryptographichash.h \
-		C:/Qt/6.8.2/mingw_64/include/QtCore/qspan.h \
-		C:/Qt/6.8.2/mingw_64/include/QtCore/q20iterator.h
+		C:/Qt/6.8.2/mingw_64/include/QtCore/qsettings.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\DatabaseSetup.o ..\..\DatabaseSetup.cpp
 
 debug/ExamManagement.o: ../../AdminPanel/ExamManagement.cpp ../../AdminPanel/ExamManagement.h \
@@ -5943,10 +5942,9 @@ debug/Login.o: ../../Login.cpp ../../Login.h \
 		C:/Qt/6.8.2/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.8.2/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.8.2/mingw_64/include/QtWidgets/QFrame \
-		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qframe.h \
 		C:/Qt/6.8.2/mingw_64/include/QtWidgets/QLabel \
 		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qlabel.h \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qframe.h \
 		C:/Qt/6.8.2/mingw_64/include/QtGui/qpicture.h \
 		C:/Qt/6.8.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.8.2/mingw_64/include/QtWidgets/QLineEdit \

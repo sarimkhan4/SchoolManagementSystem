@@ -24,46 +24,46 @@ class Ui_TeacherManagement
 {
 public:
     QTableWidget *teacherTable;
-    QLabel *labelSubject;
-    QLabel *labelName;
     QLineEdit *subjectLineEdit;
     QLineEdit *nameLineEdit;
     QPushButton *editTeacherButton;
     QPushButton *viewTeacherButton;
     QPushButton *removeTeacherButton;
     QPushButton *addTeacherButton;
+    QLabel *label;
 
     void setupUi(QDialog *TeacherManagement)
     {
         if (TeacherManagement->objectName().isEmpty())
             TeacherManagement->setObjectName("TeacherManagement");
-        TeacherManagement->resize(802, 640);
+        TeacherManagement->resize(621, 612);
         TeacherManagement->setStyleSheet(QString::fromUtf8("QDialog#TeacherManagement {\n"
-"        background-color: #fef6f0   ;\n"
-"        border: 1px solid black;\n"
+"        background-color:#1B0633;\n"
+"border:5px solid #B89AD8;\n"
 "        border-radius: 10%;\n"
 "}"));
         teacherTable = new QTableWidget(TeacherManagement);
         if (teacherTable->columnCount() < 3)
             teacherTable->setColumnCount(3);
         teacherTable->setObjectName("teacherTable");
-        teacherTable->setGeometry(QRect(10, 130, 781, 461));
+        teacherTable->setGeometry(QRect(10, 210, 601, 391));
         teacherTable->setStyleSheet(QString::fromUtf8("QTableWidget#teacherTable {\n"
-"    border: 1.5px solid #2c3e50;\n"
-"    border-radius: 8px;\n"
-"    background-color: #ffffff;\n"
+"      border: 1.5px solid #b0b0b0;  /* Softer grey border */\n"
+"    border-radius: 10px;\n"
+"    background-color: #d4d4d4;    /* Lighter table background */\n"
 "    font-family: 'Segoe UI', sans-serif;\n"
 "    font-size: 11pt;\n"
-"    color: #2c3e50;\n"
-"    gridline-color: #ecf0f1;\n"
-"    alternate-background-color: #f7f9fa;\n"
-"    selection-background-color: #d6eaf8;\n"
-"    selection-color: #1a252f;\n"
+"    color: #1f1f1f;\n"
+"    gridline-color: #bcbcbc;      /* Mid grey grid lines */\n"
+"    alternate-background-color: #e2e2e2;  /* Subtle row alternation */\n"
+"    selection-background-color: #b0b0b0;  /* Visible selection */\n"
+"    selection-color: #000000;\n"
+"    font-weight: 500;\n"
 "}\n"
 "\n"
 "QHeaderView::section {\n"
-"    background-color: #2c3e50;\n"
-"    color: white;\n"
+"    background-color: #4b4b4b;    /* Darker grey header */\n"
+"    color: #ffffff;               /* Light font for contrast */\n"
 "    font-weight: bold;\n"
 "    font-size: 11pt;\n"
 "    padding: 6px;\n"
@@ -72,127 +72,149 @@ public:
 "}\n"
 "\n"
 "QTableWidget QTableCornerButton::section {\n"
-"    background-color: #2c3e50;\n"
+"   background-color: #8a8a8a;    /* Match header color */\n"
 "    border: none;\n"
 "}\n"
 "\n"
-"QTableWidget::item {\n"
-"    padding: 6px;\n"
-"    font-size: 10.5pt;\n"
+"QTab"
+                        "leWidget::item {\n"
+"      padding: 8px 10px;\n"
+"    font-size: 10pt;\n"
+"    color: #1f1f1f;\n"
+"    background-color: transparent;\n"
 "}\n"
 "\n"
 "QTableWidget::item:selected {\n"
-"    background-color: #d6eaf8;\n"
-"    color: #1a252f;\n"
+"    background-color: #b0b0b0;\n"
+"    color: #000000;\n"
 "}\n"
 ""));
         teacherTable->setColumnCount(3);
-        labelSubject = new QLabel(TeacherManagement);
-        labelSubject->setObjectName("labelSubject");
-        labelSubject->setGeometry(QRect(10, 80, 71, 31));
-        labelSubject->setStyleSheet(QString::fromUtf8("QLabel#labelSubject {\n"
-"        font-size: 20px;\n"
-"        color: #2c3e50 ;\n"
-"}"));
-        labelName = new QLabel(TeacherManagement);
-        labelName->setObjectName("labelName");
-        labelName->setGeometry(QRect(10, 30, 71, 31));
-        labelName->setStyleSheet(QString::fromUtf8("QLabel#labelName {\n"
-"        font-size: 20px;\n"
-"        color: #2c3e50 ;\n"
-"}"));
         subjectLineEdit = new QLineEdit(TeacherManagement);
         subjectLineEdit->setObjectName("subjectLineEdit");
-        subjectLineEdit->setGeometry(QRect(90, 81, 701, 31));
+        subjectLineEdit->setGeometry(QRect(10, 170, 601, 31));
         subjectLineEdit->setStyleSheet(QString::fromUtf8("QLineEdit#subjectLineEdit {\n"
-"    color: black;;\n"
-"    border: 1.5px solid black;;\n"
+"    color:#1B0633;\n"
+"    border: 3px solid #8d4d95;\n"
 "    border-radius: 10px;\n"
-"        font-size: 16px;\n"
-"        padding: 0px 8px 0px 8px;\n"
+"        font-size: 17px;\n"
+"font-weight: 570;\n"
+"padding: 0px 8px 0px 8px;\n"
+"background-color: #E8D4F4 ;\n"
+"\n"
 "}\n"
 ""));
         nameLineEdit = new QLineEdit(TeacherManagement);
         nameLineEdit->setObjectName("nameLineEdit");
-        nameLineEdit->setGeometry(QRect(90, 31, 701, 31));
+        nameLineEdit->setGeometry(QRect(10, 130, 601, 31));
         nameLineEdit->setStyleSheet(QString::fromUtf8("QLineEdit#nameLineEdit {\n"
-"    color: black;;\n"
-"    border: 1.5px solid black;;\n"
+"     color:#1B0633;\n"
+"    border: 3px solid #8d4d95;\n"
 "    border-radius: 10px;\n"
-"        font-size: 16px;\n"
-"        padding: 0px 8px 0px 8px;\n"
+"        font-size: 17px;\n"
+"font-weight: 570;\n"
+"padding: 0px 8px 0px 8px;\n"
+"background-color: #E8D4F4 ;\n"
 "}\n"
 ""));
         editTeacherButton = new QPushButton(TeacherManagement);
         editTeacherButton->setObjectName("editTeacherButton");
-        editTeacherButton->setGeometry(QRect(260, 600, 121, 31));
+        editTeacherButton->setGeometry(QRect(170, 80, 141, 31));
         editTeacherButton->setStyleSheet(QString::fromUtf8("QPushButton#editTeacherButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
+"   border: 1.5px solid #B89FD0;\n"
 "    border-radius: 10px;\n"
+"    padding: 6px;\n"
 "    font-size: 16px;\n"
-"color: #2c3e50 ;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(95, 2, 95),\n"
+"                            stop:1 rgb(216, 181, 221));\n"
+"color:#e4c9f2;\n"
+"font-weight:700;\n"
 "}\n"
 "\n"
 "QPushButton#editTeacherButton:hover {\n"
-"color: #2c3e50 ;\n"
-"    background-color: #ee5253;\n"
+"\n"
+"   background-color: #69166f;\n"
 "}\n"
 "\n"
 ""));
         viewTeacherButton = new QPushButton(TeacherManagement);
         viewTeacherButton->setObjectName("viewTeacherButton");
         viewTeacherButton->setEnabled(true);
-        viewTeacherButton->setGeometry(QRect(560, 600, 121, 31));
+        viewTeacherButton->setGeometry(QRect(470, 80, 141, 31));
         viewTeacherButton->setStyleSheet(QString::fromUtf8("QPushButton#viewTeacherButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
+"     border: 1.5px solid #B89FD0;\n"
 "    border-radius: 10px;\n"
+"    padding: 6px;\n"
 "    font-size: 16px;\n"
-"color: #2c3e50 ;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(95, 2, 95),\n"
+"                            stop:1 rgb(216, 181, 221));\n"
+"color:#e4c9f2;\n"
+"font-weight:700;\n"
 "}\n"
 "\n"
 "QPushButton#viewTeacherButton:hover {\n"
-"color: #2c3e50 ;\n"
-"    background-color: #ee5253;\n"
+"\n"
+"   background-color: #69166f;\n"
 "}\n"
 "\n"
 ""));
         removeTeacherButton = new QPushButton(TeacherManagement);
         removeTeacherButton->setObjectName("removeTeacherButton");
-        removeTeacherButton->setGeometry(QRect(410, 600, 121, 31));
+        removeTeacherButton->setGeometry(QRect(320, 80, 141, 31));
         removeTeacherButton->setStyleSheet(QString::fromUtf8("QPushButton#removeTeacherButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
+"  border: 1.5px solid #B89FD0;\n"
 "    border-radius: 10px;\n"
+"    padding: 6px;\n"
 "    font-size: 16px;\n"
-"color: #2c3e50 ;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(95, 2, 95),\n"
+"                            stop:1 rgb(216, 181, 221));\n"
+"color:#e4c9f2;\n"
+"font-weight:700;\n"
 "}\n"
 "\n"
 "QPushButton#removeTeacherButton:hover {\n"
 "\n"
-"color: #2c3e50 ;\n"
-"    background-color: #ee5253;\n"
+"\n"
+"   background-color: #69166f;\n"
 "}\n"
 "\n"
 ""));
         addTeacherButton = new QPushButton(TeacherManagement);
         addTeacherButton->setObjectName("addTeacherButton");
-        addTeacherButton->setGeometry(QRect(110, 600, 121, 31));
+        addTeacherButton->setGeometry(QRect(20, 80, 141, 31));
         addTeacherButton->setStyleSheet(QString::fromUtf8("QPushButton#addTeacherButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
+"    border: 1.5px solid #B89FD0;\n"
 "    border-radius: 10px;\n"
+"    padding: 6px;\n"
 "    font-size: 16px;\n"
-"color: #2c3e50 ;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(95, 2, 95),\n"
+"                            stop:1 rgb(216, 181, 221));\n"
+"color:#e4c9f2;\n"
+"font-weight:700;\n"
 "}\n"
 "\n"
 "QPushButton#addTeacherButton:hover {\n"
-"color: #2c3e50 ;\n"
-"    background-color: #ee5253;\n"
+"\n"
+"   background-color: #69166f;\n"
 "}\n"
 "\n"
 ""));
+        label = new QLabel(TeacherManagement);
+        label->setObjectName("label");
+        label->setGeometry(QRect(180, 10, 251, 41));
+        label->setStyleSheet(QString::fromUtf8("QLabel#label {\n"
+"  background-color: #3E0066;\n"
+"  color: #E6CCE7;\n"
+"  border: 2px solid #E7A9A9;\n"
+"  font-weight: bold;\n"
+"  font-size: 20px;\n"
+"  text-align: center;\n"
+"\n"
+"}"));
 
         retranslateUi(TeacherManagement);
 
@@ -206,12 +228,15 @@ public:
             QCoreApplication::translate("TeacherManagement", "ID", nullptr),
             QCoreApplication::translate("TeacherManagement", "Name", nullptr),
             QCoreApplication::translate("TeacherManagement", "Subject", nullptr)}));
-        labelSubject->setText(QCoreApplication::translate("TeacherManagement", "Subject", nullptr));
-        labelName->setText(QCoreApplication::translate("TeacherManagement", "Name", nullptr));
+        subjectLineEdit->setText(QString());
+        subjectLineEdit->setPlaceholderText(QCoreApplication::translate("TeacherManagement", "\360\237\224\215Search by Teacher's Subject...", nullptr));
+        nameLineEdit->setText(QString());
+        nameLineEdit->setPlaceholderText(QCoreApplication::translate("TeacherManagement", "\360\237\224\215Search by Teacher's Name...", nullptr));
         editTeacherButton->setText(QCoreApplication::translate("TeacherManagement", "Edit Teacher", nullptr));
         viewTeacherButton->setText(QCoreApplication::translate("TeacherManagement", "View Teacher", nullptr));
         removeTeacherButton->setText(QCoreApplication::translate("TeacherManagement", "Remove Teacher", nullptr));
         addTeacherButton->setText(QCoreApplication::translate("TeacherManagement", "Add Teacher", nullptr));
+        label->setText(QCoreApplication::translate("TeacherManagement", "TEACHER MANAGMENT", nullptr));
     } // retranslateUi
 
 };

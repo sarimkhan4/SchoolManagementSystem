@@ -28,21 +28,26 @@ public:
     {
         if (StudentExam->objectName().isEmpty())
             StudentExam->setObjectName("StudentExam");
-        StudentExam->resize(734, 400);
+        StudentExam->resize(731, 443);
         StudentExam->setStyleSheet(QString::fromUtf8("QDialog#StudentExam {\n"
-"        background-color: #fef6f0   ;\n"
-"        border: 1px solid black;\n"
+"       background-color:#1B0633;\n"
+"border:5px solid #B89AD8;\n"
 "        border-radius: 10%;\n"
 "}"));
         titleLabel = new QLabel(StudentExam);
         titleLabel->setObjectName("titleLabel");
-        titleLabel->setGeometry(QRect(70, 10, 581, 33));
+        titleLabel->setGeometry(QRect(260, 10, 191, 41));
         QFont font;
         font.setBold(true);
         titleLabel->setFont(font);
         titleLabel->setStyleSheet(QString::fromUtf8("QLabel#titleLabel {\n"
-"        font-size: 25px;\n"
-"color: #2c3e50 ;\n"
+"  background-color: #3E0066;\n"
+"  color: #E6CCE7;\n"
+"  border: 2px solid #E7A9A9;\n"
+"  font-weight: bold;\n"
+"  font-size: 20px;\n"
+"  text-align: center;\n"
+"\n"
 "}"));
         titleLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
         tableWidget = new QTableWidget(StudentExam);
@@ -63,23 +68,25 @@ public:
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(6, __qtablewidgetitem6);
         tableWidget->setObjectName("tableWidget");
-        tableWidget->setGeometry(QRect(10, 50, 711, 331));
+        tableWidget->setGeometry(QRect(10, 70, 711, 361));
         tableWidget->setStyleSheet(QString::fromUtf8("QTableWidget#tableWidget {\n"
-"    border: 1.5px solid #2c3e50;\n"
-"    border-radius: 8px;\n"
-"    background-color: #ffffff;\n"
+"  border: 1.5px solid #b0b0b0;  /* Softer grey border */\n"
+"    border-radius: 10px;\n"
+"    background-color: #d4d4d4;    /* Lighter table background */\n"
 "    font-family: 'Segoe UI', sans-serif;\n"
 "    font-size: 11pt;\n"
-"    color: #2c3e50;\n"
-"    gridline-color: #ecf0f1;\n"
-"    alternate-background-color: #f7f9fa;\n"
-"    selection-background-color: #d6eaf8;\n"
-"    selection-color: #1a252f;\n"
+"    color: #1f1f1f;\n"
+"    gridline-color: #bcbcbc;      /* Mid grey grid lines */\n"
+"    alternate-background-color: #e2e2e2;  /* Subtle row alternation */\n"
+"    selection-background-color: #b0b0b0;  /* Visible selection */\n"
+"    selection-color: #000000;\n"
+"    font-weight: 500;\n"
+"\n"
 "}\n"
 "\n"
 "QHeaderView::section {\n"
-"    background-color: #2c3e50;\n"
-"    color: white;\n"
+"    background-color: #4b4b4b;    /* Darker grey header */\n"
+"    color: #ffffff;               /* Light font for contrast */\n"
 "    font-weight: bold;\n"
 "    font-size: 11pt;\n"
 "    padding: 6px;\n"
@@ -88,18 +95,21 @@ public:
 "}\n"
 "\n"
 "QTableWidget QTableCornerButton::section {\n"
-"    background-color: #2c3e50;\n"
+"   background-color: #8a8a8a;    /* Match header color */\n"
 "    border: none;\n"
 "}\n"
 "\n"
-"QTableWidget::item {\n"
-"    padding: 8px 10px;\n"
-"    font-size: 9pt;\n"
+"QTab"
+                        "leWidget::item {\n"
+"      padding: 8px 10px;\n"
+"    font-size: 10pt;\n"
+"    color: #1f1f1f;\n"
+"    background-color: transparent;\n"
 "}\n"
 "\n"
 "QTableWidget::item:selected {\n"
-"    background-color: #d6eaf8;\n"
-"    color: #1a252f;\n"
+"    background-color: #b0b0b0;\n"
+"    color: #000000;\n"
 "}\n"
 ""));
 
@@ -111,7 +121,7 @@ public:
     void retranslateUi(QDialog *StudentExam)
     {
         StudentExam->setWindowTitle(QCoreApplication::translate("StudentExam", "Assigned Exams", nullptr));
-        titleLabel->setText(QCoreApplication::translate("StudentExam", "Assigned Exams for Class", nullptr));
+        titleLabel->setText(QCoreApplication::translate("StudentExam", "ASSIGNED EXAMS", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("StudentExam", "Class", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);

@@ -24,47 +24,49 @@ class Ui_StudentManagement
 {
 public:
     QTableWidget *studentTable;
-    QLineEdit *classLineEdit;
     QLineEdit *nameLineEdit;
-    QLabel *labelName;
-    QLabel *labelClass;
     QPushButton *viewStudentButton;
     QPushButton *removeStudentButton;
     QPushButton *editStudentButton;
     QPushButton *addStudentButton;
+    QLineEdit *classLineEdit;
+    QLabel *label;
+    QLabel *labelName;
+    QLabel *labelName_2;
 
     void setupUi(QDialog *StudentManagement)
     {
         if (StudentManagement->objectName().isEmpty())
             StudentManagement->setObjectName("StudentManagement");
-        StudentManagement->resize(800, 639);
+        StudentManagement->resize(612, 640);
         StudentManagement->setStyleSheet(QString::fromUtf8("QDialog#StudentManagement {\n"
-"        background-color: #fef6f0   ;\n"
-"        border: 1px solid black;\n"
+"        background-color:#1B0633;\n"
+"border:5px solid #B89AD8;\n"
 "        border-radius: 10%;\n"
 "}"));
         studentTable = new QTableWidget(StudentManagement);
         if (studentTable->columnCount() < 3)
             studentTable->setColumnCount(3);
         studentTable->setObjectName("studentTable");
-        studentTable->setGeometry(QRect(10, 120, 781, 471));
+        studentTable->setGeometry(QRect(10, 200, 591, 421));
         studentTable->setMaximumSize(QSize(1000, 600));
         studentTable->setStyleSheet(QString::fromUtf8("QTableWidget#studentTable {\n"
-"    border: 1.5px solid #2c3e50;\n"
-"    border-radius: 8px;\n"
-"    background-color: #ffffff;\n"
+"  border: 1.5px solid #b0b0b0;  /* Softer grey border */\n"
+"    border-radius: 10px;\n"
+"    background-color: #d4d4d4;    /* Lighter table background */\n"
 "    font-family: 'Segoe UI', sans-serif;\n"
 "    font-size: 11pt;\n"
-"    color: #2c3e50;\n"
-"    gridline-color: #ecf0f1;\n"
-"    alternate-background-color: #f7f9fa;\n"
-"    selection-background-color: #d6eaf8;\n"
-"    selection-color: #1a252f;\n"
+"    color: #1f1f1f;\n"
+"    gridline-color: #bcbcbc;      /* Mid grey grid lines */\n"
+"    alternate-background-color: #e2e2e2;  /* Subtle row alternation */\n"
+"    selection-background-color: #b0b0b0;  /* Visible selection */\n"
+"    selection-color: #000000;\n"
+"    font-weight: 500;\n"
 "}\n"
 "\n"
 "QHeaderView::section {\n"
-"    background-color: #2c3e50;\n"
-"    color: white;\n"
+"    background-color: #4b4b4b;    /* Darker grey header */\n"
+"    color: #ffffff;               /* Light font for contrast */\n"
 "    font-weight: bold;\n"
 "    font-size: 11pt;\n"
 "    padding: 6px;\n"
@@ -73,128 +75,163 @@ public:
 "}\n"
 "\n"
 "QTableWidget QTableCornerButton::section {\n"
-"    background-color: #2c3e50;\n"
+"   background-color: #8a8a8a;    /* Match header color */\n"
 "    border: none;\n"
 "}\n"
 "\n"
-"QTableWidget::item {\n"
-"    padding: 6px;\n"
-"    font-size: 10.5pt;\n"
+"QTableWi"
+                        "dget::item {\n"
+"      padding: 8px 10px;\n"
+"    font-size: 10pt;\n"
+"    color: #1f1f1f;\n"
+"    background-color: transparent;\n"
 "}\n"
 "\n"
 "QTableWidget::item:selected {\n"
-"    background-color: #d6eaf8;\n"
-"    color: #1a252f;\n"
+"    background-color: #b0b0b0;\n"
+"    color: #000000;\n"
 "}\n"
 ""));
         studentTable->setShowGrid(true);
         studentTable->setColumnCount(3);
-        classLineEdit = new QLineEdit(StudentManagement);
-        classLineEdit->setObjectName("classLineEdit");
-        classLineEdit->setGeometry(QRect(70, 80, 721, 31));
-        classLineEdit->setStyleSheet(QString::fromUtf8("QLineEdit#classLineEdit {\n"
-"    color: black;;\n"
-"    border: 1.5px solid black;;\n"
-"    border-radius: 10px;\n"
-"        font-size: 16px;\n"
-"        padding: 0px 8px 0px 8px;\n"
-"}\n"
-""));
         nameLineEdit = new QLineEdit(StudentManagement);
         nameLineEdit->setObjectName("nameLineEdit");
-        nameLineEdit->setGeometry(QRect(70, 20, 721, 31));
+        nameLineEdit->setGeometry(QRect(10, 160, 591, 31));
         nameLineEdit->setStyleSheet(QString::fromUtf8("QLineEdit#nameLineEdit {\n"
-"    color: black;;\n"
-"    border: 1.5px solid black;;\n"
+"    color:#1B0633;\n"
+"    border: 3px solid #8d4d95;\n"
 "    border-radius: 10px;\n"
-"        font-size: 16px;\n"
-"        padding: 0px 8px 0px 8px;\n"
+"        font-size: 17px;\n"
+"font-weight: 570;\n"
+"padding: 0px 8px 0px 8px;\n"
+"background-color: #E8D4F4 ;\n"
 "}\n"
 ""));
-        labelName = new QLabel(StudentManagement);
-        labelName->setObjectName("labelName");
-        labelName->setGeometry(QRect(10, 20, 51, 31));
-        labelName->setStyleSheet(QString::fromUtf8("QLabel#labelName {\n"
-"        font-size: 20px;\n"
-"        color: #2c3e50 ;\n"
-"}"));
-        labelClass = new QLabel(StudentManagement);
-        labelClass->setObjectName("labelClass");
-        labelClass->setGeometry(QRect(10, 70, 51, 41));
-        labelClass->setStyleSheet(QString::fromUtf8("QLabel#labelClass {\n"
-"        font-size: 20px;\n"
-"        color: #2c3e50 ;\n"
-"}"));
         viewStudentButton = new QPushButton(StudentManagement);
         viewStudentButton->setObjectName("viewStudentButton");
         viewStudentButton->setEnabled(true);
-        viewStudentButton->setGeometry(QRect(560, 600, 141, 31));
+        viewStudentButton->setGeometry(QRect(460, 70, 141, 31));
         viewStudentButton->setStyleSheet(QString::fromUtf8("QPushButton#viewStudentButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
+" border: 1.5px solid #B89FD0;\n"
 "    border-radius: 10px;\n"
+"    padding: 6px;\n"
 "    font-size: 16px;\n"
-"color: #2c3e50 ;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(95, 2, 95),\n"
+"                            stop:1 rgb(216, 181, 221));\n"
+"color:#e4c9f2;\n"
+"font-weight:700;\n"
 "}\n"
 "\n"
 "QPushButton#viewStudentButton:hover {\n"
-"    background-color: #ee5253;\n"
-"color: #2c3e50 ;\n"
+"background-color: #69166f;\n"
 "}\n"
 "\n"
 ""));
         removeStudentButton = new QPushButton(StudentManagement);
         removeStudentButton->setObjectName("removeStudentButton");
-        removeStudentButton->setGeometry(QRect(400, 600, 131, 31));
+        removeStudentButton->setGeometry(QRect(310, 70, 141, 31));
         removeStudentButton->setStyleSheet(QString::fromUtf8("QPushButton#removeStudentButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
+"     border: 1.5px solid #B89FD0;\n"
 "    border-radius: 10px;\n"
+"    padding: 6px;\n"
 "    font-size: 16px;\n"
-"color: #2c3e50 ;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(95, 2, 95),\n"
+"                            stop:1 rgb(216, 181, 221));\n"
+"color:#e4c9f2;\n"
+"font-weight:700;\n"
 "}\n"
 "\n"
 "QPushButton#removeStudentButton:hover {\n"
-"color: #2c3e50 ;\n"
-"    background-color: #ee5253;\n"
+"background-color: #69166f;\n"
 "}\n"
 "\n"
 ""));
         editStudentButton = new QPushButton(StudentManagement);
         editStudentButton->setObjectName("editStudentButton");
-        editStudentButton->setGeometry(QRect(80, 600, 131, 31));
+        editStudentButton->setGeometry(QRect(160, 70, 141, 31));
         editStudentButton->setStyleSheet(QString::fromUtf8("QPushButton#editStudentButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
+" border: 1.5px solid #B89FD0;\n"
 "    border-radius: 10px;\n"
+"    padding: 6px;\n"
 "    font-size: 16px;\n"
-"        color: #2c3e50 ;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(95, 2, 95),\n"
+"                            stop:1 rgb(216, 181, 221));\n"
+"color:#e4c9f2;\n"
+"font-weight:700;\n"
+"\n"
 "}\n"
 "\n"
 "QPushButton#editStudentButton:hover {\n"
 "\n"
-"    background-color: #ee5253;\n"
-"        color: #2c3e50 ;\n"
+"   background-color: #69166f;\n"
+"\n"
 "}\n"
 "\n"
 ""));
         addStudentButton = new QPushButton(StudentManagement);
         addStudentButton->setObjectName("addStudentButton");
-        addStudentButton->setGeometry(QRect(240, 600, 131, 31));
+        addStudentButton->setGeometry(QRect(10, 70, 141, 31));
         addStudentButton->setStyleSheet(QString::fromUtf8("QPushButton#addStudentButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
+"     border: 1.5px solid #B89FD0;\n"
 "    border-radius: 10px;\n"
+"    padding: 6px;\n"
 "    font-size: 16px;\n"
-"        color: #2c3e50 ;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(95, 2, 95),\n"
+"                            stop:1 rgb(216, 181, 221));\n"
+"color:#e4c9f2;\n"
+"font-weight:700;\n"
+"\n"
 "}\n"
 "\n"
 "QPushButton#addStudentButton:hover {\n"
-"    background-color: #ee5253;\n"
-"        color: #2c3e50 ;\n"
+"    background-color: #69166f;\n"
 "}\n"
 "\n"
 ""));
+        classLineEdit = new QLineEdit(StudentManagement);
+        classLineEdit->setObjectName("classLineEdit");
+        classLineEdit->setGeometry(QRect(10, 120, 591, 31));
+        classLineEdit->setStyleSheet(QString::fromUtf8("QLineEdit#classLineEdit{\n"
+"     color:#1B0633;\n"
+"    border: 3px solid #8d4d95;\n"
+"    border-radius: 10px;\n"
+"        font-size: 17px;\n"
+"font-weight: 570;\n"
+"padding: 0px 8px 0px 8px;\n"
+"background-color: #E8D4F4 ;\n"
+"}"));
+        label = new QLabel(StudentManagement);
+        label->setObjectName("label");
+        label->setGeometry(QRect(180, 10, 251, 41));
+        label->setStyleSheet(QString::fromUtf8("QLabel#label{\n"
+"  background-color: #3E0066;\n"
+"  color: #E6CCE7;\n"
+"  border: 2px solid #E7A9A9;\n"
+"  font-weight: bold;\n"
+"  font-size: 20px;\n"
+"  text-align: center;\n"
+"\n"
+"}"));
+        labelName = new QLabel(StudentManagement);
+        labelName->setObjectName("labelName");
+        labelName->setGeometry(QRect(540, 600, 71, 31));
+        labelName->setStyleSheet(QString::fromUtf8("QLabel#labelName {\n"
+"        font-size: 20px;\n"
+"        color: #E8D4F4 ;\n"
+"font-weight:700;\n"
+"}"));
+        labelName_2 = new QLabel(StudentManagement);
+        labelName_2->setObjectName("labelName_2");
+        labelName_2->setGeometry(QRect(540, 610, 71, 31));
+        labelName_2->setStyleSheet(QString::fromUtf8("QLabel#labelName {\n"
+"        font-size: 20px;\n"
+"        color: #E8D4F4 ;\n"
+"font-weight:700;\n"
+"}"));
 
         retranslateUi(StudentManagement);
 
@@ -208,12 +245,17 @@ public:
             QCoreApplication::translate("StudentManagement", "ID", nullptr),
             QCoreApplication::translate("StudentManagement", "Name", nullptr),
             QCoreApplication::translate("StudentManagement", "Class", nullptr)}));
-        labelName->setText(QCoreApplication::translate("StudentManagement", "Name", nullptr));
-        labelClass->setText(QCoreApplication::translate("StudentManagement", "Class", nullptr));
+        nameLineEdit->setText(QString());
+        nameLineEdit->setPlaceholderText(QCoreApplication::translate("StudentManagement", "\360\237\224\215Search by Student's Class...", nullptr));
         viewStudentButton->setText(QCoreApplication::translate("StudentManagement", "View Students", nullptr));
         removeStudentButton->setText(QCoreApplication::translate("StudentManagement", "Remove Student", nullptr));
         editStudentButton->setText(QCoreApplication::translate("StudentManagement", "Edit Student", nullptr));
         addStudentButton->setText(QCoreApplication::translate("StudentManagement", "Add Student", nullptr));
+        classLineEdit->setText(QString());
+        classLineEdit->setPlaceholderText(QCoreApplication::translate("StudentManagement", "\360\237\224\215Search by Student's Name...", nullptr));
+        label->setText(QCoreApplication::translate("StudentManagement", "STUDENT MANAGMENT", nullptr));
+        labelName->setText(QCoreApplication::translate("StudentManagement", "Name", nullptr));
+        labelName_2->setText(QCoreApplication::translate("StudentManagement", "Name", nullptr));
     } // retranslateUi
 
 };

@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>952</width>
+    <width>1164</width>
     <height>521</height>
    </rect>
   </property>
@@ -21,14 +21,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>952</width>
-    <height>521</height>
+    <width>500</width>
+    <height>500</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>952</width>
-    <height>521</height>
+    <width>10000</width>
+    <height>10000</height>
    </size>
   </property>
   <property name="baseSize">
@@ -43,27 +43,27 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>254</red>
-        <green>246</green>
-        <blue>240</blue>
+        <red>27</red>
+        <green>6</green>
+        <blue>51</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>254</red>
-        <green>246</green>
-        <blue>240</blue>
+        <red>27</red>
+        <green>6</green>
+        <blue>51</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>254</red>
-        <green>246</green>
-        <blue>240</blue>
+        <red>27</red>
+        <green>6</green>
+        <blue>51</blue>
        </color>
       </brush>
      </colorrole>
@@ -72,27 +72,27 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>254</red>
-        <green>246</green>
-        <blue>240</blue>
+        <red>27</red>
+        <green>6</green>
+        <blue>51</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>254</red>
-        <green>246</green>
-        <blue>240</blue>
+        <red>27</red>
+        <green>6</green>
+        <blue>51</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>254</red>
-        <green>246</green>
-        <blue>240</blue>
+        <red>27</red>
+        <green>6</green>
+        <blue>51</blue>
        </color>
       </brush>
      </colorrole>
@@ -101,32 +101,35 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>254</red>
-        <green>246</green>
-        <blue>240</blue>
+        <red>27</red>
+        <green>6</green>
+        <blue>51</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>254</red>
-        <green>246</green>
-        <blue>240</blue>
+        <red>27</red>
+        <green>6</green>
+        <blue>51</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>254</red>
-        <green>246</green>
-        <blue>240</blue>
+        <red>27</red>
+        <green>6</green>
+        <blue>51</blue>
        </color>
       </brush>
      </colorrole>
     </disabled>
    </palette>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
   </property>
   <property name="windowTitle">
    <string>School Management System</string>
@@ -135,16 +138,19 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">QDialog#Login {
-        background-color: #fef6f0   ;
-        border: 1px solid black;
-}</string>
+   <string notr="true">QDialog#Login{
+ background-color:#1B0633;
+border:7.5px solid #B89AD8;
+border-radius: 8%;
+}
+
+</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>90</y>
+     <x>140</x>
+     <y>40</y>
      <width>121</width>
      <height>51</height>
     </rect>
@@ -158,8 +164,9 @@
    </property>
    <property name="styleSheet">
     <string notr="true">QLabel#label {
-        font-size: 25px;
-color: #2c3e50 ;
+        font-size: 39px;
+       font-weight: bold;
+color: #E8D4F4 ;
 }</string>
    </property>
    <property name="text">
@@ -172,16 +179,17 @@ color: #2c3e50 ;
   <widget class="QLabel" name="label_username">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>140</y>
-     <width>91</width>
+     <x>40</x>
+     <y>130</y>
+     <width>111</width>
      <height>51</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QLabel#label_username {
-        font-size: 16px;
-        color: #2c3e50 ;
+        font-size: 23px;
+        color: #E8D4F4;
+       font-weight: bold;
 }</string>
    </property>
    <property name="text">
@@ -191,19 +199,21 @@ color: #2c3e50 ;
   <widget class="QLineEdit" name="usernameInput">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>180</y>
+     <x>40</x>
+     <y>170</y>
      <width>341</width>
      <height>30</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QLineEdit#usernameInput {
-    color: black;;
-    border: 1.5px solid black;;
+    color:#1B0633;
+    border: 3px solid #8d4d95;
     border-radius: 10px;
-        font-size: 16px;
+        font-size: 17px;
+font-weight: 570;
 padding: 0px 8px 0px 8px;
+background-color: #E8D4F4 ;
 }
 </string>
    </property>
@@ -217,16 +227,17 @@ padding: 0px 8px 0px 8px;
   <widget class="QLabel" name="label_password">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>40</x>
      <y>220</y>
-     <width>80</width>
+     <width>111</width>
      <height>30</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QLabel#label_password {
-        font-size: 16px;
-color: #2c3e50 ;
+        font-size: 23px;
+        font-weight: bold;
+color: #E8D4F4 ;
 }</string>
    </property>
    <property name="text">
@@ -236,7 +247,7 @@ color: #2c3e50 ;
   <widget class="QLineEdit" name="passwordInput">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>40</x>
      <y>250</y>
      <width>341</width>
      <height>30</height>
@@ -247,11 +258,13 @@ color: #2c3e50 ;
    </property>
    <property name="styleSheet">
     <string notr="true">QLineEdit#passwordInput {
-    color: black;;
-    border: 1.5px solid black;;
-    border-radius: 10px;
-        font-size: 16px;
-        padding: 0px 8px 0px 8px;
+   color:#1B0633;
+    border: 3px solid #8d4d95;
+    border-radius: 11px;
+        font-size: 19px;
+font-weight:bold;
+padding: 0px 8px 0px 8px;
+background-color:  #E8D4F4;
 }
 </string>
    </property>
@@ -274,10 +287,10 @@ color: #2c3e50 ;
   <widget class="QPushButton" name="loginButton">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>320</y>
+     <x>40</x>
+     <y>330</y>
      <width>341</width>
-     <height>41</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="maximumSize">
@@ -288,16 +301,21 @@ color: #2c3e50 ;
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton#loginButton {
-    background-color: #ff6b6b;
-    border: 1.5px solid black;
+
+    border: 1.5px solid #B89FD0;
     border-radius: 10px;
     padding: 6px;
-    font-size: 16px;
+    font-size: 23px;
+background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                            stop:0 rgb(95, 2, 95),
+                            stop:1 rgb(216, 181, 221));
+color:#e4c9f2;
+font-weight:1000;
 }
 
 /* Hover effect */
 QPushButton#loginButton:hover {
-    background-color: #ee5253;
+    background-color: #69166f;
 }
 
 </string>
@@ -306,26 +324,13 @@ QPushButton#loginButton:hover {
     <string>Login</string>
    </property>
   </widget>
-  <widget class="Line" name="line">
-   <property name="geometry">
-    <rect>
-     <x>450</x>
-     <y>0</y>
-     <width>20</width>
-     <height>551</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Orientation::Vertical</enum>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>458</x>
-     <y>-10</y>
-     <width>501</width>
-     <height>541</height>
+     <x>410</x>
+     <y>-40</y>
+     <width>781</width>
+     <height>601</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -334,22 +339,37 @@ QPushButton#loginButton:hover {
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>10000</width>
+     <height>10000</height>
+    </size>
+   </property>
    <property name="styleSheet">
     <string notr="true">QLabel#label_2 {
-    border: 1px solid black; /* Use 'solid' for a visible border */
-    border-top-left-radius: 10%;
-    border-bottom-left-radius: 10%;
-    border-top-right-radius: 10%;
-    border-bottom-right-radius: 10%;
+
 }</string>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="Images.qrc">:/background/Resources/Adobe Express - file.jpg</pixmap>
+    <pixmap resource="Images.qrc">:/background/C:\Users\Sarim Khan\OneDrive\Desktop\SchoolManagementSystem\Resources/login page.jpeg</pixmap>
    </property>
   </widget>
+  <zorder>label_2</zorder>
+  <zorder>label</zorder>
+  <zorder>label_username</zorder>
+  <zorder>usernameInput</zorder>
+  <zorder>label_password</zorder>
+  <zorder>passwordInput</zorder>
+  <zorder>loginButton</zorder>
  </widget>
  <resources>
   <include location="Images.qrc"/>

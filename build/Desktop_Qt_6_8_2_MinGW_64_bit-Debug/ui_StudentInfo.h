@@ -36,37 +36,46 @@ public:
     {
         if (StudentInfo->objectName().isEmpty())
             StudentInfo->setObjectName("StudentInfo");
-        StudentInfo->resize(452, 318);
+        StudentInfo->resize(452, 349);
         StudentInfo->setStyleSheet(QString::fromUtf8("QDialog#StudentInfo {\n"
-"        background-color: #fef6f0   ;\n"
-"        border: 1px solid black;\n"
+"       background-color:#1B0633;\n"
+"border:5px solid #B89AD8;\n"
 "        border-radius: 10%;\n"
 "}"));
         titleLabel = new QLabel(StudentInfo);
         titleLabel->setObjectName("titleLabel");
-        titleLabel->setGeometry(QRect(10, 20, 431, 26));
+        titleLabel->setGeometry(QRect(120, 10, 211, 41));
         QFont font;
         font.setBold(true);
         titleLabel->setFont(font);
         titleLabel->setStyleSheet(QString::fromUtf8("QLabel#titleLabel {\n"
-"        font-size: 25px;\n"
-"color: #2c3e50 ;\n"
+"    background-color: #3E0066;\n"
+"  color: #E6CCE7;\n"
+"  border: 2px solid #E7A9A9;\n"
+"  font-weight: bold;\n"
+"  font-size: 20px;\n"
+"  text-align: center;\n"
 "}"));
         titleLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
         btnClose = new QPushButton(StudentInfo);
         btnClose->setObjectName("btnClose");
-        btnClose->setGeometry(QRect(20, 260, 411, 41));
+        btnClose->setGeometry(QRect(20, 290, 411, 41));
         btnClose->setStyleSheet(QString::fromUtf8("QPushButton#btnClose {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
+"    border: 1.5px solid #B89FD0;\n"
 "    border-radius: 10px;\n"
 "    padding: 6px;\n"
 "    font-size: 16px;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(95, 2, 95),\n"
+"                            stop:1 rgb(216, 181, 221));\n"
+"color:#e4c9f2;\n"
+"font-weight:700;\n"
 "}\n"
 "\n"
 "/* Hover effect */\n"
 "QPushButton#btnClose:hover {\n"
-"    background-color: #ee5253;\n"
+"\n"
+"   background-color: #69166f;\n"
 "}\n"
 "\n"
 ""));
@@ -74,77 +83,89 @@ public:
         btnClose->setChecked(false);
         lineEditClass = new QLineEdit(StudentInfo);
         lineEditClass->setObjectName("lineEditClass");
-        lineEditClass->setGeometry(QRect(110, 160, 321, 31));
+        lineEditClass->setGeometry(QRect(120, 180, 311, 31));
         lineEditClass->setStyleSheet(QString::fromUtf8("QLineEdit#lineEditClass {\n"
-"    color: black;;\n"
-"    border: 1.5px solid black;;\n"
+"       color:#1B0633;\n"
+"    border: 3px solid #8d4d95;\n"
 "    border-radius: 10px;\n"
-"        font-size: 16px;\n"
-"        padding: 0px 8px 0px 8px;\n"
+"        font-size: 17px;\n"
+"font-weight: 570;\n"
+"padding: 0px 8px 0px 8px;\n"
+"background-color: #E8D4F4 ;\n"
 "}\n"
 ""));
         lineEditClass->setReadOnly(true);
         lineEditName = new QLineEdit(StudentInfo);
         lineEditName->setObjectName("lineEditName");
-        lineEditName->setGeometry(QRect(110, 110, 321, 31));
+        lineEditName->setGeometry(QRect(120, 130, 311, 31));
         lineEditName->setStyleSheet(QString::fromUtf8("QLineEdit#lineEditName {\n"
-"    color: black;;\n"
-"    border: 1.5px solid black;;\n"
+"        color:#1B0633;\n"
+"    border: 3px solid #8d4d95;\n"
 "    border-radius: 10px;\n"
-"        font-size: 16px;\n"
-"        padding: 0px 8px 0px 8px;\n"
+"        font-size: 17px;\n"
+"font-weight: 570;\n"
+"padding: 0px 8px 0px 8px;\n"
+"background-color: #E8D4F4 ;\n"
 "}\n"
 ""));
         lineEditName->setReadOnly(true);
         label_id = new QLabel(StudentInfo);
         label_id->setObjectName("label_id");
-        label_id->setGeometry(QRect(20, 60, 81, 31));
+        label_id->setGeometry(QRect(20, 80, 111, 31));
         label_id->setStyleSheet(QString::fromUtf8("QLabel#label_id {\n"
-"        font-size: 16px;\n"
-"        color: #2c3e50 ;\n"
+" font-size: 19px;\n"
+"        color: #E8D4F4 ;\n"
+"font-weight:700;\n"
 "}"));
         lineEditId = new QLineEdit(StudentInfo);
         lineEditId->setObjectName("lineEditId");
-        lineEditId->setGeometry(QRect(110, 60, 321, 31));
+        lineEditId->setGeometry(QRect(120, 80, 311, 31));
         lineEditId->setStyleSheet(QString::fromUtf8("QLineEdit#lineEditId {\n"
-"    color: black;;\n"
-"    border: 1.5px solid black;;\n"
+"     color:#1B0633;\n"
+"    border: 3px solid #8d4d95;\n"
 "    border-radius: 10px;\n"
-"        font-size: 16px;\n"
-"        padding: 0px 8px 0px 8px;\n"
+"        font-size: 17px;\n"
+"font-weight: 570;\n"
+"padding: 0px 8px 0px 8px;\n"
+"background-color: #E8D4F4 ;\n"
 "}\n"
 ""));
         lineEditId->setReadOnly(true);
         label_class = new QLabel(StudentInfo);
         label_class->setObjectName("label_class");
-        label_class->setGeometry(QRect(20, 160, 61, 31));
+        label_class->setGeometry(QRect(20, 180, 61, 31));
         label_class->setStyleSheet(QString::fromUtf8("QLabel#label_class {\n"
-"        font-size: 16px;\n"
-"        color: #2c3e50 ;\n"
+"        font-size: 19px;\n"
+"        color: #E8D4F4 ;\n"
+"font-weight:700;\n"
 "}"));
         label_name = new QLabel(StudentInfo);
         label_name->setObjectName("label_name");
-        label_name->setGeometry(QRect(20, 100, 71, 41));
+        label_name->setGeometry(QRect(20, 120, 71, 41));
         label_name->setStyleSheet(QString::fromUtf8("QLabel#label_name {\n"
-"        font-size: 16px;\n"
-"        color: #2c3e50 ;\n"
+"        font-size: 19px;\n"
+"        color: #E8D4F4 ;\n"
+"font-weight:700;\n"
 "}"));
         label_password = new QLabel(StudentInfo);
         label_password->setObjectName("label_password");
-        label_password->setGeometry(QRect(20, 200, 91, 51));
+        label_password->setGeometry(QRect(10, 220, 101, 51));
         label_password->setStyleSheet(QString::fromUtf8("QLabel#label_password {\n"
-"        font-size: 16px;\n"
-"        color: #2c3e50 ;\n"
+"         font-size: 19px;\n"
+"        color: #E8D4F4 ;\n"
+"font-weight:700;\n"
 "}"));
         lineEditPassword = new QLineEdit(StudentInfo);
         lineEditPassword->setObjectName("lineEditPassword");
-        lineEditPassword->setGeometry(QRect(110, 210, 321, 31));
+        lineEditPassword->setGeometry(QRect(120, 230, 311, 31));
         lineEditPassword->setStyleSheet(QString::fromUtf8("QLineEdit#lineEditPassword {\n"
-"    color: black;;\n"
-"    border: 1.5px solid black;;\n"
+"      color:#1B0633;\n"
+"    border: 3px solid #8d4d95;\n"
 "    border-radius: 10px;\n"
-"        font-size: 16px;\n"
-"        padding: 0px 8px 0px 8px;\n"
+"        font-size: 17px;\n"
+"font-weight: 570;\n"
+"padding: 0px 8px 0px 8px;\n"
+"background-color: #E8D4F4 ;\n"
 "}\n"
 ""));
         lineEditPassword->setEchoMode(QLineEdit::EchoMode::Normal);
@@ -158,12 +179,12 @@ public:
     void retranslateUi(QDialog *StudentInfo)
     {
         StudentInfo->setWindowTitle(QCoreApplication::translate("StudentInfo", "Student Information", nullptr));
-        titleLabel->setText(QCoreApplication::translate("StudentInfo", "Student Profile", nullptr));
+        titleLabel->setText(QCoreApplication::translate("StudentInfo", "STUDENT PROFILE", nullptr));
         btnClose->setText(QCoreApplication::translate("StudentInfo", "Close", nullptr));
-        label_id->setText(QCoreApplication::translate("StudentInfo", "Student ID:", nullptr));
-        label_class->setText(QCoreApplication::translate("StudentInfo", "Class", nullptr));
-        label_name->setText(QCoreApplication::translate("StudentInfo", "Name", nullptr));
-        label_password->setText(QCoreApplication::translate("StudentInfo", "Password", nullptr));
+        label_id->setText(QCoreApplication::translate("StudentInfo", "ID:", nullptr));
+        label_class->setText(QCoreApplication::translate("StudentInfo", "Class:", nullptr));
+        label_name->setText(QCoreApplication::translate("StudentInfo", "Name:", nullptr));
+        label_password->setText(QCoreApplication::translate("StudentInfo", " Password:", nullptr));
     } // retranslateUi
 
 };

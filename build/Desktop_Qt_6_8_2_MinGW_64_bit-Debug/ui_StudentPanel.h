@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
@@ -24,92 +25,121 @@ public:
     QPushButton *examButton;
     QPushButton *scheduleButton;
     QPushButton *resultButton;
+    QLabel *studentPanelpic;
 
     void setupUi(QDialog *StudentPanel)
     {
         if (StudentPanel->objectName().isEmpty())
             StudentPanel->setObjectName("StudentPanel");
-        StudentPanel->resize(400, 350);
+        StudentPanel->resize(775, 401);
         StudentPanel->setStyleSheet(QString::fromUtf8("QDialog#StudentPanel {\n"
-"        background-color: #fef6f0;\n"
-"        border: 1px solid black;\n"
+"             background-color:#1B0633;\n"
+"border:9.5px solid #B89AD8;\n"
 "        border-radius: 10%;\n"
 "}"));
         personalInfoButton = new QPushButton(StudentPanel);
         personalInfoButton->setObjectName("personalInfoButton");
-        personalInfoButton->setGeometry(QRect(9, 40, 381, 41));
+        personalInfoButton->setGeometry(QRect(40, 40, 331, 41));
         personalInfoButton->setStyleSheet(QString::fromUtf8("QPushButton#personalInfoButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
-"    border-radius: 10px;\n"
-"    font-size: 16px;\n"
+"    border: 1.5px solid #B89FD0;\n"
+"border-radius: 10px;\n"
+"font-size: 20px;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(60, 0, 60),     /* darker start */\n"
+"                            stop:1 rgb(140, 110, 150)); /* darker end */\n"
+"color: #e4c9f2;\n"
+"font-weight: 1000;\n"
 "}\n"
 "\n"
 "QPushButton#personalInfoButton:hover {\n"
-"    background-color: #ee5253;\n"
+"    background-color: #69166f;\n"
 "}\n"
 "\n"
 ""));
         attendanceButton = new QPushButton(StudentPanel);
         attendanceButton->setObjectName("attendanceButton");
-        attendanceButton->setGeometry(QRect(9, 101, 381, 41));
+        attendanceButton->setGeometry(QRect(40, 110, 331, 41));
         attendanceButton->setStyleSheet(QString::fromUtf8("QPushButton#attendanceButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
-"    border-radius: 10px;\n"
-"    font-size: 16px;\n"
+"    border: 1.5px solid #B89FD0;\n"
+"border-radius: 10px;\n"
+"\n"
+"font-size: 20px;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(60, 0, 60),     /* darker start */\n"
+"                            stop:1 rgb(140, 110, 150)); /* darker end */\n"
+"color: #e4c9f2;\n"
+"font-weight: 1000;\n"
 "}\n"
 "\n"
 "QPushButton#attendanceButton:hover {\n"
-"    background-color: #ee5253;\n"
+"background-color: #69166f;\n"
 "}\n"
 "\n"
 ""));
         examButton = new QPushButton(StudentPanel);
         examButton->setObjectName("examButton");
-        examButton->setGeometry(QRect(9, 162, 381, 41));
+        examButton->setGeometry(QRect(40, 180, 331, 41));
         examButton->setStyleSheet(QString::fromUtf8("QPushButton#examButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
-"    border-radius: 10px;\n"
-"    font-size: 16px;\n"
+"   border: 1.5px solid #B89FD0;\n"
+"border-radius: 10px;\n"
+"\n"
+"font-size: 20px;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(60, 0, 60),     /* darker start */\n"
+"                            stop:1 rgb(140, 110, 150)); /* darker end */\n"
+"color: #e4c9f2;\n"
+"font-weight: 1000;\n"
 "}\n"
 "\n"
 "QPushButton#examButton:hover {\n"
-"    background-color: #ee5253;\n"
+"    background-color: #69166f;\n"
 "}\n"
 "\n"
 ""));
         scheduleButton = new QPushButton(StudentPanel);
         scheduleButton->setObjectName("scheduleButton");
-        scheduleButton->setGeometry(QRect(9, 223, 381, 41));
+        scheduleButton->setGeometry(QRect(40, 250, 331, 41));
         scheduleButton->setStyleSheet(QString::fromUtf8("QPushButton#scheduleButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
-"    border-radius: 10px;\n"
-"    font-size: 16px;\n"
+"  border: 1.5px solid #B89FD0;\n"
+"border-radius: 10px;\n"
+"\n"
+"font-size: 20px;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(60, 0, 60),     /* darker start */\n"
+"                            stop:1 rgb(140, 110, 150)); /* darker end */\n"
+"color: #e4c9f2;\n"
+"font-weight: 1000;\n"
 "}\n"
 "\n"
 "QPushButton#scheduleButton:hover {\n"
-"    background-color: #ee5253;\n"
+" background-color: #69166f;\n"
 "}\n"
 "\n"
 ""));
         resultButton = new QPushButton(StudentPanel);
         resultButton->setObjectName("resultButton");
-        resultButton->setGeometry(QRect(9, 284, 381, 41));
+        resultButton->setGeometry(QRect(40, 320, 331, 41));
         resultButton->setStyleSheet(QString::fromUtf8("QPushButton#resultButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
-"    border-radius: 10px;\n"
-"    font-size: 16px;\n"
+"    border: 1.5px solid #B89FD0;\n"
+"border-radius: 10px;\n"
+"\n"
+"font-size: 20px;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(60, 0, 60),     /* darker start */\n"
+"                            stop:1 rgb(140, 110, 150)); /* darker end */\n"
+"color: #e4c9f2;\n"
+"font-weight: 1000;\n"
 "}\n"
 "\n"
 "QPushButton#resultButton:hover {\n"
-"    background-color: #ee5253;\n"
+"   background-color: #69166f;\n"
 "}\n"
 "\n"
 ""));
+        studentPanelpic = new QLabel(StudentPanel);
+        studentPanelpic->setObjectName("studentPanelpic");
+        studentPanelpic->setGeometry(QRect(400, 10, 371, 381));
+        studentPanelpic->setPixmap(QPixmap(QString::fromUtf8("C:\\Users\\Sarim Khan\\OneDrive\\Desktop\\SchoolManagementSystem\\Resources/student page.jpeg")));
 
         retranslateUi(StudentPanel);
 
@@ -124,6 +154,7 @@ public:
         examButton->setText(QCoreApplication::translate("StudentPanel", "Assigned Exams", nullptr));
         scheduleButton->setText(QCoreApplication::translate("StudentPanel", "Class Schedule", nullptr));
         resultButton->setText(QCoreApplication::translate("StudentPanel", "My Results", nullptr));
+        studentPanelpic->setText(QString());
     } // retranslateUi
 
 };

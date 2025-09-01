@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/background">
-        <file>Resources/Adobe Express - file.jpg</file>
+        <file>C:\Users\Sarim Khan\OneDrive\Desktop\SchoolManagementSystem\Resources\login page.jpeg</file>
+        <file>C:\Users\Sarim Khan\OneDrive\Desktop\SchoolManagementSystem\Resources\admin page.jpeg</file>
+        <file>C:\Users\Sarim Khan\OneDrive\Desktop\SchoolManagementSystem\Resources\student page.jpeg</file>
+        <file>C:\Users\Sarim Khan\OneDrive\Desktop\SchoolManagementSystem\Resources\teacher page.jpeg</file>
     </qresource>
 </RCC>

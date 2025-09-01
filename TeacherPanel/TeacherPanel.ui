@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>398</width>
-    <height>332</height>
+    <width>754</width>
+    <height>420</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,8 +15,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QDialog#TeacherPanel {
-        background-color: #fef6f0   ;
-        border: 1px solid black;
+          background-color:#1B0633;
+border:9.5px solid #B89AD8;
         border-radius: 10%;
 }</string>
   </property>
@@ -24,23 +24,26 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>40</y>
+     <y>60</y>
      <width>300</width>
-     <height>40</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton#btnClassSchedule {
-    background-color: #ff6b6b;
-    border: 1.5px solid black;
-    border-radius: 10px;
-    padding: 6px;
-    font-size: 16px;
+        border: 1.5px solid #B89FD0;
+border-radius: 10px;
+font-size: 20px;
+background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                            stop:0 rgb(60, 0, 60),     /* darker start */
+                            stop:1 rgb(140, 110, 150)); /* darker end */
+color: #e4c9f2;
+font-weight: 1000;
 }
 
 /* Hover effect */
 QPushButton#btnClassSchedule:hover {
-    background-color: #ee5253;
+   background-color: #69166f;
 }
 
 </string>
@@ -53,23 +56,26 @@ QPushButton#btnClassSchedule:hover {
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>110</y>
+     <y>140</y>
      <width>300</width>
-     <height>40</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton#btnExamResult {
-    background-color: #ff6b6b;
-    border: 1.5px solid black;
-    border-radius: 10px;
-    padding: 6px;
-    font-size: 16px;
+        border: 1.5px solid #B89FD0;
+border-radius: 10px;
+font-size: 20px;
+background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                            stop:0 rgb(60, 0, 60),     /* darker start */
+                            stop:1 rgb(140, 110, 150)); /* darker end */
+color: #e4c9f2;
+font-weight: 1000;
 }
 
 /* Hover effect */
 QPushButton#btnExamResult:hover {
-    background-color: #ee5253;
+    background-color: #69166f;
 }
 
 </string>
@@ -82,23 +88,26 @@ QPushButton#btnExamResult:hover {
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>180</y>
+     <y>220</y>
      <width>300</width>
-     <height>40</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton#btnAttendanceViewing {
-    background-color: #ff6b6b;
-    border: 1.5px solid black;
-    border-radius: 10px;
-    padding: 6px;
-    font-size: 16px;
+        border: 1.5px solid #B89FD0;
+border-radius: 10px;
+font-size: 20px;
+background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                            stop:0 rgb(60, 0, 60),     /* darker start */
+                            stop:1 rgb(140, 110, 150)); /* darker end */
+color: #e4c9f2;
+font-weight: 1000;;
 }
 
 /* Hover effect */
 QPushButton#btnAttendanceViewing:hover {
-    background-color: #ee5253;
+    background-color: #69166f;
 }
 
 </string>
@@ -111,29 +120,48 @@ QPushButton#btnAttendanceViewing:hover {
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>250</y>
+     <y>300</y>
      <width>300</width>
-     <height>40</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton#btnExamManagement {
-    background-color: #ff6b6b;
-    border: 1.5px solid black;
-    border-radius: 10px;
-    padding: 6px;
-    font-size: 16px;
+       border: 1.5px solid #B89FD0;
+border-radius: 10px;
+font-size: 20px;
+background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                            stop:0 rgb(60, 0, 60),     /* darker start */
+                            stop:1 rgb(140, 110, 150)); /* darker end */
+color: #e4c9f2;
+font-weight: 1000;
 }
 
 /* Hover effect */
 QPushButton#btnExamManagement:hover {
-    background-color: #ee5253;
+  background-color: #69166f;
 }
 
 </string>
    </property>
    <property name="text">
     <string>View Assigned Exams</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>10</y>
+     <width>371</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>C:\Users\Sarim Khan\OneDrive\Desktop\SchoolManagementSystem\Resources/teacher page.jpeg</pixmap>
    </property>
   </widget>
  </widget>

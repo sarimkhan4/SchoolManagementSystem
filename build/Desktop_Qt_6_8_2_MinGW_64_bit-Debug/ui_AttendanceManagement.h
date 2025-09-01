@@ -29,13 +29,14 @@ public:
     QPushButton *markAttendanceButton;
     QComboBox *attendanceTypeComboBox;
     QLabel *label;
+    QLabel *label_2;
 
     void setupUi(QWidget *AttendanceManagement)
     {
         if (AttendanceManagement->objectName().isEmpty())
             AttendanceManagement->setObjectName("AttendanceManagement");
         AttendanceManagement->setEnabled(true);
-        AttendanceManagement->resize(800, 633);
+        AttendanceManagement->resize(550, 543);
         QSizePolicy sizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -44,40 +45,43 @@ public:
         AttendanceManagement->setMouseTracking(false);
         AttendanceManagement->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
         AttendanceManagement->setStyleSheet(QString::fromUtf8("QWidget#AttendanceManagement {\n"
-"        background-color: #fef6f0   ;\n"
-"        border: 1px solid black;\n"
+"         background-color:#1B0633;\n"
+"border:5px solid #B89AD8;\n"
 "        border-radius: 10%;\n"
 "}"));
         searchBar = new QLineEdit(AttendanceManagement);
         searchBar->setObjectName("searchBar");
-        searchBar->setGeometry(QRect(10, 60, 631, 31));
+        searchBar->setGeometry(QRect(20, 80, 241, 31));
         searchBar->setStyleSheet(QString::fromUtf8("QLineEdit#searchBar {\n"
-"    color: black;;\n"
-"    border: 1.5px solid black;;\n"
+"    color:#1B0633;\n"
+"    border: 3px solid #8d4d95;\n"
 "    border-radius: 10px;\n"
-"        font-size: 16px;\n"
-"        padding: 0px 8px 0px 8px;\n"
+"        font-size: 17px;\n"
+"font-weight: 570;\n"
+"padding: 0px 8px 0px 8px;\n"
+"background-color: #E8D4F4 ;\n"
 "}\n"
 ""));
         attendanceTable = new QTableView(AttendanceManagement);
         attendanceTable->setObjectName("attendanceTable");
-        attendanceTable->setGeometry(QRect(10, 100, 781, 521));
+        attendanceTable->setGeometry(QRect(10, 180, 531, 351));
         attendanceTable->setStyleSheet(QString::fromUtf8("QTableView#attendanceTable {\n"
-"    border: 1.5px solid #2c3e50;\n"
-"    border-radius: 8px;\n"
-"    background-color: #ffffff;\n"
+"    border: 1.5px solid #b0b0b0;  /* Softer grey border */\n"
+"    border-radius: 10px;\n"
+"    background-color: #d4d4d4;    /* Lighter table background */\n"
 "    font-family: 'Segoe UI', sans-serif;\n"
 "    font-size: 11pt;\n"
-"    color: #2c3e50;\n"
-"    gridline-color: #ecf0f1;\n"
-"    alternate-background-color: #f7f9fa;\n"
-"    selection-background-color: #d6eaf8;\n"
-"    selection-color: #1a252f;\n"
+"    color: #1f1f1f;\n"
+"    gridline-color: #bcbcbc;      /* Mid grey grid lines */\n"
+"    alternate-background-color: #e2e2e2;  /* Subtle row alternation */\n"
+"    selection-background-color: #b0b0b0;  /* Visible selection */\n"
+"    selection-color: #000000;\n"
+"    font-weight: 500;\n"
 "}\n"
 "\n"
 "QHeaderView::section {\n"
-"    background-color: #2c3e50;\n"
-"    color: white;\n"
+"    background-color: #4b4b4b;    /* Darker grey header */\n"
+"    color: #ffffff;               /* Light font for contrast */\n"
 "    font-weight: bold;\n"
 "    font-size: 11pt;\n"
 "    padding: 6px;\n"
@@ -86,34 +90,44 @@ public:
 "}\n"
 "\n"
 "QTableView QTableCornerButton::section {\n"
-"    background-color: #2c3e50;\n"
+"    background-color: #8a8a8a;    /* Match header color */\n"
 "    border: none;\n"
 "}\n"
 "\n"
-"QTableView::item {\n"
+"QTable"
+                        "View::item {\n"
 "    padding: 8px 10px;\n"
-"    font-size: 9pt;\n"
+"    font-size: 10pt;\n"
+"    color: #1f1f1f;\n"
+"    background-color: transparent;\n"
 "}\n"
 "\n"
 "QTableView::item:selected {\n"
-"    background-color: #d6eaf8;\n"
-"    color: #1a252f;\n"
+"    background-color: #b0b0b0;\n"
+"    color: #000000;\n"
 "}\n"
+"\n"
+"\n"
+"\n"
 ""));
         markAttendanceButton = new QPushButton(AttendanceManagement);
         markAttendanceButton->setObjectName("markAttendanceButton");
-        markAttendanceButton->setGeometry(QRect(650, 60, 141, 31));
+        markAttendanceButton->setGeometry(QRect(170, 130, 201, 41));
         markAttendanceButton->setStyleSheet(QString::fromUtf8("QPushButton#markAttendanceButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
-"    border-radius: 10px;\n"
-"    font-size: 16px;\n"
-"        color: #2c3e50 ;\n"
+"     border: 1.5px solid #B89FD0;\n"
+"border-radius: 10px;\n"
+"\n"
+"font-size: 20px;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(60, 0, 60),     /* darker start */\n"
+"                            stop:1 rgb(140, 110, 150)); /* darker end */\n"
+"color: #e4c9f2;\n"
+"font-weight: 1000;\n"
 "}\n"
 "\n"
 "QPushButton#markAttendanceButton:hover {\n"
-"    background-color: #ee5253;\n"
-"        color: #2c3e50 ;\n"
+" background-color: #69166f;\n"
+"\n"
 "}\n"
 "\n"
 ""));
@@ -121,31 +135,44 @@ public:
         attendanceTypeComboBox->addItem(QString());
         attendanceTypeComboBox->addItem(QString());
         attendanceTypeComboBox->setObjectName("attendanceTypeComboBox");
-        attendanceTypeComboBox->setGeometry(QRect(100, 20, 111, 31));
+        attendanceTypeComboBox->setGeometry(QRect(440, 80, 91, 31));
         attendanceTypeComboBox->setStyleSheet(QString::fromUtf8("QComboBox#attendanceTypeComboBox {\n"
-"    border: 1.5px solid #2c3e50;\n"
+"    border: 2px solid #e4c9f2;\n"
 "    border-radius: 6px;\n"
-"    font-family: 'Segoe UI';\n"
 "        padding: 6px;\n"
-"    font-size: 10pt;\n"
-"    background-color: white;\n"
-"    color: #2c3e50;\n"
+"    font-size: 12pt;\n"
+"    background-color: #1B0633;\n"
+"   color: #e4c9f2;\n"
 "}\n"
 "QComboBox#attendanceTypeComboBox::drop-down {\n"
 "    subcontrol-origin: padding;\n"
 "    subcontrol-position: top right;\n"
 "    width: 22px;\n"
-"    background-color: white;\n"
-"    border-top-right-radius: 6px;\n"
+"border-top-right-radius: 6px;\n"
 "    border-bottom-right-radius: 6px;\n"
+"    background-color: #1B0633;\n"
+"\n"
 "}\n"
 ""));
         label = new QLabel(AttendanceManagement);
         label->setObjectName("label");
-        label->setGeometry(QRect(10, 20, 91, 31));
+        label->setGeometry(QRect(320, 80, 121, 31));
         label->setStyleSheet(QString::fromUtf8("QLabel#label {\n"
-"        font-size: 16px;\n"
-"        color: #2c3e50 ;\n"
+"        font-size: 19px;\n"
+"        color: #E8D4F4 ;\n"
+"font-weight:700;\n"
+"}"));
+        label_2 = new QLabel(AttendanceManagement);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(130, 10, 291, 41));
+        label_2->setStyleSheet(QString::fromUtf8("QLabel#label_2{\n"
+"  background-color: #3E0066;\n"
+"  color: #E6CCE7;\n"
+"  border: 2px solid #E7A9A9;\n"
+"  font-weight: bold;\n"
+"  font-size: 20px;\n"
+"  text-align: center;\n"
+"\n"
 "}"));
 
         retranslateUi(AttendanceManagement);
@@ -156,12 +183,15 @@ public:
     void retranslateUi(QWidget *AttendanceManagement)
     {
         AttendanceManagement->setWindowTitle(QCoreApplication::translate("AttendanceManagement", "Attendance Management", nullptr));
-        searchBar->setPlaceholderText(QCoreApplication::translate("AttendanceManagement", "Search by ID or Name...", nullptr));
+        searchBar->setInputMask(QString());
+        searchBar->setText(QString());
+        searchBar->setPlaceholderText(QCoreApplication::translate("AttendanceManagement", "\360\237\224\215Search by ID or Name...", nullptr));
         markAttendanceButton->setText(QCoreApplication::translate("AttendanceManagement", "Mark Attendance", nullptr));
         attendanceTypeComboBox->setItemText(0, QCoreApplication::translate("AttendanceManagement", "Student", nullptr));
         attendanceTypeComboBox->setItemText(1, QCoreApplication::translate("AttendanceManagement", "Teacher", nullptr));
 
-        label->setText(QCoreApplication::translate("AttendanceManagement", "Select Type", nullptr));
+        label->setText(QCoreApplication::translate("AttendanceManagement", "Select Type:", nullptr));
+        label_2->setText(QCoreApplication::translate("AttendanceManagement", "ATTENDENCE MANAGMENT", nullptr));
     } // retranslateUi
 
 };

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>766</width>
-    <height>632</height>
+    <width>695</width>
+    <height>624</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,8 +15,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QDialog#ExamResultManagement {
-        background-color: #fef6f0   ;
-        border: 1px solid black;
+       background-color:#1B0633;
+border:5px solid #B89AD8;
         border-radius: 10%;
 }</string>
   </property>
@@ -24,30 +24,39 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>10</y>
-     <width>741</width>
+     <y>60</y>
+     <width>691</width>
      <height>171</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QGroupBox{
+border-radius: 10%;
+     font-size: 19px;
+        color: #E8D4F4 ;
+font-weight:700;}</string>
+   </property>
    <property name="title">
-    <string>Exam Result Entry</string>
+    <string/>
    </property>
    <widget class="QLineEdit" name="studentIdInput">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>30</y>
-      <width>161</width>
+      <x>80</x>
+      <y>40</y>
+      <width>171</width>
       <height>22</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit#studentIdInput {
-    color: black;;
-    border: 1.5px solid black;;
+     color:#1B0633;
+    border: 3px solid #8d4d95;
     border-radius: 10px;
-        font-size: 16px;
-        padding: 0px 8px 0px 8px;
+        font-size: 17px;
+font-weight: 570;
+padding: 0px 8px 0px 8px;
+background-color: #E8D4F4 ;
 }
 </string>
     </property>
@@ -55,38 +64,41 @@
    <widget class="QLabel" name="labelSubject">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>60</y>
+      <x>360</x>
+      <y>10</y>
       <width>71</width>
       <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel#labelSubject {
-        font-size: 16px;
-        color: #2c3e50 ;
+        font-size: 19px;
+        color: #E8D4F4 ;
+font-weight:700;
 }</string>
     </property>
     <property name="text">
-     <string>Subject</string>
+     <string>Subject:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="marksInput">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>90</y>
-      <width>161</width>
+      <x>480</x>
+      <y>40</y>
+      <width>171</width>
       <height>22</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit#marksInput {
-    color: black;;
-    border: 1.5px solid black;;
+     color:#1B0633;
+    border: 3px solid #8d4d95;
     border-radius: 10px;
-        font-size: 16px;
-        padding: 0px 8px 0px 8px;
+        font-size: 17px;
+font-weight: 570;
+padding: 0px 8px 0px 8px;
+background-color: #E8D4F4 ;
 }
 </string>
     </property>
@@ -94,19 +106,21 @@
    <widget class="QLineEdit" name="studentNameInput">
     <property name="geometry">
      <rect>
-      <x>562</x>
-      <y>30</y>
+      <x>80</x>
+      <y>10</y>
       <width>171</width>
       <height>22</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit#studentNameInput {
-    color: black;;
-    border: 1.5px solid black;;
+       color:#1B0633;
+    border: 3px solid #8d4d95;
     border-radius: 10px;
-        font-size: 16px;
-        padding: 0px 8px 0px 8px;
+        font-size: 17px;
+font-weight: 570;
+padding: 0px 8px 0px 8px;
+background-color: #E8D4F4 ;
 }
 </string>
     </property>
@@ -114,57 +128,61 @@
    <widget class="QLabel" name="labelClass">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>60</y>
-      <width>51</width>
+      <x>10</x>
+      <y>70</y>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel#labelClass {
-        font-size: 16px;
-        color: #2c3e50 ;
+         font-size: 19px;
+        color: #E8D4F4 ;
+font-weight:700;
 }</string>
     </property>
     <property name="text">
-     <string>Class</string>
+     <string>Class:</string>
     </property>
    </widget>
    <widget class="QLabel" name="labelStudentName">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>20</y>
-      <width>111</width>
+      <x>10</x>
+      <y>0</y>
+      <width>81</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel#labelStudentName {
-        font-size: 16px;
-        color: #2c3e50 ;
+       font-size: 19px;
+        color: #E8D4F4 ;
+font-weight:700;
 }</string>
     </property>
     <property name="text">
-     <string>Student Name</string>
+     <string>Name:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="classInput">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>60</y>
-      <width>161</width>
+      <x>80</x>
+      <y>70</y>
+      <width>171</width>
       <height>22</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit#classInput {
-    color: black;;
-    border: 1.5px solid black;;
+     color:#1B0633;
+    border: 3px solid #8d4d95;
     border-radius: 10px;
-        font-size: 16px;
-        padding: 0px 8px 0px 8px;
+        font-size: 17px;
+font-weight: 570;
+padding: 0px 8px 0px 8px;
+background-color: #E8D4F4 ;
 }
 </string>
     </property>
@@ -172,38 +190,41 @@
    <widget class="QLabel" name="labelStudentId">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>30</y>
-      <width>58</width>
+      <x>10</x>
+      <y>40</y>
+      <width>111</width>
       <height>16</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel#labelStudentId {
-        font-size: 16px;
-        color: #2c3e50 ;
+        font-size: 19px;
+        color: #E8D4F4 ;
+font-weight:700;
 }</string>
     </property>
     <property name="text">
-     <string>Student ID:</string>
+     <string>ID:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="subjectInput">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>60</y>
+      <x>480</x>
+      <y>10</y>
       <width>171</width>
       <height>22</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit#subjectInput {
-    color: black;;
-    border: 1.5px solid black;;
+   color:#1B0633;
+    border: 3px solid #8d4d95;
     border-radius: 10px;
-        font-size: 16px;
-        padding: 0px 8px 0px 8px;
+        font-size: 17px;
+font-weight: 570;
+padding: 0px 8px 0px 8px;
+background-color: #E8D4F4 ;
 }
 </string>
     </property>
@@ -211,19 +232,21 @@
    <widget class="QLineEdit" name="totalmarksInput">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>90</y>
+      <x>480</x>
+      <y>80</y>
       <width>171</width>
       <height>22</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit#totalmarksInput {
-    color: black;;
-    border: 1.5px solid black;;
+   color:#1B0633;
+    border: 3px solid #8d4d95;
     border-radius: 10px;
-        font-size: 16px;
-        padding: 0px 8px 0px 8px;
+        font-size: 17px;
+font-weight: 570;
+padding: 0px 8px 0px 8px;
+background-color: #E8D4F4 ;
 }
 </string>
     </property>
@@ -231,65 +254,71 @@
    <widget class="QLabel" name="labelMarks">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>80</y>
-      <width>51</width>
+      <x>360</x>
+      <y>40</y>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel#labelMarks {
-        font-size: 16px;
-        color: #2c3e50 ;
+         font-size: 19px;
+        color: #E8D4F4 ;
+font-weight:700;
 }</string>
     </property>
     <property name="text">
-     <string>Marks</string>
+     <string>Marks:</string>
     </property>
    </widget>
    <widget class="QLabel" name="labelTotalMarks">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>80</y>
-      <width>101</width>
+      <x>360</x>
+      <y>70</y>
+      <width>111</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel#labelTotalMarks {
-        font-size: 16px;
-        color: #2c3e50 ;
+      font-size: 19px;
+        color: #E8D4F4 ;
+font-weight:700;
 }</string>
     </property>
     <property name="text">
-     <string>Total Marks</string>
+     <string>Total Marks:</string>
     </property>
    </widget>
    <widget class="QPushButton" name="clearButton">
     <property name="geometry">
      <rect>
-      <x>530</x>
+      <x>260</x>
       <y>120</y>
-      <width>206</width>
+      <width>171</width>
       <height>29</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton#clearButton {
-    background-color: #ff6b6b;
-    border: 1.5px solid black;
+     border: 1.5px solid #B89FD0;
     border-radius: 10px;
     padding: 6px;
     font-size: 16px;
+background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                            stop:0 rgb(95, 2, 95),
+                            stop:1 rgb(216, 181, 221));
+color:#e4c9f2;
+font-weight:700;
 }
 
 /* Hover effect */
-QPushButton#loginButton:hover {
-    background-color: #ee5253;
+QPushButton#clearButton:hover {
+ background-color: #69166f;
 }
 
-font: 9pt &quot;Segoe UI&quot;;</string>
+</string>
     </property>
     <property name="text">
      <string>Clear</string>
@@ -298,27 +327,31 @@ font: 9pt &quot;Segoe UI&quot;;</string>
    <widget class="QPushButton" name="updateButton">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>450</x>
       <y>120</y>
-      <width>205</width>
+      <width>171</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton#updateButton {
-    background-color: #ff6b6b;
-    border: 1.5px solid black;
+  border: 1.5px solid #B89FD0;
     border-radius: 10px;
     padding: 6px;
     font-size: 16px;
+background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                            stop:0 rgb(95, 2, 95),
+                            stop:1 rgb(216, 181, 221));
+color:#e4c9f2;
+font-weight:700;
 }
 
 /* Hover effect */
-QPushButton#loginButton:hover {
-    background-color: #ee5253;
-}
+QPushButton#updateButton:hover {
 
-font: 9pt &quot;Segoe UI&quot;;</string>
+  background-color: #69166f;
+}
+</string>
     </property>
     <property name="text">
      <string>Update</string>
@@ -327,27 +360,31 @@ font: 9pt &quot;Segoe UI&quot;;</string>
    <widget class="QPushButton" name="saveButton">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>70</x>
       <y>120</y>
-      <width>206</width>
+      <width>171</width>
       <height>29</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton#saveButton {
-    background-color: #ff6b6b;
-    border: 1.5px solid black;
+     border: 1.5px solid #B89FD0;
     border-radius: 10px;
     padding: 6px;
     font-size: 16px;
+background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                            stop:0 rgb(95, 2, 95),
+                            stop:1 rgb(216, 181, 221));
+color:#e4c9f2;
+font-weight:700;
 }
 
 /* Hover effect */
-QPushButton#loginButton:hover {
-    background-color: #ee5253;
+QPushButton#saveButton:hover {
+   background-color: #69166f;
 }
 
-font: 9pt &quot;Segoe UI&quot;;</string>
+</string>
     </property>
     <property name="text">
      <string>Save</string>
@@ -358,28 +395,30 @@ font: 9pt &quot;Segoe UI&quot;;</string>
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>230</y>
-     <width>741</width>
-     <height>391</height>
+     <y>280</y>
+     <width>671</width>
+     <height>331</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QTableView#tableViewResults {
-    border: 1.5px solid #2c3e50;
-    border-radius: 8px;
-    background-color: #ffffff;
+border: 1.5px solid #b0b0b0;  /* Softer grey border */
+    border-radius: 10px;
+    background-color: #d4d4d4;    /* Lighter table background */
     font-family: 'Segoe UI', sans-serif;
     font-size: 11pt;
-    color: #2c3e50;
-    gridline-color: #ecf0f1;
-    alternate-background-color: #f7f9fa;
-    selection-background-color: #d6eaf8;
-    selection-color: #1a252f;
+    color: #1f1f1f;
+    gridline-color: #bcbcbc;      /* Mid grey grid lines */
+    alternate-background-color: #e2e2e2;  /* Subtle row alternation */
+    selection-background-color: #b0b0b0;  /* Visible selection */
+    selection-color: #000000;
+    font-weight: 500;
+
 }
 
 QHeaderView::section {
-    background-color: #2c3e50;
-    color: white;
+    background-color: #4b4b4b;    /* Darker grey header */
+    color: #ffffff;               /* Light font for contrast */
     font-weight: bold;
     font-size: 11pt;
     padding: 6px;
@@ -387,19 +426,21 @@ QHeaderView::section {
     font-family: 'Segoe UI', sans-serif;
 }
 
-QTableView QTableCornerButton::section {
-    background-color: #2c3e50;
+QTableWidget QTableCornerButton::section {
+   background-color: #8a8a8a;    /* Match header color */
     border: none;
 }
 
-QTableView::item {
-    padding: 8px 10px;
-    font-size: 9pt;
+QTableWidget::item {
+      padding: 8px 10px;
+    font-size: 10pt;
+    color: #1f1f1f;
+    background-color: transparent;
 }
 
-QTableView::item:selected {
-    background-color: #d6eaf8;
-    color: #1a252f;
+QTableWidget::item:selected {
+    background-color: #b0b0b0;
+    color: #000000;
 }
 </string>
    </property>
@@ -408,52 +449,81 @@ QTableView::item:selected {
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>190</y>
-     <width>621</width>
+     <y>240</y>
+     <width>561</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QLineEdit#searchInput {
-    color: black;;
-    border: 1.5px solid black;;
+  color:#1B0633;
+    border: 3px solid #8d4d95;
     border-radius: 10px;
-        font-size: 16px;
-        padding: 0px 8px 0px 8px;
+        font-size: 17px;
+font-weight: 570;
+padding: 0px 8px 0px 8px;
+background-color: #E8D4F4 ;
 }
 </string>
    </property>
    <property name="placeholderText">
-    <string>Enter Student ID or Name to search</string>
+    <string>🔍Search by student ID or name...</string>
    </property>
   </widget>
   <widget class="QPushButton" name="searchButton">
    <property name="geometry">
     <rect>
-     <x>650</x>
-     <y>190</y>
+     <x>580</x>
+     <y>240</y>
      <width>91</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton#searchButton {
-    background-color: #ff6b6b;
-    border: 1.5px solid black;
+  border: 1.5px solid #B89FD0;
     border-radius: 10px;
     padding: 6px;
     font-size: 16px;
+background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                            stop:0 rgb(95, 2, 95),
+                            stop:1 rgb(216, 181, 221));
+color:#e4c9f2;
+font-weight:700;
 }
 
 /* Hover effect */
-QPushButton#loginButton:hover {
-    background-color: #ee5253;
+QPushButton#searchButton:hover {
+   background-color: #69166f;
 }
 
 </string>
    </property>
    <property name="text">
     <string>Search</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>10</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel#label{
+     background-color: #3E0066;
+  color: #E6CCE7;
+  border: 2px solid #E7A9A9;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}</string>
+   </property>
+   <property name="text">
+    <string>RESULT ENTRY</string>
    </property>
   </widget>
  </widget>

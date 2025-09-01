@@ -28,38 +28,39 @@ public:
     QPushButton *editButton;
     QPushButton *addButton;
     QLineEdit *searchBar;
-    QLabel *searchLabel;
+    QLabel *label;
 
     void setupUi(QWidget *ExamManagement)
     {
         if (ExamManagement->objectName().isEmpty())
             ExamManagement->setObjectName("ExamManagement");
-        ExamManagement->resize(850, 632);
+        ExamManagement->resize(853, 593);
         ExamManagement->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
         ExamManagement->setStyleSheet(QString::fromUtf8("QWidget#ExamManagement {\n"
-"        background-color: #fef6f0   ;\n"
-"        border: 1px solid black;\n"
+"        background-color:#1B0633;\n"
+"border:5px solid #B89AD8;\n"
 "        border-radius: 10%;\n"
 "}"));
         examTable = new QTableView(ExamManagement);
         examTable->setObjectName("examTable");
-        examTable->setGeometry(QRect(10, 80, 831, 501));
+        examTable->setGeometry(QRect(10, 160, 831, 421));
         examTable->setStyleSheet(QString::fromUtf8("QTableView#examTable {\n"
-"    border: 1.5px solid #2c3e50;\n"
-"    border-radius: 8px;\n"
-"    background-color: #ffffff;\n"
+"    border: 1.5px solid #b0b0b0;  /* Softer grey border */\n"
+"    border-radius: 10px;\n"
+"    background-color: #d4d4d4;    /* Lighter table background */\n"
 "    font-family: 'Segoe UI', sans-serif;\n"
 "    font-size: 11pt;\n"
-"    color: #2c3e50;\n"
-"    gridline-color: #ecf0f1;\n"
-"    alternate-background-color: #f7f9fa;\n"
-"    selection-background-color: #d6eaf8;\n"
-"    selection-color: #1a252f;\n"
+"    color: #1f1f1f;\n"
+"    gridline-color: #bcbcbc;      /* Mid grey grid lines */\n"
+"    alternate-background-color: #e2e2e2;  /* Subtle row alternation */\n"
+"    selection-background-color: #b0b0b0;  /* Visible selection */\n"
+"    selection-color: #000000;\n"
+"    font-weight: 500;\n"
 "}\n"
 "\n"
 "QHeaderView::section {\n"
-"    background-color: #2c3e50;\n"
-"    color: white;\n"
+"    background-color: #4b4b4b;    /* Darker grey header */\n"
+"    color: #ffffff;               /* Light font for contrast */\n"
 "    font-weight: bold;\n"
 "    font-size: 11pt;\n"
 "    padding: 6px;\n"
@@ -68,90 +69,112 @@ public:
 "}\n"
 "\n"
 "QTableView QTableCornerButton::section {\n"
-"    background-color: #2c3e50;\n"
+"    background-color: #8a8a8a;    /* Match header color */\n"
 "    border: none;\n"
 "}\n"
 "\n"
-"QTableView::item {\n"
-"    padding: 6px;\n"
-"    font-size: 10.5pt;\n"
+"QTableView::"
+                        "item {\n"
+"    padding: 8px 10px;\n"
+"    font-size: 10pt;\n"
+"    color: #1f1f1f;\n"
+"    background-color: transparent;\n"
 "}\n"
 "\n"
 "QTableView::item:selected {\n"
-"    background-color: #d6eaf8;\n"
-"    color: #1a252f;\n"
+"    background-color: #b0b0b0;\n"
+"    color: #000000;\n"
 "}\n"
+"\n"
+"\n"
 ""));
         removeButton = new QPushButton(ExamManagement);
         removeButton->setObjectName("removeButton");
-        removeButton->setGeometry(QRect(360, 590, 121, 31));
+        removeButton->setGeometry(QRect(480, 70, 121, 31));
         removeButton->setFocusPolicy(Qt::FocusPolicy::StrongFocus);
         removeButton->setStyleSheet(QString::fromUtf8("QPushButton#removeButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
+"   border: 1.5px solid #B89FD0;\n"
 "    border-radius: 10px;\n"
+"    padding: 6px;\n"
 "    font-size: 16px;\n"
-"color: #2c3e50 ;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(95, 2, 95),\n"
+"                            stop:1 rgb(216, 181, 221));\n"
+"color:#e4c9f2;\n"
+"font-weight:700;\n"
 "}\n"
 "\n"
 "QPushButton#removeButton:hover {\n"
-"color: #2c3e50 ;\n"
-"    background-color: #ee5253;\n"
+"background-color: #69166f;\n"
 "}\n"
 "\n"
 ""));
         editButton = new QPushButton(ExamManagement);
         editButton->setObjectName("editButton");
-        editButton->setGeometry(QRect(190, 590, 121, 31));
+        editButton->setGeometry(QRect(340, 70, 121, 31));
         editButton->setStyleSheet(QString::fromUtf8("QPushButton#editButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
+"   border: 1.5px solid #B89FD0;\n"
 "    border-radius: 10px;\n"
+"    padding: 6px;\n"
 "    font-size: 16px;\n"
-"color: #2c3e50 ;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(95, 2, 95),\n"
+"                            stop:1 rgb(216, 181, 221));\n"
+"color:#e4c9f2;\n"
+"font-weight:700;\n"
 "}\n"
 "\n"
 "QPushButton#editButton:hover {\n"
-"color: #2c3e50 ;\n"
-"    background-color: #ee5253;\n"
+"background-color: #69166f;\n"
 "}\n"
 "\n"
 ""));
         addButton = new QPushButton(ExamManagement);
         addButton->setObjectName("addButton");
-        addButton->setGeometry(QRect(520, 590, 121, 31));
+        addButton->setGeometry(QRect(200, 70, 121, 31));
         addButton->setStyleSheet(QString::fromUtf8("QPushButton#addButton {\n"
-"    background-color: #ff6b6b;\n"
-"    border: 1.5px solid black;\n"
+"   border: 1.5px solid #B89FD0;\n"
 "    border-radius: 10px;\n"
+"    padding: 6px;\n"
 "    font-size: 16px;\n"
-"color: #2c3e50 ;\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"                            stop:0 rgb(95, 2, 95),\n"
+"                            stop:1 rgb(216, 181, 221));\n"
+"color:#e4c9f2;\n"
+"font-weight:700;\n"
 "}\n"
 "\n"
 "QPushButton#addButton:hover {\n"
-"color: #2c3e50 ;\n"
-"    background-color: #ee5253;\n"
+"background-color: #69166f;\n"
 "}\n"
 "\n"
 ""));
         searchBar = new QLineEdit(ExamManagement);
         searchBar->setObjectName("searchBar");
-        searchBar->setGeometry(QRect(90, 30, 751, 31));
+        searchBar->setGeometry(QRect(20, 120, 801, 31));
         searchBar->setStyleSheet(QString::fromUtf8("QLineEdit#searchBar {\n"
-"    color: black;;\n"
-"    border: 1.5px solid black;;\n"
+"  color:#1B0633;\n"
+"    border: 3px solid #8d4d95;\n"
 "    border-radius: 10px;\n"
-"        font-size: 16px;\n"
-"        padding: 0px 8px 0px 8px;\n"
+"        font-size: 17px;\n"
+"font-weight: 570;\n"
+"padding: 0px 8px 0px 8px;\n"
+"background-color: #E8D4F4 ;\n"
 "}\n"
 ""));
-        searchLabel = new QLabel(ExamManagement);
-        searchLabel->setObjectName("searchLabel");
-        searchLabel->setGeometry(QRect(10, 30, 71, 31));
-        searchLabel->setStyleSheet(QString::fromUtf8("QLabel#searchLabel {\n"
-"        font-size: 20px;\n"
-"        color: #2c3e50 ;\n"
-"}"));
+        label = new QLabel(ExamManagement);
+        label->setObjectName("label");
+        label->setGeometry(QRect(320, 10, 181, 41));
+        label->setStyleSheet(QString::fromUtf8("QLabel#label{\n"
+"  background-color: #3E0066;\n"
+"  color: #E6CCE7;\n"
+"  border: 2px solid #E7A9A9;\n"
+"  font-weight: bold;\n"
+"  font-size: 20px;\n"
+"  text-align: center;\n"
+"\n"
+"}\n"
+""));
 
         retranslateUi(ExamManagement);
 
@@ -164,7 +187,9 @@ public:
         removeButton->setText(QCoreApplication::translate("ExamManagement", "Remove Exam", nullptr));
         editButton->setText(QCoreApplication::translate("ExamManagement", "Edit Exam", nullptr));
         addButton->setText(QCoreApplication::translate("ExamManagement", "Add Exam", nullptr));
-        searchLabel->setText(QCoreApplication::translate("ExamManagement", "Search", nullptr));
+        searchBar->setText(QString());
+        searchBar->setPlaceholderText(QCoreApplication::translate("ExamManagement", "\360\237\224\215Search by subject...", nullptr));
+        label->setText(QCoreApplication::translate("ExamManagement", "EXAM SCHEDULE", nullptr));
     } // retranslateUi
 
 };

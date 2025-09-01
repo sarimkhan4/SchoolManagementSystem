@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>639</height>
+    <width>612</width>
+    <height>640</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,8 +15,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QDialog#StudentManagement {
-        background-color: #fef6f0   ;
-        border: 1px solid black;
+        background-color:#1B0633;
+border:5px solid #B89AD8;
         border-radius: 10%;
 }</string>
   </property>
@@ -24,9 +24,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>120</y>
-     <width>781</width>
-     <height>471</height>
+     <y>200</y>
+     <width>591</width>
+     <height>421</height>
     </rect>
    </property>
    <property name="maximumSize">
@@ -37,21 +37,22 @@
    </property>
    <property name="styleSheet">
     <string notr="true">QTableWidget#studentTable {
-    border: 1.5px solid #2c3e50;
-    border-radius: 8px;
-    background-color: #ffffff;
+  border: 1.5px solid #b0b0b0;  /* Softer grey border */
+    border-radius: 10px;
+    background-color: #d4d4d4;    /* Lighter table background */
     font-family: 'Segoe UI', sans-serif;
     font-size: 11pt;
-    color: #2c3e50;
-    gridline-color: #ecf0f1;
-    alternate-background-color: #f7f9fa;
-    selection-background-color: #d6eaf8;
-    selection-color: #1a252f;
+    color: #1f1f1f;
+    gridline-color: #bcbcbc;      /* Mid grey grid lines */
+    alternate-background-color: #e2e2e2;  /* Subtle row alternation */
+    selection-background-color: #b0b0b0;  /* Visible selection */
+    selection-color: #000000;
+    font-weight: 500;
 }
 
 QHeaderView::section {
-    background-color: #2c3e50;
-    color: white;
+    background-color: #4b4b4b;    /* Darker grey header */
+    color: #ffffff;               /* Light font for contrast */
     font-weight: bold;
     font-size: 11pt;
     padding: 6px;
@@ -60,18 +61,20 @@ QHeaderView::section {
 }
 
 QTableWidget QTableCornerButton::section {
-    background-color: #2c3e50;
+   background-color: #8a8a8a;    /* Match header color */
     border: none;
 }
 
 QTableWidget::item {
-    padding: 6px;
-    font-size: 10.5pt;
+      padding: 8px 10px;
+    font-size: 10pt;
+    color: #1f1f1f;
+    background-color: transparent;
 }
 
 QTableWidget::item:selected {
-    background-color: #d6eaf8;
-    color: #1a252f;
+    background-color: #b0b0b0;
+    color: #000000;
 }
 </string>
    </property>
@@ -92,82 +95,32 @@ QTableWidget::item:selected {
    <column/>
    <column/>
   </widget>
-  <widget class="QLineEdit" name="classLineEdit">
-   <property name="geometry">
-    <rect>
-     <x>70</x>
-     <y>80</y>
-     <width>721</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLineEdit#classLineEdit {
-    color: black;;
-    border: 1.5px solid black;;
-    border-radius: 10px;
-        font-size: 16px;
-        padding: 0px 8px 0px 8px;
-}
-</string>
-   </property>
-  </widget>
   <widget class="QLineEdit" name="nameLineEdit">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>20</y>
-     <width>721</width>
+     <x>10</x>
+     <y>160</y>
+     <width>591</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QLineEdit#nameLineEdit {
-    color: black;;
-    border: 1.5px solid black;;
+    color:#1B0633;
+    border: 3px solid #8d4d95;
     border-radius: 10px;
-        font-size: 16px;
-        padding: 0px 8px 0px 8px;
+        font-size: 17px;
+font-weight: 570;
+padding: 0px 8px 0px 8px;
+background-color: #E8D4F4 ;
 }
 </string>
    </property>
-  </widget>
-  <widget class="QLabel" name="labelName">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>20</y>
-     <width>51</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLabel#labelName {
-        font-size: 20px;
-        color: #2c3e50 ;
-}</string>
-   </property>
    <property name="text">
-    <string>Name</string>
+    <string/>
    </property>
-  </widget>
-  <widget class="QLabel" name="labelClass">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>70</y>
-     <width>51</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLabel#labelClass {
-        font-size: 20px;
-        color: #2c3e50 ;
-}</string>
-   </property>
-   <property name="text">
-    <string>Class</string>
+   <property name="placeholderText">
+    <string>🔍Search by Student's Class...</string>
    </property>
   </widget>
   <widget class="QPushButton" name="viewStudentButton">
@@ -176,24 +129,27 @@ QTableWidget::item:selected {
    </property>
    <property name="geometry">
     <rect>
-     <x>560</x>
-     <y>600</y>
+     <x>460</x>
+     <y>70</y>
      <width>141</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton#viewStudentButton {
-    background-color: #ff6b6b;
-    border: 1.5px solid black;
+ border: 1.5px solid #B89FD0;
     border-radius: 10px;
+    padding: 6px;
     font-size: 16px;
-color: #2c3e50 ;
+background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                            stop:0 rgb(95, 2, 95),
+                            stop:1 rgb(216, 181, 221));
+color:#e4c9f2;
+font-weight:700;
 }
 
 QPushButton#viewStudentButton:hover {
-    background-color: #ee5253;
-color: #2c3e50 ;
+background-color: #69166f;
 }
 
 </string>
@@ -205,24 +161,27 @@ color: #2c3e50 ;
   <widget class="QPushButton" name="removeStudentButton">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>600</y>
-     <width>131</width>
+     <x>310</x>
+     <y>70</y>
+     <width>141</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton#removeStudentButton {
-    background-color: #ff6b6b;
-    border: 1.5px solid black;
+     border: 1.5px solid #B89FD0;
     border-radius: 10px;
+    padding: 6px;
     font-size: 16px;
-color: #2c3e50 ;
+background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                            stop:0 rgb(95, 2, 95),
+                            stop:1 rgb(216, 181, 221));
+color:#e4c9f2;
+font-weight:700;
 }
 
 QPushButton#removeStudentButton:hover {
-color: #2c3e50 ;
-    background-color: #ee5253;
+background-color: #69166f;
 }
 
 </string>
@@ -234,25 +193,30 @@ color: #2c3e50 ;
   <widget class="QPushButton" name="editStudentButton">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>600</y>
-     <width>131</width>
+     <x>160</x>
+     <y>70</y>
+     <width>141</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton#editStudentButton {
-    background-color: #ff6b6b;
-    border: 1.5px solid black;
+ border: 1.5px solid #B89FD0;
     border-radius: 10px;
+    padding: 6px;
     font-size: 16px;
-        color: #2c3e50 ;
+background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                            stop:0 rgb(95, 2, 95),
+                            stop:1 rgb(216, 181, 221));
+color:#e4c9f2;
+font-weight:700;
+
 }
 
 QPushButton#editStudentButton:hover {
 
-    background-color: #ee5253;
-        color: #2c3e50 ;
+   background-color: #69166f;
+
 }
 
 </string>
@@ -264,30 +228,125 @@ QPushButton#editStudentButton:hover {
   <widget class="QPushButton" name="addStudentButton">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>600</y>
-     <width>131</width>
+     <x>10</x>
+     <y>70</y>
+     <width>141</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton#addStudentButton {
-    background-color: #ff6b6b;
-    border: 1.5px solid black;
+     border: 1.5px solid #B89FD0;
     border-radius: 10px;
+    padding: 6px;
     font-size: 16px;
-        color: #2c3e50 ;
+background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                            stop:0 rgb(95, 2, 95),
+                            stop:1 rgb(216, 181, 221));
+color:#e4c9f2;
+font-weight:700;
+
 }
 
 QPushButton#addStudentButton:hover {
-    background-color: #ee5253;
-        color: #2c3e50 ;
+    background-color: #69166f;
 }
 
 </string>
    </property>
    <property name="text">
     <string>Add Student</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="classLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>591</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit#classLineEdit{
+     color:#1B0633;
+    border: 3px solid #8d4d95;
+    border-radius: 10px;
+        font-size: 17px;
+font-weight: 570;
+padding: 0px 8px 0px 8px;
+background-color: #E8D4F4 ;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>🔍Search by Student's Name...</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>10</y>
+     <width>251</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel#label{
+  background-color: #3E0066;
+  color: #E6CCE7;
+  border: 2px solid #E7A9A9;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+
+}</string>
+   </property>
+   <property name="text">
+    <string>STUDENT MANAGMENT</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelName">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>600</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel#labelName {
+        font-size: 20px;
+        color: #E8D4F4 ;
+font-weight:700;
+}</string>
+   </property>
+   <property name="text">
+    <string>Name</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelName_2">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>610</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel#labelName {
+        font-size: 20px;
+        color: #E8D4F4 ;
+font-weight:700;
+}</string>
+   </property>
+   <property name="text">
+    <string>Name</string>
    </property>
   </widget>
  </widget>

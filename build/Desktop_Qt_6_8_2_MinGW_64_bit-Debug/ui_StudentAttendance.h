@@ -28,21 +28,26 @@ public:
     {
         if (StudentAttendance->objectName().isEmpty())
             StudentAttendance->setObjectName("StudentAttendance");
-        StudentAttendance->resize(261, 400);
+        StudentAttendance->resize(291, 432);
         StudentAttendance->setStyleSheet(QString::fromUtf8("QDialog#StudentAttendance {\n"
-"        background-color: #fef6f0   ;\n"
-"        border: 1px solid black;\n"
+"        background-color:#1B0633;\n"
+"border:5px solid #B89AD8;\n"
 "        border-radius: 10%;\n"
 "}"));
         titleLabel = new QLabel(StudentAttendance);
         titleLabel->setObjectName("titleLabel");
-        titleLabel->setGeometry(QRect(-100, 10, 461, 41));
+        titleLabel->setGeometry(QRect(30, 10, 231, 41));
         QFont font;
         font.setBold(true);
         titleLabel->setFont(font);
         titleLabel->setStyleSheet(QString::fromUtf8("QLabel#titleLabel {\n"
-"        font-size: 25px;\n"
-"color: #2c3e50 ;\n"
+"      background-color: #3E0066;\n"
+"  color: #E6CCE7;\n"
+"  border: 2px solid #E7A9A9;\n"
+"  font-weight: bold;\n"
+"  font-size: 20px;\n"
+"  text-align: center;\n"
+"\n"
 "}"));
         titleLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
         tableWidget_2 = new QTableWidget(StudentAttendance);
@@ -53,23 +58,24 @@ public:
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         tableWidget_2->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         tableWidget_2->setObjectName("tableWidget_2");
-        tableWidget_2->setGeometry(QRect(10, 60, 241, 321));
+        tableWidget_2->setGeometry(QRect(10, 80, 271, 341));
         tableWidget_2->setStyleSheet(QString::fromUtf8("QTableWidget#tableWidget_2 {\n"
-"    border: 1.5px solid #2c3e50;\n"
-"    border-radius: 8px;\n"
-"    background-color: #ffffff;\n"
+"   border: 1.5px solid #b0b0b0;  /* Softer grey border */\n"
+"    border-radius: 10px;\n"
+"    background-color: #d4d4d4;    /* Lighter table background */\n"
 "    font-family: 'Segoe UI', sans-serif;\n"
 "    font-size: 11pt;\n"
-"    color: #2c3e50;\n"
-"    gridline-color: #ecf0f1;\n"
-"    alternate-background-color: #f7f9fa;\n"
-"    selection-background-color: #d6eaf8;\n"
-"    selection-color: #1a252f;\n"
+"    color: #1f1f1f;\n"
+"    gridline-color: #bcbcbc;      /* Mid grey grid lines */\n"
+"    alternate-background-color: #e2e2e2;  /* Subtle row alternation */\n"
+"    selection-background-color: #b0b0b0;  /* Visible selection */\n"
+"    selection-color: #000000;\n"
+"    font-weight: 500;\n"
 "}\n"
 "\n"
 "QHeaderView::section {\n"
-"    background-color: #2c3e50;\n"
-"    color: white;\n"
+"    background-color: #4b4b4b;    /* Darker grey header */\n"
+"    color: #ffffff;               /* Light font for contrast */\n"
 "    font-weight: bold;\n"
 "    font-size: 11pt;\n"
 "    padding: 6px;\n"
@@ -78,18 +84,21 @@ public:
 "}\n"
 "\n"
 "QTableWidget QTableCornerButton::section {\n"
-"    background-color: #2c3e50;\n"
+"   background-color: #8a8a8a;    /* Match header color */\n"
 "    border: none;\n"
 "}\n"
 "\n"
-"QTableWidget::item {\n"
-"    padding: 8px 10px;\n"
-"    font-size: 9pt;\n"
+"QTable"
+                        "Widget::item {\n"
+"      padding: 8px 10px;\n"
+"    font-size: 10pt;\n"
+"    color: #1f1f1f;\n"
+"    background-color: transparent;\n"
 "}\n"
 "\n"
 "QTableWidget::item:selected {\n"
-"    background-color: #d6eaf8;\n"
-"    color: #1a252f;\n"
+"    background-color: #b0b0b0;\n"
+"    color: #000000;\n"
 "}\n"
 ""));
 
@@ -101,7 +110,7 @@ public:
     void retranslateUi(QDialog *StudentAttendance)
     {
         StudentAttendance->setWindowTitle(QCoreApplication::translate("StudentAttendance", "My Attendance", nullptr));
-        titleLabel->setText(QCoreApplication::translate("StudentAttendance", "Attendance Record", nullptr));
+        titleLabel->setText(QCoreApplication::translate("StudentAttendance", "ATTENDENCE RECORD", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tableWidget_2->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("StudentAttendance", "Date", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = tableWidget_2->horizontalHeaderItem(1);

@@ -28,21 +28,26 @@ public:
     {
         if (AttendanceMarkingViewing->objectName().isEmpty())
             AttendanceMarkingViewing->setObjectName("AttendanceMarkingViewing");
-        AttendanceMarkingViewing->resize(500, 400);
+        AttendanceMarkingViewing->resize(373, 422);
         AttendanceMarkingViewing->setStyleSheet(QString::fromUtf8("QDialog#AttendanceMarkingViewing {\n"
-"        background-color: #fef6f0   ;\n"
-"        border: 1px solid black;\n"
-"        border-radius: 10%;\n"
+"        background-color:#1B0633;\n"
+"border:5px solid #B89AD8;\n"
+"        border-radius: 10%;;\n"
 "}"));
         lblTitle = new QLabel(AttendanceMarkingViewing);
         lblTitle->setObjectName("lblTitle");
-        lblTitle->setGeometry(QRect(9, 0, 481, 41));
+        lblTitle->setGeometry(QRect(60, 10, 231, 41));
         QFont font;
         font.setBold(true);
         lblTitle->setFont(font);
         lblTitle->setStyleSheet(QString::fromUtf8("QLabel#lblTitle {\n"
-"        font-size: 25px;\n"
-"color: #2c3e50 ;\n"
+"        background-color: #3E0066;\n"
+"  color: #E6CCE7;\n"
+"  border: 2px solid #E7A9A9;\n"
+"  font-weight: bold;\n"
+"  font-size: 20px;\n"
+"  text-align: center;\n"
+"\n"
 "}"));
         lblTitle->setAlignment(Qt::AlignmentFlag::AlignCenter);
         tableWidget = new QTableWidget(AttendanceMarkingViewing);
@@ -57,23 +62,25 @@ public:
         QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         tableWidget->setObjectName("tableWidget");
-        tableWidget->setGeometry(QRect(9, 41, 481, 341));
+        tableWidget->setGeometry(QRect(10, 70, 351, 341));
         tableWidget->setStyleSheet(QString::fromUtf8("QTableWidget#tableWidget {\n"
-"    border: 1.5px solid #2c3e50;\n"
-"    border-radius: 8px;\n"
-"    background-color: #ffffff;\n"
+"    border: 1.5px solid #b0b0b0;  /* Softer grey border */\n"
+"    border-radius: 10px;\n"
+"    background-color: #d4d4d4;    /* Lighter table background */\n"
 "    font-family: 'Segoe UI', sans-serif;\n"
 "    font-size: 11pt;\n"
-"    color: #2c3e50;\n"
-"    gridline-color: #ecf0f1;\n"
-"    alternate-background-color: #f7f9fa;\n"
-"    selection-background-color: #d6eaf8;\n"
-"    selection-color: #1a252f;\n"
+"    color: #1f1f1f;\n"
+"    gridline-color: #bcbcbc;      /* Mid grey grid lines */\n"
+"    alternate-background-color: #e2e2e2;  /* Subtle row alternation */\n"
+"    selection-background-color: #b0b0b0;  /* Visible selection */\n"
+"    selection-color: #000000;\n"
+"    font-weight: 500;\n"
+"\n"
 "}\n"
 "\n"
 "QHeaderView::section {\n"
-"    background-color: #2c3e50;\n"
-"    color: white;\n"
+"    background-color: #4b4b4b;    /* Darker grey header */\n"
+"    color: #ffffff;               /* Light font for contrast */\n"
 "    font-weight: bold;\n"
 "    font-size: 11pt;\n"
 "    padding: 6px;\n"
@@ -82,18 +89,21 @@ public:
 "}\n"
 "\n"
 "QTableWidget QTableCornerButton::section {\n"
-"    background-color: #2c3e50;\n"
+"   background-color: #8a8a8a;    /* Match header color */\n"
 "    border: none;\n"
 "}\n"
 "\n"
-"QTableWidget::item {\n"
-"    padding: 8px 10px;\n"
-"    font-size: 9pt;\n"
+"QT"
+                        "ableWidget::item {\n"
+"      padding: 8px 10px;\n"
+"    font-size: 10pt;\n"
+"    color: #1f1f1f;\n"
+"    background-color: transparent;\n"
 "}\n"
 "\n"
 "QTableWidget::item:selected {\n"
-"    background-color: #d6eaf8;\n"
-"    color: #1a252f;\n"
+"    background-color: #b0b0b0;\n"
+"    color: #000000;\n"
 "}\n"
 ""));
 
@@ -105,7 +115,7 @@ public:
     void retranslateUi(QDialog *AttendanceMarkingViewing)
     {
         AttendanceMarkingViewing->setWindowTitle(QCoreApplication::translate("AttendanceMarkingViewing", "My Attendance Record", nullptr));
-        lblTitle->setText(QCoreApplication::translate("AttendanceMarkingViewing", "My Attendance Record", nullptr));
+        lblTitle->setText(QCoreApplication::translate("AttendanceMarkingViewing", "ATTENDENCE RECORD", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("AttendanceMarkingViewing", "Date", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
