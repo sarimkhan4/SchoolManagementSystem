@@ -171,15 +171,11 @@ The system includes the following core tables:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 👨‍💻 Author
 
 **Sarim Khan**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn Profile]
+- GitHub: [@sarimkhan4](https://github.com/sarimkhan4)
+- LinkedIn: [https://www.linkedin.com/in/sarim-khan-54a2841aa/]
 
 ## 🙏 Acknowledgments
 
@@ -191,8 +187,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you encounter any issues or have questions:
 - Create an issue in the GitHub repository
-- Contact: [your-email@example.com]
-- Documentation: [Link to detailed documentation if available]
+- Contact: [sarimkhan.0440@gmail.com]
 
 ---
 
